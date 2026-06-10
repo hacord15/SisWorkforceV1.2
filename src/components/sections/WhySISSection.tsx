@@ -44,21 +44,21 @@ export default function WhySISSection() {
         {/* Header */}
         <div className="text-center mb-14">
           <p className="text-brand-red text-sm font-semibold tracking-widest uppercase mb-2">
-            Our Advantages
+            Stafffing Offerings
           </p>
 
           <h2
             className="text-4xl font-bold text-brand-grey-900"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            Why SIS Global Workforce?
+            Flexible Staffing Solutions for Every Business Need
           </h2>
 
           <div className="section-divider mt-4" />
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {whyCards.map((card, i) => {
             const Icon = card.icon;
 

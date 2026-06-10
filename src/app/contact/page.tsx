@@ -4,50 +4,21 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContactClient from "./ContactClient";
 
-// ── Static data lives here so it never ships to the browser bundle ────────
+// ── Static data lives here so it never ships to the browser bundle ─────────
 
-export const OFFICES = [
-  {
-    city:    "Gurugram (HQ)",
-    address: "7th Floor, Unitech Cyber Park, Sector 39, Gurugram, Haryana — 122 001",
-    phone:   "+91 124 417 1888",
-    email:   "info@sisglobal.com",
-    hours:   "Mon – Sat: 9:00 AM – 6:30 PM",
-    mapUrl:  "https://maps.google.com/?q=Unitech+Cyber+Park+Sector+39+Gurugram",
-    primary: true,
-    icon:    "🏢",
+export const OFFICE = {
+  name:    "SIS Global Workforce Solutions Pvt. Ltd.",
+  address: "A-28 & 29, Phase-1, Okhla Industrial Area, New Delhi – 110020",
+  phone:   "+91-11-49032418",
+  email:   "info@sisglobalworkforce.com",
+  hours:   "Mon – Sat: 9:00 AM – 6:30 PM",
+  mapUrl:  "https://maps.google.com/?q=A-28+Okhla+Industrial+Area+Phase+1+New+Delhi",
+  socials: {
+    linkedin:  "https://www.linkedin.com/company/sisglobalworkforcesolutions/",
+    instagram: "https://www.instagram.com/sisglobalworkforce/",
+    facebook:  "https://www.facebook.com/sisglobalworkforce",
   },
-  {
-    city:    "Mumbai",
-    address: "Unit 12, Maker Chambers IV, Nariman Point, Mumbai, Maharashtra — 400 021",
-    phone:   "+91 22 6123 4567",
-    email:   "mumbai@sisglobal.com",
-    hours:   "Mon – Sat: 9:00 AM – 6:00 PM",
-    mapUrl:  "https://maps.google.com/?q=Maker+Chambers+IV+Nariman+Point+Mumbai",
-    primary: false,
-    icon:    "🌊",
-  },
-  {
-    city:    "Bengaluru",
-    address: "3rd Floor, Prestige Atlanta, 80 Feet Road, Koramangala, Bengaluru — 560 034",
-    phone:   "+91 80 4567 8901",
-    email:   "bengaluru@sisglobal.com",
-    hours:   "Mon – Sat: 9:00 AM – 6:00 PM",
-    mapUrl:  "https://maps.google.com/?q=Prestige+Atlanta+Koramangala+Bengaluru",
-    primary: false,
-    icon:    "💻",
-  },
-  {
-    city:    "Dubai (International)",
-    address: "Office 2104, Jumeirah Bay X2 Tower, JLT, Dubai, UAE — PO Box 338822",
-    phone:   "+971 4 567 8901",
-    email:   "dubai@sisglobal.com",
-    hours:   "Sun – Thu: 9:00 AM – 6:00 PM",
-    mapUrl:  "https://maps.google.com/?q=Jumeirah+Bay+X2+Tower+JLT+Dubai",
-    primary: false,
-    icon:    "🌍",
-  },
-] as const;
+} as const;
 
 export const FAQS = [
   { q: "How quickly can you deploy workforce?",   a: "For most roles we can shortlist candidates within 48 hours and deploy within 5–7 working days, depending on documentation." },
@@ -62,11 +33,11 @@ export const FAQS = [
 
 export const metadata: Metadata = {
   title:       "Contact Us | SIS Global Workforce Solutions",
-  description: "Get in touch with SIS Global Workforce Solutions. Reach our offices in Gurugram, Mumbai, Bengaluru, or Dubai — or send us a message and we'll respond within 4 hours.",
+  description: "Get in touch with SIS Global Workforce Solutions. Reach our office in New Delhi or send us your hiring requirement or job application.",
   openGraph: {
     title:       "Contact SIS Global Workforce Solutions",
-    description: "Hire workforce, explore job opportunities, or partner with us. Offices in India and UAE.",
-    url:         "https://sisglobal.com/contact",
+    description: "Hire skilled workforce or find international jobs. Office in Okhla Industrial Area, New Delhi.",
+    url:         "https://sisglobalworkforce.com/contact",
     siteName:    "SIS Global Workforce Solutions",
     type:        "website",
   },
@@ -78,12 +49,7 @@ export default function ContactPage() {
   return (
     <>
       <Navbar />
-      {/*
-        All interactivity (form state, office accordion, submit handler)
-        is delegated to the Client Component below.
-        The static data arrays are passed as plain props — serialisable, zero JS overhead.
-      */}
-      <ContactClient offices={OFFICES} faqs={FAQS} />
+      <ContactClient office={OFFICE} faqs={FAQS} />
       <Footer />
     </>
   );
