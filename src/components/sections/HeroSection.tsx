@@ -28,20 +28,24 @@ export default function HeroSection() {
             className="text-white text-5xl md:text-6xl font-bold leading-tight mb-4"
             style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.01em" }}
           >
-            Empowering Employers with{" "}
-            <span className="text-brand-red">Reliable Workforce</span>{" "}
-            Solutions
+            Trusted{" "}
+            <span className="text-brand-red">Global Workforce Solution </span>{" "}
+            Provider with Skilled, Industry-Ready Talent
           </h1>
           <p className="text-white/80 text-lg mb-8 max-w-md leading-relaxed">
-            Connecting businesses with skilled, verified and reliable workforce across industries.
+            SIS Global Workforce Solutions empowers businesses across GCC, Europe, and global markets with compliant, trained, and deployment-ready workforce solutions from India, Nepal, and Sri Lanka.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link href="/employers" className="btn-primary">
               Hire Workforce <ArrowRight size={16} />
             </Link>
-            <Link href="/solutions" className="btn-outline">
+            <Link href="/jobs" className="btn-outline">
               <Play size={14} fill="currentColor" />
-              Explore Workforce Solutions
+              Explore Jobs
+            </Link>
+            <Link href="/contact" className="btn-outline">
+              <Play size={14} fill="currentColor" />
+              Speak to Our Team
             </Link>
           </div>
         </div>

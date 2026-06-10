@@ -9,6 +9,10 @@ import RecruitmentSection from "@/components/sections/RecruitmentSection";
 import WorldMapSection from "@/components/sections/WorldMapSection";
 import CTASection from "@/components/sections/CTASection";
 import QuickForm from "@/components/ui/QuickForm";
+import TechSection from "@/components/sections/TechSection";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import ImpactSection from "@/components/sections/ImpactSection";
+import WorkforceReadinessSection from "@/components/sections/WorkforceReadinessSection";
 
 export default function HomePage() {
   return (
@@ -18,10 +22,16 @@ export default function HomePage() {
         <HeroSection />
         <StatsBar />
         <AboutSection />
-        <IndustriesSection />
         <WhySISSection />
-        <RecruitmentSection />
-        <WorldMapSection />
+         {/* <WorkforceReadinessSection />
+        <TechSection />
+        <TestimonialsSection /> */}
+        <ImpactSection />
+       
+        {/* <IndustriesSection /> */}
+        
+        {/* <RecruitmentSection /> */}
+        {/* <WorldMapSection /> */}
         <CTASection />
       </main>
       <Footer />

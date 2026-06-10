@@ -25,19 +25,22 @@ export const navItems: NavItem[] = [
       { label: "SIS Global", href: "/sis-global" },
       { label: "SIS India Group", href: "/sis-india-group" },
     ], },
-  {
-    label: "Solutions",
-    href: "/solutions",
-    children: [
-      { label: "Permanent Staffing", href: "/" },
-      { label: "Contract Staffing", href: "/" },
-      { label: "Payroll Management", href: "/" },
-      { label: "HR Consulting", href: "/" },
-    ],
-  },
-  // { label: "Industries", href: "/industries" },
-  { label: "Verticals", href: "/industries" },
-  { label: "Employer", href: "/employers" },
+  // {
+  //   label: "Solutions",
+  //   href: "/solutions",
+  //   children: [
+  //     { label: "Permanent Staffing", href: "/" },
+  //     { label: "Contract Staffing", href: "/" },
+  //     { label: "Payroll Management", href: "/" },
+  //     { label: "HR Consulting", href: "/" },
+  //   ],
+  // },
+ 
+  // { label: "Countries", href: "/countries" },
+  { label: "Industries", href: "/industries" },
+  
+  
+  // { label: "Employer", href: "/employers" },
   // { label: "Associate Partner", href: "/associate-partner" },
   { label: "Jobs", href: "/jobs" },
   { label: "Contact Us",  href: "/contact" },
@@ -55,7 +58,13 @@ export const industries = [
     id: "healthcare",
     title: "Healthcare",
     description:
-      "Reliable healthcare staffing solutions for hospitals, clinics, elderly care, and home healthcare.",
+      "",
+      bulletpoints: [
+        "Nurses",
+        "Caregivers",
+        "Maedical Technicians",
+        "MRI Technologists",
+      ],
     icon: HeartPulse,
     image:
       "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&q=80",
@@ -66,7 +75,13 @@ export const industries = [
     id: "hospitality",
     title: "Hospitality",
     description:
-      "Supporting hospitality brands with trained professionals for hotels, resorts, restaurants, and catering services.",
+      "",
+      bulletpoints: [
+        "Chefs",
+        "Front Office Staff",
+        "Bartenders",
+        "Housekeeping",
+      ],
     icon: Hotel,
     image:
       "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80",
@@ -77,7 +92,13 @@ export const industries = [
     id: "oil-gas",
     title: "Oil & Gas",
     description:
-      "Technical workforce solutions for EPC, shutdowns, refineries, and industrial plants.",
+      "",
+      bulletpoints: [
+        "Rig Operators",
+        "Welders",
+        "QA/QC Professionals",
+        "Maintenance Engineers",
+      ],
     icon: Cog,
     image:
       "https://images.unsplash.com/photo-1513828583688-c52646db42da?w=400&q=80",
@@ -88,7 +109,13 @@ export const industries = [
     id: "logistics",
     title: "Logistics & Warehousing",
     description:
-      "Workforce solutions for warehouses, e-commerce, supply chain companies, and distribution centers.",
+      "",
+      bulletpoints: [
+        "Warehouse Supervisors",
+        "Inventory Controllers",
+        "Forklift Operators",
+        
+      ],
     icon: Truck,
     image:
       "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&q=80",
@@ -97,9 +124,16 @@ export const industries = [
 
   {
     id: "engineering-mep",
-    title: "Engineering & MEP",
+    title: "Engineering & Technical",
     description:
-      "Technical staffing support for MEP projects, facility management, commercial buildings, and industrial operations.",
+      "",
+      bulletpoints: [
+        
+        "Fabricators",
+        "Electricians",
+        "Steel Fixers",
+        "Pipe Fitters",
+      ],
     icon: Wrench,
     image:
       "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=80",
@@ -108,9 +142,15 @@ export const industries = [
 
   {
     id: "it-technology",
-    title: "IT & Technology",
+    title: "Education ",
     description:
-      "Skilled technology professionals for software development, infrastructure, and digital transformation projects.",
+      "",
+      bulletpoints: [
+        "Teachers",
+        "Lab Assistants",
+        "Administrative Staff",
+        
+      ],
     icon: MonitorSmartphone,
     image:
       "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&q=80",
@@ -121,46 +161,46 @@ export const industries = [
 export const whyCards: WhyCard[] = [
   {
     id: 1,
-    title: "End-to-End Solutions",
+    title: "Long-Term Employment",
     description:
-      "We handle the entire workforce lifecycle — from sourcing and screening to onboarding and compliance — so you can focus on growing your business.",
+      "Stable and skilled workforce deployment for ongoing business operations.",
     icon: RefreshCcw,
   },
   {
     id: 2,
-    title: "Technology Driven",
+    title: "Short-Term Staffing",
     description:
-      "Our proprietary platform uses AI-powered matching and real-time analytics to connect you with verified candidates faster than traditional methods.",
+      "Rapid workforce mobilization for seasonal or project-based requirements.",
     icon: Bot,
   },
   {
     id: 3,
-    title: "Structured & Transparent",
+    title: "Event Hiring",
     description:
-      "Clear SLAs, regular reporting, and dedicated account managers ensure you always have full visibility into your workforce deployment.",
+      "Temporary staffing solutions for exhibitions, hospitality events, industrial shutdowns, and corporate events.",
     icon: BarChart3,
   },
   {
     id: 4,
-    title: "Faster Turnaround",
+    title: "Contract Staffing",
     description:
-      "Our pre-verified talent pool and streamlined processes mean critical positions are filled in days, not weeks.",
+      "Flexible workforce deployment with payroll and compliance support.",
     icon: Zap,
   },
-  {
-    id: 5,
-    title: "Compliance Guaranteed",
-    description:
-      "We stay ahead of labor regulations, ensuring full legal compliance across all geographies and industry sectors.",
-    icon: ShieldCheck,
-  },
-  {
-    id: 6,
-    title: "Backed by SIS India",
-    description:
-      "As a venture of SIS India Ltd., we bring decades of operational excellence and a national network to every engagement.",
-    icon: Building2,
-  },
+  // {
+  //   id: 5,
+  //   title: "Compliance Guaranteed",
+  //   description:
+  //     "We stay ahead of labor regulations, ensuring full legal compliance across all geographies and industry sectors.",
+  //   icon: ShieldCheck,
+  // },
+  // {
+  //   id: 6,
+  //   title: "Backed by SIS India",
+  //   description:
+  //     "As a venture of SIS India Ltd., we bring decades of operational excellence and a national network to every engagement.",
+  //   icon: Building2,
+  // },
 ];
 
 export const recruitmentSteps: RecruitmentStep[] = [
