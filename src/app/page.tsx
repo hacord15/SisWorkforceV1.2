@@ -8,7 +8,7 @@ import WhySISSection from "@/components/sections/WhySISSection";
 import RecruitmentSection from "@/components/sections/RecruitmentSection";
 import WorldMapSection from "@/components/sections/WorldMapSection";
 import CTASection from "@/components/sections/CTASection";
-import QuickForm from "@/components/ui/QuickForm";
+// import QuickForm from "@/components/ui/QuickForm";
 import TechSection from "@/components/sections/TechSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import ImpactSection from "@/components/sections/ImpactSection";
