@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import CookieConsent from "@/components/ui/CookieConsent";
-import QuickForm from "@/components/ui/QuickForm";
+// import QuickForm from "@/components/ui/QuickForm";
 
 export const metadata: Metadata = {
   title: "SIS Global Workforce Solutions | Empowering Employers",
@@ -19,7 +19,7 @@ export default function RootLayout({
       <body>
         {children}
         <CookieConsent/>
-        <QuickForm />
+        {/* <QuickForm /> */}
 
       </body>
     </html>

@@ -8,7 +8,7 @@ import WhySISSection from "@/components/sections/WhySISSection";
 import RecruitmentSection from "@/components/sections/RecruitmentSection";
 import WorldMapSection from "@/components/sections/WorldMapSection";
 import CTASection from "@/components/sections/CTASection";
-import QuickForm from "@/components/ui/QuickForm";
+// import QuickForm from "@/components/ui/QuickForm";
 
 export default function HomePage() {
   return (
@@ -20,7 +20,7 @@ export default function HomePage() {
         <AboutSection />
         <IndustriesSection />
         <WhySISSection />
-        <RecruitmentSection />
+        {/* <RecruitmentSection /> */}
         <WorldMapSection />
         <CTASection />
       </main>
