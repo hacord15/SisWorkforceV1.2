@@ -168,14 +168,33 @@ export default async function FindJobsPage({
     <>
       <Navbar />
       <main>
-        {/* ── Hero ── */}
+        {/* ════════════════════════════════════════════════════════
+            HERO — uses /assets/job_banner.png as background
+        ════════════════════════════════════════════════════════ */}
         <div
-          style={{
-            background: "linear-gradient(135deg,#FFF5F6 0%,#FFF0F2 60%,#F9F9F9 100%)",
-            borderBottom: "1px solid #E5E5E5",
-          }}
+          className="relative"
+          style={{ borderBottom: "1px solid #E5E5E5" }}
         >
-          <div className="max-w-7xl mx-auto px-4 py-10">
+          {/* Background image layer */}
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: "url('/assets/job_banner.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "right center",
+              backgroundRepeat: "no-repeat",
+            }}
+          />
+          {/* Gradient overlay so text stays readable over the photo */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(90deg, #FFFFFF 0%, #FFF6F7 28%, rgba(255,246,247,0.55) 52%, rgba(255,255,255,0.05) 78%)",
+            }}
+          />
+
+          <div className="max-w-7xl mx-auto px-4 py-10 relative z-10">
             {/* Breadcrumb */}
             <div className="flex items-center gap-2 text-xs text-brand-grey-500 mb-4">
               <Link href="/" className="hover:text-brand-red transition-colors">Home</Link>
@@ -183,36 +202,36 @@ export default async function FindJobsPage({
               <span className="text-brand-grey-800 font-medium">Find Jobs</span>
             </div>
 
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-              <div>
-                <h1
-                  className="text-3xl md:text-4xl font-bold text-brand-grey-900 mb-2"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  {q ? `Results for "${q}"` : "Explore International Career Opportunities"}
-                </h1>
-                <h2 className="text-lg text-brand-grey-700 mb-1">
-                  Discover verified overseas job opportunities across GCC and Europe.
-                </h2>
-                <p className="text-brand-grey-500 text-sm">
-                  Showing{" "}
-                  <strong className="text-brand-grey-800">{paginatedJobs.length}</strong> of{" "}
-                  <strong className="text-brand-grey-800">{total}</strong> open positions
-                </p>
-              </div>
+            <div className="max-w-2xl">
+              <h1
+                className="text-3xl md:text-4xl font-bold text-brand-grey-900 mb-2"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                {q ? `Results for "${q}"` : (
+                  <>Explore International Career <span className="text-brand-red">Opportunities</span></>
+                )}
+              </h1>
+              <p className="text-brand-grey-600 mb-1 text-base">
+                Discover verified overseas job opportunities across GCC and Europe.
+              </p>
+              <p className="text-brand-grey-500 text-sm mb-5 flex items-center gap-1.5">
+                <Briefcase size={13} className="text-brand-red" />
+                <strong className="text-brand-grey-800">{total.toLocaleString()}+</strong> job positions
+              </p>
 
-              <form method="GET" className="flex items-center gap-2 w-full md:w-auto">
-                <div className="relative flex-1 md:w-72">
+              {/* Search bar */}
+              <form method="GET" className="flex items-center gap-2 w-full max-w-lg">
+                <div className="relative flex-1">
                   <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-brand-grey-400" />
                   <input
                     name="q"
                     defaultValue={q}
                     placeholder="Job title or keyword…"
-                    className="w-full pl-9 pr-4 py-2.5 border border-brand-grey-300 text-sm rounded focus:outline-none focus:border-brand-red"
+                    className="w-full pl-9 pr-4 py-2.5 border border-brand-grey-300 text-sm rounded focus:outline-none focus:border-brand-red bg-white"
                   />
                 </div>
-                <button type="submit" className="btn-primary !py-2.5 !px-5 text-sm">
-                  Search
+                <button type="submit" className="btn-primary !py-2.5 !px-5 text-sm whitespace-nowrap">
+                  <Search size={14} /> Search
                 </button>
               </form>
             </div>
@@ -435,12 +454,23 @@ export default async function FindJobsPage({
         </div>
 
         {/* ════════════════════════════════════════════════════════
-            CANDIDATE BENEFITS
+            CANDIDATE BENEFITS — uses /assets/job_why_work.png
         ════════════════════════════════════════════════════════ */}
         <section
           className="py-20 relative overflow-hidden"
           style={{ background: "linear-gradient(135deg,#171717 0%,#262626 100%)" }}
         >
+          {/* Background image — subtle world/dot map */}
+          <div
+            className="absolute inset-0 opacity-25 mix-blend-screen pointer-events-none"
+            style={{
+              backgroundImage: "url('/assets/job_why_work.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "left center",
+              backgroundRepeat: "no-repeat",
+            }}
+          />
+
           {/* Decorative rings */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full border border-white/5" />
@@ -468,7 +498,7 @@ export default async function FindJobsPage({
                 Why Work With <span className="text-brand-red">SIS Global?</span>
               </h2>
               <p className="text-white/50 text-base mt-4 max-w-xl mx-auto">
-                We don't just place you — we support you every step of the way,
+                We don&apos;t just place you — we support you every step of the way,
                 from application to settling into your new role abroad.
               </p>
             </div>
@@ -482,6 +512,7 @@ export default async function FindJobsPage({
                   style={{
                     background: "rgba(255,255,255,0.04)",
                     border: "1px solid rgba(255,255,255,0.08)",
+                    backdropFilter: "blur(2px)",
                   }}
                 >
                   {/* Icon */}

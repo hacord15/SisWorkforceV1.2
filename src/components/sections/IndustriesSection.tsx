@@ -39,8 +39,20 @@ export default function IndustriesSection() {
   return (
     <>
       {/* ── Industries ──────────────────────────────────────────── */}
-      <section className="py-20 grey-gradient-section" ref={ref}>
-        <div className="max-w-7xl mx-auto px-4">
+      <section
+        className="py-20 grey-gradient-section relative"
+        ref={ref}
+        style={{
+          backgroundImage: "url('/assets/industries_bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center top",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        {/* Overlay so cards remain readable */}
+        <div className="absolute inset-0 bg-white/80 pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
           {/* Header */}
           <div
             className={`text-center mb-14 transition-all duration-700 ${

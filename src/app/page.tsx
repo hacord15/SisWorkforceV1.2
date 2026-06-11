@@ -23,9 +23,9 @@ export default function HomePage() {
         <StatsBar />
         <AboutSection />
         <WhySISSection />
-         {/* <WorkforceReadinessSection />
+         <WorkforceReadinessSection />
         <TechSection />
-        <TestimonialsSection /> */}
+        <TestimonialsSection /> 
         <ImpactSection />
        
         {/* <IndustriesSection /> */}
