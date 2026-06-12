@@ -387,7 +387,7 @@ export default function CountriesPage() {
               <div className="section-divider mt-5" />
             </div>
 
-            {/* License cards */}
+            
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
               {LICENSES.map((lic) => (
                 <div
@@ -395,7 +395,7 @@ export default function CountriesPage() {
                   className="group flex items-start gap-5 p-6 rounded-2xl border border-brand-grey-200 hover:shadow-md hover:border-opacity-60 transition-all duration-300"
                   style={{ "--hover-border": lic.color } as React.CSSProperties}
                 >
-                  {/* Code badge */}
+                
                   <div
                     className="w-16 h-16 rounded-2xl flex flex-col items-center justify-center flex-shrink-0 text-white transition-transform duration-300 group-hover:scale-105"
                     style={{ background: `linear-gradient(135deg,${lic.color} 0%,${lic.color}AA 100%)`, boxShadow: `0 8px 20px ${lic.color}30` }}
@@ -428,12 +428,12 @@ export default function CountriesPage() {
               ))}
             </div>
 
-            {/* Compliance statement */}
+           
             <div
               className="relative overflow-hidden rounded-2xl p-8 text-white"
               style={{ background: "linear-gradient(135deg,#171717 0%,#2D0A0F 100%)" }}
             >
-              {/* Decorative ring */}
+             
               <div className="absolute -right-16 -top-16 w-64 h-64 rounded-full border border-white/5 pointer-events-none" />
               <div className="absolute -left-8 -bottom-8 w-48 h-48 rounded-full border border-brand-red/10 pointer-events-none" />
 

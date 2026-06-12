@@ -70,8 +70,8 @@ export default function Navbar() {
       </div>
 
       {/* Main nav */}
-      <nav className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${scrolled ? "shadow-lg" : "shadow-sm"}`}>
-        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-20">
+      <nav className={`sticky top-0  z-50 bg-white transition-shadow duration-300 ${scrolled ? "shadow-lg" : "shadow-sm"}`}>
+        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-22">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 flex-shrink-0">
             <img 
