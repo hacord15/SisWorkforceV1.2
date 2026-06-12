@@ -372,7 +372,7 @@ export default function CountriesPage() {
         {/* ══════════════════════════════════════════════════
             COMPLIANCE & LICENSING
         ══════════════════════════════════════════════════ */}
-        <section id="compliance" className="py-20 bg-white">
+        {/* <section id="compliance" className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-14">
               <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-brand-red mb-3 px-3 py-1.5 rounded-full" style={{ background: "rgba(200,16,46,0.08)" }}>
@@ -475,12 +475,12 @@ export default function CountriesPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* ══════════════════════════════════════════════════
             PROCESS STRIP
         ══════════════════════════════════════════════════ */}
-        <section className="py-16" style={{ background: "linear-gradient(135deg,#F9F9F9 0%,#F2F2F2 100%)" }}>
+        {/* <section className="py-16" style={{ background: "linear-gradient(135deg,#F9F9F9 0%,#F2F2F2 100%)" }}>
           <div className="max-w-5xl mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-brand-grey-900" style={{ fontFamily: "var(--font-display)" }}>
@@ -515,7 +515,7 @@ export default function CountriesPage() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* ══════════════════════════════════════════════════
             DUAL CTA
