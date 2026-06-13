@@ -1,5 +1,9 @@
 // src/app/about/page.tsx
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import {
@@ -10,12 +14,12 @@ import {
 // ── Static data ─────────────────────────────────────────────────────────────
 
 const STATS = [
-  { value: "15,982 cr", label: "REVENUE",   sub: "" },
-  { value: "22,329",    label: "CUSTOMERS",  sub: "" },
-  { value: "357,028",   label: "EMPLOYEES",  sub: "" },
-  { value: "446",       label: "OFFICES",    sub: "" },
-  { value: "78,154",    label: "SITES",      sub: "" },
-  { value: "790",       label: "DISTRICTS",  sub: "" },
+  { value: 15982, suffix: " cr", label: "REVENUE",   decimal: false },
+  { value: 22329,  suffix: "",   label: "CUSTOMERS",  decimal: false },
+  { value: 357028, suffix: "",   label: "EMPLOYEES",  decimal: false },
+  { value: 446,    suffix: "",   label: "OFFICES",    decimal: false },
+  { value: 78154,  suffix: "",   label: "SITES",      decimal: false },
+  { value: 790,    suffix: "",   label: "DISTRICTS",  decimal: false },
 ];
 
 const FEATURES = [
@@ -43,6 +47,60 @@ const VALUES = [
   { icon: <CheckCircle size={22} />,   title: "Customer Commitment",     desc: "Maintaining the highest standards of service delivery and client satisfaction." },
 ];
 
+// ── Images (Unsplash — replace with /public assets) ───────────────────────
+const IMG_HERO        = "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1400&q=85";
+const IMG_WHO_WE_ARE  = "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80";
+const IMG_VISION      = "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&q=80";
+const IMG_MISSION     = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&q=80";
+
+// ── Animated counter hook ─────────────────────────────────────────────────
+function useCountUp(target: number, duration = 2000, started: boolean) {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    if (!started) return;
+    let startTime: number | null = null;
+    const step = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      // ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * target));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [target, duration, started]);
+  return count;
+}
+
+function StatCounter({ value, suffix, label }: { value: number; suffix: string; label: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [started, setStarted] = useState(false);
+  const count = useCountUp(value, 2200, started);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setStarted(true); observer.disconnect(); } },
+      { threshold: 0.3 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const display = count.toLocaleString("en-IN") + suffix;
+
+  return (
+    <div ref={ref} className="relative">
+      <div
+        className="text-4xl font-bold mb-1 tabular-nums"
+        style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.02em" }}
+      >
+        {display}
+      </div>
+      <div className="text-white/90 text-sm font-semibold">{label}</div>
+    </div>
+  );
+}
+
 // ── Page ───────────────────────────────────────────────────────────────────
 export default function AboutPage() {
   return (
@@ -52,9 +110,22 @@ export default function AboutPage() {
 
         {/* ── HERO ── */}
         <section className="relative overflow-hidden" style={{ background: "linear-gradient(135deg,#FFF5F6 0%,#FFF0F2 50%,#F5F5F5 100%)" }}>
+          {/* Background hero image — right half */}
+          <div className="absolute right-0 top-0 w-1/2 h-full hidden md:block">
+            <Image
+              src={IMG_HERO}
+              alt="SIS Global diverse workforce team"
+              fill
+              className="object-cover object-center"
+              priority
+            />
+            {/* fade left so text stays legible */}
+            <div className="absolute inset-0" style={{ background: "linear-gradient(to right, #FFF5F6 0%, transparent 40%)" }} />
+          </div>
+
+          {/* Decorative radial overlays */}
           <div className="absolute right-0 top-0 w-1/2 h-full pointer-events-none overflow-hidden">
             <div className="absolute right-0 top-0 w-full h-full" style={{ background: "radial-gradient(ellipse 60% 80% at 80% 40%, rgba(200,16,46,0.06) 0%, transparent 70%)" }} />
-            <div className="absolute right-0 top-0 w-full h-full" style={{ background: "radial-gradient(ellipse 40% 60% at 90% 10%, rgba(200,16,46,0.04) 0%, transparent 70%)" }} />
           </div>
 
           <div className="max-w-7xl mx-auto px-4 py-20 relative z-10">
@@ -83,11 +154,7 @@ export default function AboutPage() {
                   {i < STATS.length - 1 && (
                     <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-10 bg-white/20" />
                   )}
-                  <div className="text-4xl font-bold mb-1" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.02em" }}>
-                    {s.value}
-                  </div>
-                  <div className="text-white/90 text-sm font-semibold">{s.label}</div>
-                  <div className="text-white/55 text-xs mt-0.5">{s.sub}</div>
+                  <StatCounter value={s.value} suffix={s.suffix} label={s.label} />
                 </div>
               ))}
             </div>
@@ -119,35 +186,51 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                {FEATURES.map((f, i) => (
-                  <div
-                    key={f.title}
-                    className="rounded-2xl p-6 border transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-                    style={{
-                      background:  i % 2 === 0 ? "#FFF5F6" : "#FAFAFA",
-                      borderColor: i % 2 === 0 ? "rgba(200,16,46,0.15)" : "#E5E5E5",
-                    }}
-                  >
+              {/* Right — image + feature cards overlay */}
+              <div className="relative">
+                {/* Main image */}
+                <div className="relative w-full h-72 rounded-2xl overflow-hidden shadow-lg mb-4">
+                  <Image
+                    src={IMG_WHO_WE_ARE}
+                    alt="SIS Global workforce solutions team meeting"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-grey-900/30 to-transparent" />
+                </div>
+
+                {/* Feature cards below */}
+                <div className="grid grid-cols-2 gap-4">
+                  {FEATURES.map((f, i) => (
                     <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
-                      style={{ background: i % 2 === 0 ? "rgba(200,16,46,0.1)" : "#F0F0F0", color: "#C8102E" }}
+                      key={f.title}
+                      className="rounded-2xl p-6 border transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                      style={{
+                        background:  i % 2 === 0 ? "#FFF5F6" : "#FAFAFA",
+                        borderColor: i % 2 === 0 ? "rgba(200,16,46,0.15)" : "#E5E5E5",
+                      }}
                     >
-                      {f.icon}
+                      <div
+                        className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
+                        style={{ background: i % 2 === 0 ? "rgba(200,16,46,0.1)" : "#F0F0F0", color: "#C8102E" }}
+                      >
+                        {f.icon}
+                      </div>
+                      <h3 className="font-bold text-brand-grey-900 text-sm mb-2" style={{ fontFamily: "var(--font-display)" }}>
+                        {f.title}
+                      </h3>
+                      <p className="text-xs text-brand-grey-500 leading-relaxed">{f.desc}</p>
                     </div>
-                    <h3 className="font-bold text-brand-grey-900 text-sm mb-2" style={{ fontFamily: "var(--font-display)" }}>
-                      {f.title}
-                    </h3>
-                    <p className="text-xs text-brand-grey-500 leading-relaxed">{f.desc}</p>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* ── VISION & MISSION ── */}
-        <section className="py-20" style={{ background: "linear-gradient(135deg,#171717 0%,#262626 100%)" }}>
+        <section className="py-20 relative" style={{ background: "linear-gradient(135deg,#171717 0%,#262626 100%)" }}>
           {/* Decorative rings */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full border border-white/5" />
@@ -159,30 +242,35 @@ export default function AboutPage() {
 
               {/* Vision */}
               <div
-                className="rounded-3xl p-10 relative overflow-hidden"
+                className="rounded-3xl overflow-hidden relative"
                 style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
               >
-                {/* Red glow */}
-                <div
-                  className="absolute -top-16 -right-16 w-48 h-48 rounded-full pointer-events-none"
-                  style={{ background: "radial-gradient(circle, rgba(200,16,46,0.18) 0%, transparent 70%)" }}
-                />
-
-                <div className="relative z-10">
+                {/* Image top */}
+                <div className="relative w-full h-48">
+                  <Image
+                    src={IMG_VISION}
+                    alt="Vision — global workforce leadership"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover object-center"
+                  />
+                  <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(23,23,23,0.3) 0%, rgba(23,23,23,0.85) 100%)" }} />
                   <div
-                    className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
-                    style={{ background: "rgba(200,16,46,0.20)", color: "#FF6B7A" }}
+                    className="absolute top-5 left-5 w-14 h-14 rounded-2xl flex items-center justify-center"
+                    style={{ background: "rgba(200,16,46,0.80)", color: "#fff" }}
                   >
                     <Eye size={24} />
                   </div>
+                  <span className="absolute bottom-4 left-6 text-xs font-bold tracking-[0.2em] uppercase text-brand-red/90">Our Vision</span>
+                </div>
 
-                  <span className="text-xs font-bold tracking-[0.2em] uppercase text-brand-red/80 mb-3 block">
-                    Our Vision
-                  </span>
-                  <h2
-                    className="text-3xl font-bold text-white mb-6 leading-tight"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
+                <div className="p-10 relative z-10">
+                  {/* Red glow */}
+                  <div
+                    className="absolute -top-16 -right-16 w-48 h-48 rounded-full pointer-events-none"
+                    style={{ background: "radial-gradient(circle, rgba(200,16,46,0.18) 0%, transparent 70%)" }}
+                  />
+                  <h2 className="text-3xl font-bold text-white mb-4 leading-tight" style={{ fontFamily: "var(--font-display)" }}>
                     Vision
                   </h2>
                   <div className="w-10 h-0.5 bg-brand-red mb-6 rounded-full" />
@@ -196,34 +284,37 @@ export default function AboutPage() {
 
               {/* Mission */}
               <div
-                className="rounded-3xl p-10 relative overflow-hidden"
+                className="rounded-3xl overflow-hidden relative"
                 style={{ background: "rgba(200,16,46,0.08)", border: "1px solid rgba(200,16,46,0.20)" }}
               >
-                {/* White glow */}
-                <div
-                  className="absolute -top-16 -left-16 w-48 h-48 rounded-full pointer-events-none"
-                  style={{ background: "radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%)" }}
-                />
-
-                <div className="relative z-10">
+                {/* Image top */}
+                <div className="relative w-full h-48">
+                  <Image
+                    src={IMG_MISSION}
+                    alt="Mission — skilled professionals ready for deployment"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover object-center"
+                  />
+                  <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(23,23,23,0.3) 0%, rgba(160,13,37,0.80) 100%)" }} />
                   <div
-                    className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
-                    style={{ background: "rgba(200,16,46,0.30)", color: "#FF6B7A" }}
+                    className="absolute top-5 left-5 w-14 h-14 rounded-2xl flex items-center justify-center"
+                    style={{ background: "rgba(200,16,46,0.90)", color: "#fff" }}
                   >
                     <Rocket size={24} />
                   </div>
+                  <span className="absolute bottom-4 left-6 text-xs font-bold tracking-[0.2em] uppercase text-white/80">Our Mission</span>
+                </div>
 
-                  <span className="text-xs font-bold tracking-[0.2em] uppercase text-brand-red/80 mb-3 block">
-                    Our Mission
-                  </span>
-                  <h2
-                    className="text-3xl font-bold text-white mb-6 leading-tight"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
+                <div className="p-10 relative z-10">
+                  <div
+                    className="absolute -top-16 -left-16 w-48 h-48 rounded-full pointer-events-none"
+                    style={{ background: "radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%)" }}
+                  />
+                  <h2 className="text-3xl font-bold text-white mb-4 leading-tight" style={{ fontFamily: "var(--font-display)" }}>
                     Mission
                   </h2>
                   <div className="w-10 h-0.5 bg-brand-red mb-6 rounded-full" />
-
                   <ul className="space-y-4">
                     {MISSION_POINTS.map((point) => (
                       <li key={point} className="flex items-start gap-3">

@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Phone, Mail, MapPin, Clock, Send, ChevronRight,
   CheckCircle, Briefcase, Users, Upload, Linkedin,
@@ -234,6 +235,119 @@ function CandidateForm({
   );
 }
 
+// ── Sub-component: OfficeInfoSidebar ──────────────────────────────────────
+
+function OfficeInfoSidebar({ office }: { office: OfficeType }) {
+  return (
+    <div className="flex flex-col gap-5 h-full">
+
+      {/* Contact details card */}
+      <div
+        className="rounded-2xl p-6"
+        style={{ background: "linear-gradient(135deg,#1A1A1A 0%,#262626 100%)", border: "1px solid rgba(255,255,255,0.07)" }}
+      >
+        <p className="text-xs font-bold tracking-[0.16em] uppercase text-white/35 mb-4">Our Office</p>
+        <div className="space-y-4">
+          <div className="flex items-start gap-3">
+            <span
+              className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
+              style={{ background: "rgba(200,16,46,0.20)" }}
+            >
+              <MapPin size={15} className="text-brand-red" />
+            </span>
+            <p className="text-white/75 text-sm leading-relaxed">{office.address}</p>
+          </div>
+
+          <a
+            href={`tel:${office.phone.replace(/[\s-]/g, "")}`}
+            className="flex items-center gap-3 group"
+          >
+            <span
+              className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+              style={{ background: "rgba(200,16,46,0.20)" }}
+            >
+              <Phone size={15} className="text-brand-red" />
+            </span>
+            <span className="text-white/75 text-sm group-hover:text-white transition-colors">{office.phone}</span>
+          </a>
+
+          <a
+            href={`mailto:${office.email}`}
+            className="flex items-center gap-3 group"
+          >
+            <span
+              className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+              style={{ background: "rgba(200,16,46,0.20)" }}
+            >
+              <Mail size={15} className="text-brand-red" />
+            </span>
+            <span className="text-white/75 text-sm group-hover:text-white transition-colors break-all">{office.email}</span>
+          </a>
+
+          <div className="flex items-center gap-3">
+            <span
+              className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+              style={{ background: "rgba(200,16,46,0.20)" }}
+            >
+              <Clock size={15} className="text-brand-red" />
+            </span>
+            <span className="text-white/60 text-sm">{office.hours}</span>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="border-t border-white/8 my-5" />
+
+        {/* Social links */}
+        <p className="text-xs font-bold tracking-[0.16em] uppercase text-white/35 mb-3">Follow Us</p>
+        <div className="flex items-center gap-2">
+          {[
+            { href: office.socials.linkedin,  icon: <Linkedin  size={16} />, label: "LinkedIn"  },
+            { href: office.socials.instagram, icon: <Instagram size={16} />, label: "Instagram" },
+            { href: office.socials.facebook,  icon: <Facebook  size={16} />, label: "Facebook"  },
+          ].map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={s.label}
+              className="w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200 hover:bg-brand-red"
+              style={{ background: "rgba(200,16,46,0.22)", color: "#FF6B7A" }}
+            >
+              {s.icon}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* Embedded Google Map */}
+      <div
+        className="rounded-2xl overflow-hidden flex-1 min-h-[220px]"
+        style={{ border: "1px solid #E5E5E5" }}
+      >
+        {/*
+          Replace the src below with your actual Google Maps embed URL.
+          Go to maps.google.com → search your address → Share → Embed a map → copy the src.
+          Example format:
+          https://www.google.com/maps/embed?pb=!1m18!...your_embed_key...
+        */}
+        <iframe
+          title="Office Location"
+          src={`https://maps.google.com/maps?q=${encodeURIComponent(office.address)}&output=embed`}
+          width="100%"
+          height="100%"
+          style={{ border: 0, minHeight: "220px", display: "block" }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      </div>
+
+    </div>
+  );
+}
+
 // ── Main Component ─────────────────────────────────────────────────────────
 
 export default function ContactClient({ office, faqs }: Props) {
@@ -259,7 +373,7 @@ export default function ContactClient({ office, faqs }: Props) {
     <main>
 
       {/* ════════════════════════════════════════════════════════
-          HERO
+          HERO — with image on the right
       ════════════════════════════════════════════════════════ */}
       <section
         className="relative overflow-hidden"
@@ -285,7 +399,7 @@ export default function ContactClient({ office, faqs }: Props) {
           </div>
 
           <div className="grid md:grid-cols-2 gap-14 items-center">
-            {/* Heading */}
+            {/* LEFT — Heading + quick office info + socials */}
             <div>
               <span
                 className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.18em] uppercase px-3 py-1.5 rounded-full mb-6"
@@ -301,64 +415,83 @@ export default function ContactClient({ office, faqs }: Props) {
                 Let&apos;s Build Your{" "}
                 <span className="text-brand-red">Global Workforce Together</span>
               </h1>
-              <p className="text-white/55 text-lg leading-relaxed max-w-md">
+              <p className="text-white/55 text-lg leading-relaxed max-w-md mb-8">
                 Whether you&apos;re looking to hire skilled workforce or find an international job —
                 our team is ready to help.
               </p>
+
+              {/* Quick contact chips */}
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href={`tel:${office.phone.replace(/[\s-]/g, "")}`}
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold text-white transition-colors hover:bg-brand-red"
+                  style={{ background: "rgba(200,16,46,0.20)", border: "1px solid rgba(200,16,46,0.35)" }}
+                >
+                  <Phone size={14} className="text-brand-red" />
+                  {office.phone}
+                </a>
+                <a
+                  href={`mailto:${office.email}`}
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold text-white transition-colors hover:bg-white/10"
+                  style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)" }}
+                >
+                  <Mail size={14} className="text-white/60" />
+                  {office.email}
+                </a>
+              </div>
             </div>
 
-            {/* Office + social card */}
-            <div className="flex flex-col gap-4">
-              {/* Office info card */}
+            {/* RIGHT — Hero image */}
+            <div className="relative">
+              {/* Glow behind image */}
               <div
-                className="rounded-2xl px-5 py-5"
-                style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}
-              >
-                <p className="text-xs font-bold tracking-widest uppercase text-white/40 mb-3">Our Office</p>
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <MapPin size={16} className="text-brand-red flex-shrink-0 mt-0.5" />
-                    <p className="text-white/80 text-sm leading-relaxed">{office.address}</p>
-                  </div>
-                  <a href={`tel:${office.phone.replace(/[\s-]/g, "")}`} className="flex items-center gap-3 group">
-                    <Phone size={16} className="text-brand-red flex-shrink-0" />
-                    <span className="text-white/80 text-sm group-hover:text-white transition-colors">{office.phone}</span>
-                  </a>
-                  <a href={`mailto:${office.email}`} className="flex items-center gap-3 group">
-                    <Mail size={16} className="text-brand-red flex-shrink-0" />
-                    <span className="text-white/80 text-sm group-hover:text-white transition-colors">{office.email}</span>
-                  </a>
-                  <div className="flex items-center gap-3">
-                    <Clock size={16} className="text-brand-red flex-shrink-0" />
-                    <span className="text-white/60 text-sm">{office.hours}</span>
-                  </div>
-                </div>
-              </div>
+                className="absolute inset-0 rounded-3xl"
+                style={{ background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,16,46,0.18) 0%, transparent 70%)", transform: "scale(1.1)" }}
+              />
 
-              {/* Social links */}
               <div
-                className="rounded-2xl px-5 py-4 flex items-center gap-5"
-                style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}
+                className="relative rounded-3xl overflow-hidden aspect-[4/3]"
+                style={{ border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 32px 64px rgba(0,0,0,0.45)" }}
               >
-                <p className="text-xs font-bold tracking-widest uppercase text-white/40 flex-shrink-0">Follow Us</p>
-                <div className="flex items-center gap-3">
-                  {[
-                    { href: office.socials.linkedin,  icon: <Linkedin  size={17} />, label: "LinkedIn"  },
-                    { href: office.socials.instagram, icon: <Instagram size={17} />, label: "Instagram" },
-                    { href: office.socials.facebook,  icon: <Facebook  size={17} />, label: "Facebook"  },
-                  ].map((s) => (
-                    <a
-                      key={s.label}
-                      href={s.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={s.label}
-                      className="w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200 hover:bg-brand-red"
-                      style={{ background: "rgba(200,16,46,0.20)", color: "#FF6B7A" }}
-                    >
-                      {s.icon}
-                    </a>
-                  ))}
+                {/*
+                  Image: "Team collaboration" by Campaign Creators on Unsplash (free, no attribution required)
+                  https://unsplash.com/photos/people-sitting-down-near-table-with-assorted-laptop-computers-pypeCEaJeZY
+
+                  IMPORTANT: add "images.unsplash.com" to the `images.remotePatterns` array in next.config.js
+                  so Next.js <Image> can optimise this URL, e.g.:
+                    remotePatterns: [{ protocol: "https", hostname: "images.unsplash.com" }]
+                */}
+                <Image
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=85&auto=format&fit=crop"
+                  alt="Diverse professional team collaborating — SIS Global Workforce Solutions"
+                  fill
+                  className="object-cover"
+                  priority
+                  unoptimized
+                />
+
+                {/* Subtle red gradient overlay at bottom */}
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  style={{ background: "linear-gradient(to top, rgba(140,8,28,0.45) 0%, transparent 55%)" }}
+                />
+
+                {/* Floating stat badge */}
+                <div
+                  className="absolute bottom-5 left-5 px-4 py-3 rounded-xl backdrop-blur-md"
+                  style={{ background: "rgba(0,0,0,0.55)", border: "1px solid rgba(255,255,255,0.10)" }}
+                >
+                  <p className="text-white font-bold text-lg leading-none">10,000+</p>
+                  <p className="text-white/55 text-xs mt-0.5">Workers Placed Globally</p>
+                </div>
+
+                {/* Second stat badge */}
+                <div
+                  className="absolute bottom-5 right-5 px-4 py-3 rounded-xl backdrop-blur-md"
+                  style={{ background: "rgba(200,16,46,0.70)", border: "1px solid rgba(255,255,255,0.12)" }}
+                >
+                  <p className="text-white font-bold text-lg leading-none">15+</p>
+                  <p className="text-white/80 text-xs mt-0.5">Countries Served</p>
                 </div>
               </div>
             </div>
@@ -367,83 +500,92 @@ export default function ContactClient({ office, faqs }: Props) {
       </section>
 
       {/* ════════════════════════════════════════════════════════
-          TABBED FORM
+          FORM + SIDEBAR (2-col layout)
       ════════════════════════════════════════════════════════ */}
       <section className="py-20" style={{ background: "linear-gradient(160deg,#FAFAFA 0%,#F3F3F3 100%)" }}>
-        <div className="max-w-3xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
 
-          <div
-            className="bg-white rounded-3xl overflow-hidden shadow-xl"
-            style={{ border: "1px solid #E5E5E5", borderTop: "4px solid #C8102E" }}
-          >
-            {/* Card header + tab toggle */}
-            <div className="px-8 pt-8 pb-0">
-              <h2
-                className="text-2xl font-bold text-brand-grey-900 mb-1"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                Contact Us
-              </h2>
-              <p className="text-sm text-brand-grey-500 mb-5">
-                Tell us who you are and we&apos;ll take it from there.
-              </p>
+          <div className="grid lg:grid-cols-[1fr_380px] gap-8 items-start">
 
-              {/* Toggle pill */}
-              <div
-                className="flex gap-1.5 rounded-xl p-1 w-fit"
-                style={{ background: "#F3F3F3" }}
-              >
-                {(["employer", "candidate"] as const).map((tab) => {
-                  const isActive = activeTab === tab;
-                  return (
-                    <button
-                      key={tab}
-                      type="button"
-                      onClick={() => setActiveTab(tab)}
-                      className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200"
-                      style={{
-                        background: isActive ? "#C8102E" : "transparent",
-                        color:      isActive ? "#fff"    : "#6B6B6B",
-                      }}
-                    >
-                      {tab === "employer" ? <Briefcase size={15} /> : <Users size={15} />}
-                      {tab === "employer" ? "Hire Workforce" : "Find a Job"}
-                    </button>
-                  );
-                })}
+            {/* ── LEFT: Form card ─────────────────────────────── */}
+            <div
+              className="bg-white rounded-3xl overflow-hidden shadow-xl"
+              style={{ border: "1px solid #E5E5E5", borderTop: "4px solid #C8102E" }}
+            >
+              {/* Card header + tab toggle */}
+              <div className="px-8 pt-8 pb-0">
+                <h2
+                  className="text-2xl font-bold text-brand-grey-900 mb-1"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  Contact Us
+                </h2>
+                <p className="text-sm text-brand-grey-500 mb-5">
+                  Tell us who you are and we&apos;ll take it from there.
+                </p>
+
+                {/* Toggle pill */}
+                <div
+                  className="flex gap-1.5 rounded-xl p-1 w-fit"
+                  style={{ background: "#F3F3F3" }}
+                >
+                  {(["employer", "candidate"] as const).map((tab) => {
+                    const isActive = activeTab === tab;
+                    return (
+                      <button
+                        key={tab}
+                        type="button"
+                        onClick={() => setActiveTab(tab)}
+                        className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200"
+                        style={{
+                          background: isActive ? "#C8102E" : "transparent",
+                          color:      isActive ? "#fff"    : "#6B6B6B",
+                        }}
+                      >
+                        {tab === "employer" ? <Briefcase size={15} /> : <Users size={15} />}
+                        {tab === "employer" ? "Hire Workforce" : "Find a Job"}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                <div className="border-t border-brand-grey-100 mt-5" />
               </div>
 
-              <div className="border-t border-brand-grey-100 mt-5" />
+              {/* Form body */}
+              <div className="px-8 py-7">
+                {activeTab === "employer" ? (
+                  <>
+                    <p className="text-sm text-brand-grey-500 mb-5">
+                      Tell us your requirement and we&apos;ll match you with the right talent.
+                    </p>
+                    {employerSubmitted ? (
+                      <SuccessState message="Requirement Submitted!" onReset={() => setEmployerSubmitted(false)} />
+                    ) : (
+                      <EmployerForm loading={employerLoading} onSubmit={handleEmployerSubmit} />
+                    )}
+                  </>
+                ) : (
+                  <>
+                    <p className="text-sm text-brand-grey-500 mb-5">
+                      Submit your profile and we&apos;ll connect you with the right opportunity.
+                    </p>
+                    {candidateSubmitted ? (
+                      <SuccessState message="Application Received!" onReset={() => setCandidateSubmitted(false)} />
+                    ) : (
+                      <CandidateForm loading={candidateLoading} onSubmit={handleCandidateSubmit} />
+                    )}
+                  </>
+                )}
+              </div>
             </div>
 
-            {/* Form body */}
-            <div className="px-8 py-7">
-              {activeTab === "employer" ? (
-                <>
-                  <p className="text-sm text-brand-grey-500 mb-5">
-                    Tell us your requirement and we&apos;ll match you with the right talent.
-                  </p>
-                  {employerSubmitted ? (
-                    <SuccessState message="Requirement Submitted!" onReset={() => setEmployerSubmitted(false)} />
-                  ) : (
-                    <EmployerForm loading={employerLoading} onSubmit={handleEmployerSubmit} />
-                  )}
-                </>
-              ) : (
-                <>
-                  <p className="text-sm text-brand-grey-500 mb-5">
-                    Submit your profile and we&apos;ll connect you with the right opportunity.
-                  </p>
-                  {candidateSubmitted ? (
-                    <SuccessState message="Application Received!" onReset={() => setCandidateSubmitted(false)} />
-                  ) : (
-                    <CandidateForm loading={candidateLoading} onSubmit={handleCandidateSubmit} />
-                  )}
-                </>
-              )}
+            {/* ── RIGHT: Address details + map ─────────────────── */}
+            <div className="lg:sticky lg:top-6">
+              <OfficeInfoSidebar office={office} />
             </div>
+
           </div>
-
         </div>
       </section>
 
