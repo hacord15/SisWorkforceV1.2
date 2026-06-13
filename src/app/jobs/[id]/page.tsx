@@ -179,14 +179,30 @@ export default async function JobDetailPage({
               </div>
 
               {/* Actions */}
-              <div className="flex items-center gap-3 flex-shrink-0">
+              {/* <div className="flex items-center gap-3 flex-shrink-0">
                 <button className="w-9 h-9 rounded-lg border border-brand-grey-200 flex items-center justify-center text-brand-grey-500 hover:border-brand-red hover:text-brand-red transition-colors">
                   <Bookmark size={15} />
                 </button>
                 <button className="w-9 h-9 rounded-lg border border-brand-grey-200 flex items-center justify-center text-brand-grey-500 hover:border-brand-red hover:text-brand-red transition-colors">
                   <Share2 size={15} />
                 </button>
-              </div>
+              </div> */}
+
+              <div className="flex-shrink-0 flex flex-col items-end m-5 gap-2">
+                            <Link
+                              // href={`/jobs/${job.id}#apply`}
+                              href="/register "
+                              className="btn-primary !py-2 !px-4 text-xs flex items-center gap-1.5 whitespace-nowrap"
+                            >
+                              Apply Now <ArrowRight size={12} />
+                            </Link>
+                            {/* <Link
+                              href={`/jobs/${job.id}`}
+                              className="text-xs text-brand-grey-400 hover:text-brand-red transition-colors"
+                            >
+                              View Details →
+                            </Link> */}
+                          </div>
             </div>
           </div>
         </div>
@@ -262,7 +278,7 @@ export default async function JobDetailPage({
                         }}
                       >
                         {doc.document_name}
-                        <span className="ml-1 opacity-60">({doc.is_required ? "Req" : "Opt"})</span>
+                        {/* <span className="ml-1 opacity-60">({doc.is_required ? "Req" : "Opt"})</span> */}
                       </span>
                     ))}
                   </div>
@@ -270,7 +286,7 @@ export default async function JobDetailPage({
               )}
 
               {/* CTA card */}
-              <div
+              {/* <div
                 className="rounded-2xl p-5 text-white text-center"
                 style={{ background: "linear-gradient(135deg,#C8102E 0%,#900B20 100%)" }}
               >
@@ -287,7 +303,7 @@ export default async function JobDetailPage({
                 >
                   Contact Us <ArrowRight size={13} className="inline ml-1" />
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

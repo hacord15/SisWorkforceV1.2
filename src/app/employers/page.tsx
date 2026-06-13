@@ -38,7 +38,7 @@ interface Country {
 
 const INITIAL_PARTNER_FORM: PartnerFormData = {
   lead_type: "EMPLOYER",
-  organisation_name: "Associate Partner",
+  organisation_name: "",
   contact_name: "",
   phone: "",
   email: "",

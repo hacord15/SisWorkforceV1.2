@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import CookieConsent from "@/components/ui/CookieConsent";
+import WhatsAppButton from "@/components/ui/WhatsAppButton";
 // import QuickForm from "@/components/ui/QuickForm";
 
 export const metadata: Metadata = {
@@ -20,6 +21,11 @@ export default function RootLayout({
         {children}
         <CookieConsent/>
         {/* <QuickForm /> */}
+        <WhatsAppButton
+  phoneNumber="911145678900"   // your number, no + or spaces
+  message="Hello! I'd like to know more about your workforce solutions."
+  position="bottom-right"      // or "bottom-left"
+/>
 
       </body>
     </html>

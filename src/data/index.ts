@@ -53,6 +53,8 @@ export const stats: Stat[] = [
   { value: 2918, label: "Placements" },
 ];
 
+export const STATS_About = [];
+
 export const industries = [
   {
     id: "healthcare",

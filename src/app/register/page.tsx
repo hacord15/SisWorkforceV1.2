@@ -11,7 +11,7 @@ import {
   AlertCircle, ArrowRight, ChevronLeft, Globe, Briefcase,
 } from "lucide-react";
 
-const API_BASE = "https://uatsisglobalapi.neuralinfo.co.in/public";
+const API_BASE = "https://sisglobalapi.neuralinfo.co.in/public";
 
 interface Country  { country_id: number; country_name: string; country_code: string; iso_code: string }
 interface StateRow { state_id:   number; state_name:   string; country_id:  number  }
@@ -187,8 +187,7 @@ export default function RegisterPage() {
   const canSubmit = useMemo(
     () => Boolean(
       form.first_name.trim() && form.last_name.trim() &&
-      form.phone.trim() && form.email.trim() &&
-      form.passport_number.trim() && form.experience.trim()
+      form.phone.trim() && form.email.trim() 
     ),
     [form.first_name, form.last_name, form.phone, form.email, form.passport_number, form.experience]
   );
@@ -215,8 +214,8 @@ export default function RegisterPage() {
         country_id:               typeof form.country_id === "number" ? form.country_id : null,
         state_id:                 typeof form.state_id   === "number" ? form.state_id   : null,
         city_id:                  typeof form.city_id    === "number" ? form.city_id    : null,
-        experience:               form.experience ? Number(form.experience) : null,
-        international_experience: form.international_experience ? Number(form.international_experience) : null,
+        // experience:               form.experience ? Number(form.experience) : null,
+        // international_experience: form.international_experience ? Number(form.international_experience) : null,
       });
       setSignup(res);
     } catch (err: unknown) {
@@ -264,11 +263,14 @@ export default function RegisterPage() {
                 Your candidate profile has been created. Log in to complete document uploads and apply for jobs.
               </p>
               <div className="flex flex-col gap-2.5">
-                <Link href="/find-jobs" className="btn-primary justify-center">
+                <Link href="https://sisglobalapp.neuralinfo.co.in/jobs"
+                target="_blank"
+                className="btn-primary justify-center">
                   Browse Jobs <ArrowRight size={14} />
                 </Link>
                 <Link
-                  href="/portal/login?portal=candidate"
+                  href="https://sisglobalapp.neuralinfo.co.in/portal/login/auth?portal=candidate"
+                  target="_blank"
                   className="flex items-center justify-center gap-2 px-5 py-2.5 border border-brand-grey-300 text-brand-grey-700 text-[13px] font-semibold rounded-lg hover:border-brand-red hover:text-brand-red transition-colors"
                   style={{ fontFamily: "var(--font-display)", letterSpacing: "0.05em" }}
                 >
@@ -359,7 +361,7 @@ export default function RegisterPage() {
               {/* Row 3 — Experience */}
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <Label required>Experience (Years)</Label>
+                  <Label >Experience (Years)</Label>
                   <Input
                     icon={<Briefcase size={14} />}
                     type="number"
@@ -367,7 +369,7 @@ export default function RegisterPage() {
                     min="0"
                     value={form.experience}
                     onChange={(v) => set("experience", v)}
-                    required
+                    
                   />
                 </div>
                 <div>
@@ -381,13 +383,14 @@ export default function RegisterPage() {
                     onChange={(v) => set("international_experience", v)}
                   />
                 </div>
+
               </div>
 
               {/* Row 4 */}
               <div className="grid grid-cols-3 gap-3">
                 <div>
                   <Label required>Passport No.</Label>
-                  <Input icon={<FileText size={14} />} placeholder="A1234567" value={form.passport_number} onChange={(v) => set("passport_number", v)} required />
+                  <Input icon={<FileText size={14} />} placeholder="A1234567" value={form.passport_number} onChange={(v) => set("passport_number", v)} />
                 </div>
                 <div>
                   <Label>Date of Birth</Label>
@@ -479,7 +482,7 @@ onChange={(v) => set("city_id", v as number | "")}
                 </Link>
               </div>
 
-              <Link href="/find-jobs" className="inline-flex items-center gap-1.5 text-[12px] text-brand-red hover:underline">
+              <Link href="/jobs" className="inline-flex items-center gap-1.5 text-[12px] text-brand-red hover:underline">
                 <ChevronLeft size={13} /> Back to Jobs
               </Link>
 

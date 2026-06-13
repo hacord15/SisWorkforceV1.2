@@ -11,106 +11,106 @@ import {
 
 const DESTINATION_REGIONS = [
   {
-    id:        "europe",
-    region:    "Europe",
-    badge:     "🇪🇺",
-    tagline:   "Skilled workforce for European markets",
-    desc:      "SIS Global deploys verified, AUG-compliant workforce across major European economies through licensed partnerships and regulated recruitment frameworks.",
+    id: "europe",
+    region: "Europe",
+    badge: "🇪🇺",
+    tagline: "Skilled workforce for European markets",
+    desc: "SIS Global deploys verified, AUG-compliant workforce across major European economies through licensed partnerships and regulated recruitment frameworks.",
     countries: [
-      { name: "Germany",  flag: "🇩🇪", detail: "AUG Licensed deployment" },
-      { name: "Finland",  flag: "🇫🇮", detail: "Nordic market specialist" },
-      { name: "Italy",    flag: "🇮🇹", detail: "Southern Europe hub"     },
-      { name: "Poland",   flag: "🇵🇱", detail: "Central Europe gateway"  },
-      { name: "Romania",  flag: "🇷🇴", detail: "Emerging markets partner" },
-      { name: "Spain",    flag: "🇪🇸", detail: "Iberian Peninsula hub"   },
+      { name: "Germany", flag: "🇩🇪", detail: "AUG Licensed deployment" },
+      { name: "Finland", flag: "🇫🇮", detail: "Nordic market specialist" },
+      { name: "Italy", flag: "🇮🇹", detail: "Southern Europe hub" },
+      { name: "Poland", flag: "🇵🇱", detail: "Central Europe gateway" },
+      { name: "Romania", flag: "🇷🇴", detail: "Emerging markets partner" },
+      { name: "Spain", flag: "🇪🇸", detail: "Iberian Peninsula hub" },
     ],
     image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&q=80",
     accentColor: "#1D4ED8",
-    lightBg:    "rgba(29,78,216,0.05)",
-    lightBorder:"rgba(29,78,216,0.15)",
+    lightBg: "rgba(29,78,216,0.05)",
+    lightBorder: "rgba(29,78,216,0.15)",
   },
   {
-    id:        "gcc",
-    region:    "GCC & Middle East",
-    badge:     "🌍",
-    tagline:   "Trusted workforce partner across the Gulf",
-    desc:      "A primary destination for SIS Global's workforce deployment. We operate with full MOHRE compliance and MEA licensing across all GCC member states.",
+    id: "gcc",
+    region: "GCC & Middle East",
+    badge: "🌍",
+    tagline: "Trusted workforce partner across the Gulf",
+    desc: "A primary destination for SIS Global's workforce deployment. We operate with full MOHRE compliance and MEA licensing across all GCC member states.",
     countries: [
-      { name: "UAE",   flag: "🇦🇪", detail: "MOHRE Compliant — Regional Hub" },
-      { name: "Oman",  flag: "🇴🇲", detail: "Sultanate approved partner"     },
-      { name: "Qatar", flag: "🇶🇦", detail: "World Cup legacy workforce"     },
+      { name: "UAE", flag: "🇦🇪", detail: "MOHRE Compliant — Regional Hub" },
+      { name: "Oman", flag: "🇴🇲", detail: "Sultanate approved partner" },
+      { name: "Qatar", flag: "🇶🇦", detail: "World Cup legacy workforce" },
     ],
     image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80",
     accentColor: "#C8102E",
-    lightBg:    "rgba(200,16,46,0.05)",
-    lightBorder:"rgba(200,16,46,0.18)",
+    lightBg: "rgba(200,16,46,0.05)",
+    lightBorder: "rgba(200,16,46,0.18)",
   },
 ];
 
 const SOURCE_COUNTRIES = [
   {
-    name:     "India",
-    flag:     "🇮🇳",
-    desc:     "Our primary talent origin. Pre-trained, MEA-documented workers across healthcare, engineering, hospitality, and skilled trades.",
+    name: "India",
+    flag: "🇮🇳",
+    desc: "Our primary talent origin. Pre-trained, MEA-documented workers across healthcare, engineering, hospitality, and skilled trades.",
     strength: "250,000+ workforce deployed",
-    img:      "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600&q=80",
+    img: "https://visitayodhyarammandir.com/wp-content/uploads/2024/05/image9-2.png",
   },
   {
-    name:     "Nepal",
-    flag:     "🇳🇵",
-    desc:     "Hardworking and disciplined workforce, particularly strong in construction, facility management, and industrial roles.",
+    name: "Nepal",
+    flag: "🇳🇵",
+    desc: "Hardworking and disciplined workforce, particularly strong in construction, facility management, and industrial roles.",
     strength: "Specialist trade skills",
-    img:      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&q=80",
+    img: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&q=80",
   },
   {
-    name:     "Sri Lanka",
-    flag:     "🇱🇰",
-    desc:     "English-proficient, well-educated talent pool excelling in healthcare, hospitality, and domestic services globally.",
+    name: "Sri Lanka",
+    flag: "🇱🇰",
+    desc: "English-proficient, well-educated talent pool excelling in healthcare, hospitality, and domestic services globally.",
     strength: "High compliance standards",
-    img:      "https://plus.unsplash.com/premium_photo-1666254114402-cd16bc302aea?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    img: "https://plus.unsplash.com/premium_photo-1666254114402-cd16bc302aea?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
 const LICENSES = [
   {
-    code:      "MEA",
-    full:      "Ministry of External Affairs License",
-    country:   "Government of India",
-    flag:      "🇮🇳",
-    desc:      "Authorised overseas manpower recruitment agent registered with India's Ministry of External Affairs, enabling legal international workforce deployment.",
-    color:     "#C8102E",
+    code: "MEA",
+    full: "Ministry of External Affairs License",
+    country: "Government of India",
+    flag: "🇮🇳",
+    desc: "Authorised overseas manpower recruitment agent registered with India's Ministry of External Affairs, enabling legal international workforce deployment.",
+    color: "#C8102E",
   },
   {
-    code:      "MOHRE",
-    full:      "Ministry of Human Resources & Emiratisation",
-    country:   "United Arab Emirates",
-    flag:      "🇦🇪",
-    desc:      "Full compliance with UAE's MOHRE framework ensuring ethical recruitment, worker rights protection, and regulated employment contracts for all Gulf deployments.",
-    color:     "#C8102E",
+    code: "MOHRE",
+    full: "Ministry of Human Resources & Emiratisation",
+    country: "United Arab Emirates",
+    flag: "🇦🇪",
+    desc: "Full compliance with UAE's MOHRE framework ensuring ethical recruitment, worker rights protection, and regulated employment contracts for all Gulf deployments.",
+    color: "#C8102E",
   },
   {
-    code:      "AUG",
-    full:      "Arbeitnehmerüberlassungsgesetz License",
-    country:   "Federal Republic of Germany",
-    flag:      "🇩🇪",
-    desc:      "German statutory license for lawful temporary staffing and workforce leasing under the German Temporary Employment Act — enabling compliant EU deployments.",
-    color:     "#1D4ED8",
+    code: "AUG",
+    full: "AUG License",
+    country: "Federal Republic of Germany",
+    flag: "🇩🇪",
+    desc: "German statutory license for lawful temporary staffing and workforce leasing under the German Temporary Employment Act — enabling compliant EU deployments.",
+    color: "#1D4ED8",
   },
   {
-    code:      "ILC",
-    full:      "International Legal & Compliance Partnerships",
-    country:   "Multi-Jurisdiction",
-    flag:      "🌐",
-    desc:      "Network of in-country legal partners ensuring adherence to destination-country labour law, visa compliance, and ethical recruitment standards across all markets.",
-    color:     "#059669",
+    code: "ILC",
+    full: "International Legal & Compliance Partnerships",
+    country: "Multi-Jurisdiction",
+    flag: "🌐",
+    desc: "Network of in-country legal partners ensuring adherence to destination-country labour law, visa compliance, and ethical recruitment standards across all markets.",
+    color: "#059669",
   },
 ];
 
 const STATS = [
-  { value: "9+",     label: "Countries",            sub: "Active deployments"     },
-  { value: "3",      label: "Licenses",             sub: "MEA · MOHRE · AUG"      },
-  { value: "3",      label: "Source Countries",     sub: "India · Nepal · Sri Lanka"},
-  { value: "100%",   label: "Compliance Rate",      sub: "Zero violations record"  },
+  { value: "9+", label: "Countries", sub: "Active deployments" },
+  { value: "3", label: "Licenses", sub: "MEA · MOHRE · AUG" },
+  { value: "3", label: "Source Countries", sub: "India · Nepal · Sri Lanka" },
+  { value: "100%", label: "Compliance Rate", sub: "Zero violations record" },
 ];
 
 // ── Page ──────────────────────────────────────────────────────────────────
@@ -267,8 +267,8 @@ export default function CountriesPage() {
                           key={c.name}
                           className="flex items-center gap-4 p-4 rounded-xl border transition-all hover:shadow-sm"
                           style={{
-                            background:   region.lightBg,
-                            borderColor:  region.lightBorder,
+                            background: region.lightBg,
+                            borderColor: region.lightBorder,
                           }}
                         >
                           <span className="text-2xl flex-shrink-0 leading-none">{c.flag}</span>
@@ -295,6 +295,8 @@ export default function CountriesPage() {
         {/* ══════════════════════════════════════════════════
             SOURCE COUNTRIES
         ══════════════════════════════════════════════════ */}
+
+
         <section className="py-20" style={{ background: "linear-gradient(135deg,#F9F9F9 0%,#F2F2F2 100%)" }}>
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-14">
@@ -324,9 +326,21 @@ export default function CountriesPage() {
                       alt={c.name}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 50%)" }} />
+
+                    {/* Static bottom gradient overlay (always visible) */}
+                    <div
+                      className="absolute inset-0"
+                      style={{ background: "linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 50%)" }}
+                    />
+
+                    {/* Hover gradient overlay - appears on card hover */}
+                    <div
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-350"
+                      style={{ background: "linear-gradient(#0000 0%, #c8102e66 40%, #c8102ed9 100%)" }}
+                    />
+
                     {/* Flag + name */}
-                    <div className="absolute bottom-4 left-4 flex items-center gap-2">
+                    <div className="absolute bottom-4 left-4 flex items-center gap-2 z-10">
                       <span className="text-2xl">{c.flag}</span>
                       <span
                         className="text-white font-bold text-lg"
@@ -372,7 +386,7 @@ export default function CountriesPage() {
         {/* ══════════════════════════════════════════════════
             COMPLIANCE & LICENSING
         ══════════════════════════════════════════════════ */}
-        {/* <section id="compliance" className="py-20 bg-white">
+        <section id="compliance" className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-14">
               <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-brand-red mb-3 px-3 py-1.5 rounded-full" style={{ background: "rgba(200,16,46,0.08)" }}>
@@ -475,12 +489,12 @@ export default function CountriesPage() {
               </div>
             </div>
           </div>
-        </section> */}
+        </section>
 
         {/* ══════════════════════════════════════════════════
             PROCESS STRIP
         ══════════════════════════════════════════════════ */}
-        {/* <section className="py-16" style={{ background: "linear-gradient(135deg,#F9F9F9 0%,#F2F2F2 100%)" }}>
+        <section className="py-16" style={{ background: "linear-gradient(135deg,#F9F9F9 0%,#F2F2F2 100%)" }}>
           <div className="max-w-5xl mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-brand-grey-900" style={{ fontFamily: "var(--font-display)" }}>
@@ -515,7 +529,7 @@ export default function CountriesPage() {
               ))}
             </div>
           </div>
-        </section> */}
+        </section>
 
         {/* ══════════════════════════════════════════════════
             DUAL CTA

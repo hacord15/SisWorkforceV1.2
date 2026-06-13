@@ -1,4 +1,3 @@
-// src/app/contact/ContactClient.tsx  ← CLIENT COMPONENT
 "use client";
 
 import { useState, useRef } from "react";
@@ -197,7 +196,7 @@ function CandidateForm({
           <span className="text-brand-grey-600">
             {fileName
               ? <span className="text-brand-grey-800 font-semibold">{fileName}</span>
-              : <><span className="text-brand-red font-semibold">Choose file</span> or drag & drop</>
+              : <><span className="text-brand-red font-semibold">Choose file</span> or drag &amp; drop</>
             }
           </span>
         </button>
@@ -238,6 +237,7 @@ function CandidateForm({
 // ── Main Component ─────────────────────────────────────────────────────────
 
 export default function ContactClient({ office, faqs }: Props) {
+  const [activeTab,          setActiveTab]          = useState<"employer" | "candidate">("employer");
   const [employerSubmitted,  setEmployerSubmitted]  = useState(false);
   const [candidateSubmitted, setCandidateSubmitted] = useState(false);
   const [employerLoading,    setEmployerLoading]    = useState(false);
@@ -367,112 +367,85 @@ export default function ContactClient({ office, faqs }: Props) {
       </section>
 
       {/* ════════════════════════════════════════════════════════
-          TWO FORMS
+          TABBED FORM
       ════════════════════════════════════════════════════════ */}
       <section className="py-20" style={{ background: "linear-gradient(160deg,#FAFAFA 0%,#F3F3F3 100%)" }}>
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-10 items-start">
+        <div className="max-w-3xl mx-auto px-4">
 
-            {/* ── Employer Form ── */}
-            <div
-              className="bg-white rounded-3xl overflow-hidden shadow-xl"
-              style={{ border: "1px solid #E5E5E5", borderTop: "4px solid #C8102E" }}
-            >
-              <div className="px-8 pt-8 pb-6 border-b border-brand-grey-100">
-                <div className="flex items-center gap-3 mb-2">
-                  <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ background: "rgba(200,16,46,0.08)" }}
-                  >
-                    <Briefcase size={18} className="text-brand-red" />
-                  </div>
-                  <h2
-                    className="text-2xl font-bold text-brand-grey-900"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
-                    Looking to Hire Skilled Workforce?
-                  </h2>
-                </div>
-                <p className="text-sm text-brand-grey-500 pl-[52px]">
-                  Tell us your requirement and we&apos;ll match you with the right talent.
-                </p>
+          <div
+            className="bg-white rounded-3xl overflow-hidden shadow-xl"
+            style={{ border: "1px solid #E5E5E5", borderTop: "4px solid #C8102E" }}
+          >
+            {/* Card header + tab toggle */}
+            <div className="px-8 pt-8 pb-0">
+              <h2
+                className="text-2xl font-bold text-brand-grey-900 mb-1"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Contact Us
+              </h2>
+              <p className="text-sm text-brand-grey-500 mb-5">
+                Tell us who you are and we&apos;ll take it from there.
+              </p>
+
+              {/* Toggle pill */}
+              <div
+                className="flex gap-1.5 rounded-xl p-1 w-fit"
+                style={{ background: "#F3F3F3" }}
+              >
+                {(["employer", "candidate"] as const).map((tab) => {
+                  const isActive = activeTab === tab;
+                  return (
+                    <button
+                      key={tab}
+                      type="button"
+                      onClick={() => setActiveTab(tab)}
+                      className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200"
+                      style={{
+                        background: isActive ? "#C8102E" : "transparent",
+                        color:      isActive ? "#fff"    : "#6B6B6B",
+                      }}
+                    >
+                      {tab === "employer" ? <Briefcase size={15} /> : <Users size={15} />}
+                      {tab === "employer" ? "Hire Workforce" : "Find a Job"}
+                    </button>
+                  );
+                })}
               </div>
-              <div className="px-8 py-7">
-                {employerSubmitted ? (
-                  <SuccessState message="Requirement Submitted!" onReset={() => setEmployerSubmitted(false)} />
-                ) : (
-                  <EmployerForm loading={employerLoading} onSubmit={handleEmployerSubmit} />
-                )}
-              </div>
+
+              <div className="border-t border-brand-grey-100 mt-5" />
             </div>
 
-            {/* ── Candidate Form ── */}
-            <div
-              className="bg-white rounded-3xl overflow-hidden shadow-xl"
-              style={{ border: "1px solid #E5E5E5", borderTop: "4px solid #C8102E" }}
-            >
-              <div className="px-8 pt-8 pb-6 border-b border-brand-grey-100">
-                <div className="flex items-center gap-3 mb-2">
-                  <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ background: "rgba(200,16,46,0.08)" }}
-                  >
-                    <Users size={18} className="text-brand-red" />
-                  </div>
-                  <h2
-                    className="text-2xl font-bold text-brand-grey-900"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
-                    Looking for International Jobs?
-                  </h2>
-                </div>
-                <p className="text-sm text-brand-grey-500 pl-[52px]">
-                  Submit your profile and we&apos;ll connect you with the right opportunity.
-                </p>
-              </div>
-              <div className="px-8 py-7">
-                {candidateSubmitted ? (
-                  <SuccessState message="Application Received!" onReset={() => setCandidateSubmitted(false)} />
-                ) : (
-                  <CandidateForm loading={candidateLoading} onSubmit={handleCandidateSubmit} />
-                )}
-              </div>
+            {/* Form body */}
+            <div className="px-8 py-7">
+              {activeTab === "employer" ? (
+                <>
+                  <p className="text-sm text-brand-grey-500 mb-5">
+                    Tell us your requirement and we&apos;ll match you with the right talent.
+                  </p>
+                  {employerSubmitted ? (
+                    <SuccessState message="Requirement Submitted!" onReset={() => setEmployerSubmitted(false)} />
+                  ) : (
+                    <EmployerForm loading={employerLoading} onSubmit={handleEmployerSubmit} />
+                  )}
+                </>
+              ) : (
+                <>
+                  <p className="text-sm text-brand-grey-500 mb-5">
+                    Submit your profile and we&apos;ll connect you with the right opportunity.
+                  </p>
+                  {candidateSubmitted ? (
+                    <SuccessState message="Application Received!" onReset={() => setCandidateSubmitted(false)} />
+                  ) : (
+                    <CandidateForm loading={candidateLoading} onSubmit={handleCandidateSubmit} />
+                  )}
+                </>
+              )}
             </div>
-
           </div>
+
         </div>
       </section>
-
-      {/* ════════════════════════════════════════════════════════
-          FAQ
-      ════════════════════════════════════════════════════════ */}
-      {/* <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <h2
-              className="text-3xl font-bold text-brand-grey-900"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Frequently Asked Questions
-            </h2>
-            <div className="section-divider mt-4" />
-          </div>
-          <div className="grid md:grid-cols-2 gap-5">
-            {faqs.map((faq) => (
-              <div
-                key={faq.q}
-                className="p-5 rounded-xl border border-brand-grey-200 hover:border-brand-red/30 transition-colors"
-              >
-                <h4 className="font-bold text-brand-grey-900 text-sm mb-2 flex items-start gap-2">
-                  <span className="text-brand-red mt-0.5 flex-shrink-0">Q</span>
-                  {faq.q}
-                </h4>
-                <p className="text-xs text-brand-grey-500 leading-relaxed pl-5">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
       {/* ════════════════════════════════════════════════════════
           BOTTOM CTA

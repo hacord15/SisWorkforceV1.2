@@ -50,22 +50,42 @@ export default function Navbar() {
             </a>
           </div>
           <div className="flex items-center gap-4">
-            <span className="text-sm text-gray-500">Follow Us:</span>
-            {[
-              { icon: faLinkedinIn, key: "linkedin", label: "in" },
-              { icon: faFacebookF, key: "facebook", label: "f" },
-              { icon: faInstagram, key: "instagram", label: "ig" },
-              { icon: faYoutube, key: "youtube", label: "yt" }
-            ].map((social) => (
-              <a 
-                key={social.key} 
-                href="#" 
-                className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-red-600 hover:text-white transition-all"
-              >
-                <FontAwesomeIcon icon={social.icon} className="text-xs" />
-              </a>
-            ))}
-          </div>
+  <span className="text-sm text-gray-500">Follow Us:</span>
+
+  {[
+    {
+      icon: faLinkedinIn,
+      href: "https://www.linkedin.com/company/sisglobalworkforcesolutions",
+      key: "linkedin",
+    },
+    {
+      icon: faFacebookF,
+      href: "https://www.facebook.com/people/SIS-Global-Workforce-Solutions/61589420021952/",
+      key: "facebook",
+    },
+    {
+      icon: faInstagram,
+      href: "https://www.instagram.com/sisglobalworkforce/",
+      key: "instagram",
+    },
+    // {
+    //   icon: faYoutube,
+    //   href: "#", 
+    //   key: "youtube",
+    // },
+  ].map((social) => (
+    <a
+      key={social.key}
+      href={social.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={social.key}
+      className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-red-600 hover:text-white transition-all"
+    >
+      <FontAwesomeIcon icon={social.icon} className="text-xs" />
+    </a>
+  ))}
+</div>
         </div>
       </div>
 

@@ -288,14 +288,14 @@ export default async function FindJobsPage({
                 <p className="text-sm text-brand-grey-500">
                   <strong className="text-brand-grey-900">{total}</strong> jobs found
                 </p>
-                <div className="relative">
+                {/* <div className="relative">
                   <select className="pl-3 pr-8 py-2 border border-brand-grey-200 text-sm text-brand-grey-700 rounded appearance-none focus:outline-none focus:border-brand-red bg-white cursor-pointer">
                     {SORT_OPTIONS.map((o) => (
                       <option key={o}>{o}</option>
                     ))}
                   </select>
                   <ChevronDown size={13} className="absolute right-2.5 top-1/2 -translate-y-1/2 text-brand-grey-400 pointer-events-none" />
-                </div>
+                </div> */}
               </div>
 
               {paginatedJobs.length === 0 ? (

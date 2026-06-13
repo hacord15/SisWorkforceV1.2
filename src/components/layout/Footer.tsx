@@ -58,33 +58,33 @@ const footerLinks = {
     { label: "Help Center", href: "/help", icon: FaHeadset },
     { label: "FAQ's", href: "/faq", icon: FaQuestionCircle },
     { label: "Terms of Service", href: "/terms", icon: FaFileContract },
-    { label: "Privacy Policy", href: "/privacy", icon: FaShieldAlt },
+    { label: "Privacy Policy", href: "/privacy-policy", icon: FaShieldAlt },
     { label: "Cookie Policy", href: "/cookies", icon: FaCookie },
   ],
 };
 
 const socialLinks = [
-  {
-    icon: FaTwitter,
-    href: "https://twitter.com",
-    label: "Twitter",
-    color: "hover:bg-[#1DA1F2]",
-  },
+  // {
+  //   icon: FaTwitter,
+  //   href: "https://twitter.com",
+  //   label: "Twitter",
+  //   color: "hover:bg-[#1DA1F2]",
+  // },
   {
     icon: FaLinkedin,
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/company/sisglobalworkforcesolutions",
     label: "LinkedIn",
     color: "hover:bg-[#0077B5]",
   },
   {
     icon: FaFacebook,
-    href: "https://facebook.com",
+    href: "https://www.facebook.com/people/SIS-Global-Workforce-Solutions/61589420021952/",
     label: "Facebook",
     color: "hover:bg-[#4267B2]",
   },
   {
     icon: FaInstagram,
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/sisglobalworkforce/",
     label: "Instagram",
     color: "hover:bg-[#E4405F]",
   },
@@ -178,7 +178,7 @@ export default function Footer() {
                 (label) => (
                   <Link
                     key={label}
-                    href="#"
+                    href="/privacy-policy"
                     className="text-brand-grey-500 hover:text-white text-xs sm:text-sm transition-colors duration-200"
                   >
                     {label}
