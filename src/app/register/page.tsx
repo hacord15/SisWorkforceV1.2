@@ -263,18 +263,18 @@ export default function RegisterPage() {
                 Your candidate profile has been created. Log in to complete document uploads and apply for jobs.
               </p>
               <div className="flex flex-col gap-2.5">
-                <Link href="https://sisglobalapp.neuralinfo.co.in/jobs"
+                <Link href="https://sisglobalapp.neuralinfo.co.in/portal/login/auth?portal=candidate"
                 target="_blank"
                 className="btn-primary justify-center">
-                  Browse Jobs <ArrowRight size={14} />
+                  Complete Your Profile <ArrowRight size={14} />
                 </Link>
                 <Link
-                  href="https://sisglobalapp.neuralinfo.co.in/portal/login/auth?portal=candidate"
-                  target="_blank"
+                  href="/jobs"
+                  
                   className="flex items-center justify-center gap-2 px-5 py-2.5 border border-brand-grey-300 text-brand-grey-700 text-[13px] font-semibold rounded-lg hover:border-brand-red hover:text-brand-red transition-colors"
                   style={{ fontFamily: "var(--font-display)", letterSpacing: "0.05em" }}
                 >
-                  Go to Candidate Portal
+                  Browse Jobs
                 </Link>
               </div>
             </div>
