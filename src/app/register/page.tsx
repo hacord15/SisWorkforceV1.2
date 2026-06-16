@@ -266,7 +266,7 @@ export default function RegisterPage() {
                 <Link href="https://sisglobalapp.neuralinfo.co.in/portal/login/auth?portal=candidate"
                 target="_blank"
                 className="btn-primary justify-center">
-                  Complete Your Profile <ArrowRight size={14} />
+                  Login & Complete Profile <ArrowRight size={14} />
                 </Link>
                 <Link
                   href="/jobs"

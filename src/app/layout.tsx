@@ -19,14 +19,13 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {children}
-        <CookieConsent/>
+        <CookieConsent />
         {/* <QuickForm /> */}
         <WhatsAppButton
-  phoneNumber="911145678900" 
-  message="Hello! I'd like to know more about your workforce solutions."
-  position="bottom-right"     
-  right-right="20px"
-/>
+          phoneNumber="911145678900"
+          message="Hello! I'd like to know more about your workforce solutions."
+          position="bottom-right"
+        />
 
       </body>
     </html>

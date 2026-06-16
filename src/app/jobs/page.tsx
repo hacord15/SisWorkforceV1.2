@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import JobFilters from "@/components/ui/JobFilters";
+import MobileFilterToggle from "@/components/ui/MobileFilterToggle";
 import {
   MapPin,
   Clock,
@@ -271,8 +272,8 @@ export default async function FindJobsPage({
         <div className="max-w-7xl mx-auto px-4 py-10">
           <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-8">
 
-            {/* Sidebar */}
-            <aside>
+            {/* Sidebar — desktop only (hidden below lg) */}
+            <aside className="hidden lg:block">
               <Suspense
                 fallback={
                   <div className="bg-white border border-brand-grey-200 rounded-xl p-5 h-96 animate-pulse" />
@@ -284,18 +285,16 @@ export default async function FindJobsPage({
 
             {/* Job list */}
             <div>
+              {/* Top bar: job count + mobile filter toggle */}
               <div className="flex items-center justify-between mb-5 flex-wrap gap-3">
                 <p className="text-sm text-brand-grey-500">
                   <strong className="text-brand-grey-900">{total}</strong> jobs found
                 </p>
-                {/* <div className="relative">
-                  <select className="pl-3 pr-8 py-2 border border-brand-grey-200 text-sm text-brand-grey-700 rounded appearance-none focus:outline-none focus:border-brand-red bg-white cursor-pointer">
-                    {SORT_OPTIONS.map((o) => (
-                      <option key={o}>{o}</option>
-                    ))}
-                  </select>
-                  <ChevronDown size={13} className="absolute right-2.5 top-1/2 -translate-y-1/2 text-brand-grey-400 pointer-events-none" />
-                </div> */}
+
+                {/* Mobile filter icon — client component handles state */}
+                <Suspense fallback={null}>
+                  <MobileFilterToggle />
+                </Suspense>
               </div>
 
               {paginatedJobs.length === 0 ? (
@@ -313,6 +312,7 @@ export default async function FindJobsPage({
                         key={job.id}
                         className="group bg-white border border-brand-grey-200 rounded-xl p-5 hover:border-brand-red/40 hover:shadow-md transition-all duration-200"
                       >
+                        {/* Top row: Logo + Details + (desktop) buttons */}
                         <div className="flex items-start gap-4">
                           {/* Logo */}
                           <div
@@ -347,7 +347,7 @@ export default async function FindJobsPage({
 
                             <Link href={`/jobs/${job.id}`}>
                               <h3
-                                className="font-bold text-brand-grey-900 text-base group-hover:text-brand-red transition-colors mb-1 truncate cursor-pointer"
+                                className="font-bold text-brand-grey-900 text-base group-hover:text-brand-red transition-colors mb-1 cursor-pointer"
                                 style={{ fontFamily: "var(--font-display)" }}
                               >
                                 {job.title}
@@ -355,7 +355,7 @@ export default async function FindJobsPage({
                             </Link>
                             <p className="text-sm text-brand-grey-500 mb-3">{job.company}</p>
 
-                            <div className="flex flex-wrap gap-4 text-xs text-brand-grey-500">
+                            <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-xs text-brand-grey-500">
                               <span className="flex items-center gap-1">
                                 <MapPin size={12} className="text-brand-red flex-shrink-0" />
                                 {job.location}
@@ -371,8 +371,8 @@ export default async function FindJobsPage({
                             </div>
                           </div>
 
-                          {/* Apply button */}
-                          <div className="flex-shrink-0 flex flex-col items-end gap-2">
+                          {/* Apply button — desktop only */}
+                          <div className="hidden sm:flex flex-shrink-0 flex-col items-end gap-2">
                             <Link
                               href={`/jobs/${job.id}#apply`}
                               className="btn-primary !py-2 !px-4 text-xs flex items-center gap-1.5 whitespace-nowrap"
@@ -386,6 +386,22 @@ export default async function FindJobsPage({
                               View Details →
                             </Link>
                           </div>
+                        </div>
+
+                        {/* Mobile-only: buttons at bottom full width */}
+                        <div className="sm:hidden flex items-center gap-3 mt-4 pt-4 border-t border-brand-grey-100">
+                          <Link
+                            href={`/jobs/${job.id}#apply`}
+                            className="btn-primary flex-1 !py-2.5 text-xs flex items-center justify-center gap-1.5"
+                          >
+                            Apply Now <ArrowRight size={12} />
+                          </Link>
+                          <Link
+                            href={`/jobs/${job.id}`}
+                            className="flex-1 text-center text-xs font-semibold py-2.5 border border-brand-grey-200 rounded-lg text-brand-grey-600 hover:border-brand-red hover:text-brand-red transition-colors"
+                          >
+                            View Details →
+                          </Link>
                         </div>
                       </div>
                     );

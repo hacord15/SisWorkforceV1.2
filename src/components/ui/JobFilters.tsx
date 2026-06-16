@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { SlidersHorizontal } from "lucide-react";
+import { SlidersHorizontal, X } from "lucide-react";
 
 const JOB_TYPES = ["Full Time", "Part Time", "Remote", "Hybrid", "Contract"];
 const EXPERIENCE = ["0–2 Years", "2–5 Years", "5–10 Years", "10+ Years"];
@@ -13,7 +13,13 @@ interface ListItem {
   count: number;
 }
 
-export default function JobFilters() {
+interface JobFiltersProps {
+  isMobile?: boolean;
+  isOpen?: boolean;
+  onClose?: () => void;
+}
+
+export default function JobFilters({ isMobile = false, isOpen = false, onClose }: JobFiltersProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -103,12 +109,13 @@ export default function JobFilters() {
   const clearAll = () => {
     setTypes([]); setExp([]); setSalary([]); setSelectedIndustry([]); setSelectedCountry([]);
     router.push("/jobs");
+    if (isMobile && onClose) onClose();
   };
 
   const hasFilters = types.length || exp.length || salary.length || selectedIndustry.length || selectedCountry.length;
 
-  return (
-    <div className="bg-white border border-brand-grey-200 rounded-xl sticky top-20 overflow-hidden flex flex-col" style={{ maxHeight: "calc(100vh - 100px)" }}>
+  const FilterContent = () => (
+    <>
       {/* Header */}
       <div className="flex items-center justify-between px-5 py-4 border-b border-brand-grey-100 flex-shrink-0">
         <div className="flex items-center gap-2">
@@ -117,16 +124,22 @@ export default function JobFilters() {
             FILTER JOBS
           </h3>
         </div>
-        {hasFilters ? (
-          <button onClick={clearAll} className="text-xs text-brand-red hover:underline font-semibold bg-transparent border-none cursor-pointer">
-            Clear All
-          </button>
-        ) : null}
+        <div className="flex items-center gap-3">
+          {hasFilters ? (
+            <button onClick={clearAll} className="text-xs text-brand-red hover:underline font-semibold bg-transparent border-none cursor-pointer">
+              Clear All
+            </button>
+          ) : null}
+          {isMobile && (
+            <button onClick={onClose} className="p-1 hover:bg-brand-grey-100 rounded-lg transition-colors">
+              <X size={20} className="text-brand-grey-600" />
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Scrollable filter body */}
       <div className="overflow-y-auto flex-1 px-5 py-4">
-
         {/* Country */}
         {countries.length > 0 && (
           <FilterGroup title="Country">
@@ -207,8 +220,38 @@ export default function JobFilters() {
             </label>
           ))}
         </FilterGroup>
-
       </div>
+    </>
+  );
+
+  // For mobile: render as sidebar with overlay
+  if (isMobile) {
+    return (
+      <>
+        {/* Overlay */}
+        <div 
+          className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 ${
+            isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
+          onClick={onClose}
+        />
+        
+        {/* Sidebar */}
+        <div 
+          className={`fixed top-0 right-0 h-full w-full max-w-[400px] bg-white z-50 shadow-2xl transition-transform duration-300 ease-in-out flex flex-col ${
+            isOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+        >
+          <FilterContent />
+        </div>
+      </>
+    );
+  }
+
+  // For desktop: render as sticky sidebar
+  return (
+    <div className="bg-white border border-brand-grey-200 rounded-xl sticky top-20 overflow-hidden flex flex-col" style={{ maxHeight: "calc(100vh - 100px)" }}>
+      <FilterContent />
     </div>
   );
 }
