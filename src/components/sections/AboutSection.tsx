@@ -21,23 +21,23 @@ export default function AboutSection() {
     <section className="py-20 bg-white" ref={ref}>
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Image */}
-          <div
-            className={`relative transition-all duration-700 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"}`}
-          >
-            <div className="relative rounded-lg overflow-hidden shadow-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80"
-                alt="SIS Global Office"
-                className="w-full h-[420px] object-cover"
-              />
-              <div className="absolute bottom-4 left-4 bg-brand-red text-white text-xs font-semibold px-3 py-1 rounded tracking-wider uppercase">
-                Backed by SIS India Ltd.
-              </div>
-            </div>
-            {/* Decorative element */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 border-4 border-brand-red/20 rounded-lg -z-10" />
-          </div>
+         {/* Image */}
+<div
+  className={`relative transition-all duration-700 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"}`}
+>
+  <div className="relative rounded-lg overflow-hidden shadow-2xl">
+    <img
+      src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80"
+      alt="SIS Global Office"
+      className="w-full h-[420px] object-cover"
+    />
+    <div className="absolute bottom-4 left-4 bg-brand-red text-white text-xs font-semibold px-3 py-1 rounded tracking-wider uppercase">
+      Backed by SIS India Ltd.
+    </div>
+  </div>
+  {/* Decorative element - hidden on mobile, visible on md and up */}
+  <div className="absolute -bottom-6 -right-6 w-32 h-32 border-4 border-brand-red/20 rounded-lg -z-10 hidden md:block" />
+</div>
 
           {/* Content */}
           <div
