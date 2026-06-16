@@ -22,9 +22,10 @@ export default function RootLayout({
         <CookieConsent/>
         {/* <QuickForm /> */}
         <WhatsAppButton
-  phoneNumber="911145678900"   // your number, no + or spaces
+  phoneNumber="911145678900" 
   message="Hello! I'd like to know more about your workforce solutions."
-  position="bottom-right"      // or "bottom-left"
+  position="bottom-right"     
+  right-right="20px"
 />
 
       </body>
