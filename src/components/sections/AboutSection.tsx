@@ -73,7 +73,7 @@ export default function AboutSection() {
             
 
             <div className="flex gap-4">
-              <a href="/" className="btn-primary">
+              <a href="/sis-global" className="btn-primary">
                 Learn More <ArrowRight size={16} />
               </a>
               <Link

@@ -23,7 +23,9 @@ export default function HeroSection() {
         /* ── video ── */
         .sis-video {
           position: absolute; inset: 0;
-          width: 100%; height: 100%; object-fit: cover;
+          width: 100%; height: 100%;
+          object-fit: cover;
+          object-position: center center;
         }
 
         /* ── gradient overlay: heavy left, lighter right ── */
@@ -56,7 +58,6 @@ export default function HeroSection() {
           position: absolute; inset: 0; z-index: 10;
           max-width: 1280px; margin: 0 auto; padding: 0 2.5rem;
           width: 100%;
-          /* make it a positioning context only — no flex centering */
         }
 
         /* ── TOP-LEFT: "Trusted Global Workforce Solution" ── */
@@ -78,7 +79,7 @@ export default function HeroSection() {
           margin: 0;
         }
 
-        /* decorative red vertical bar — echoes the screenshot's red stripe */
+        /* decorative red vertical bar */
         .sis-topleft-bar {
           width: 4px; height: 56px;
           background: linear-gradient(to bottom, #C8102E, rgba(200,16,46,0.2));
@@ -89,9 +90,8 @@ export default function HeroSection() {
         /* ── CENTER-RIGHT block ── */
         .sis-centerright {
           position: absolute;
-          /* vertically sit at ~42% so it's visually centred-low as in screenshot */
           top: 42%;
-          left: 50%;                    /* pushed right */
+          left: 50%;
           transform: translateY(-50%);
           width: 52%;
           max-width: 640px;
@@ -107,6 +107,7 @@ export default function HeroSection() {
         .sis-eyebrow.in { opacity: 1; transform: translateY(0); }
         .sis-eyebrow-dash {
           width: 28px; height: 2px; background: #C8102E; border-radius: 1px;
+          flex-shrink: 0;
         }
         .sis-eyebrow span {
           font-family: var(--font-display);
@@ -136,7 +137,6 @@ export default function HeroSection() {
           color: #C8102E;
           position: relative;
         }
-        /* subtle underline brush stroke */
         .sis-h1 em::after {
           content: '';
           position: absolute;
@@ -180,15 +180,10 @@ export default function HeroSection() {
           border-radius: 1px;
           transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
           position: relative; overflow: hidden;
-        }
-        .sis-btn-red::before {
-          content: '';
-          position: absolute; inset: 0;
-          background: rgba(255,255,255,0);
-          transition: background 0.2s;
+          white-space: nowrap;
         }
         .sis-btn-red:hover { background: #a80d26; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200,16,46,0.45); }
-        .sis-btn-red .btn-arr { transition: transform 0.2s; }
+        .sis-btn-red .btn-arr { transition: transform 0.2s; flex-shrink: 0; }
         .sis-btn-red:hover .btn-arr { transform: translateX(4px); }
 
         /* ghost */
@@ -206,6 +201,7 @@ export default function HeroSection() {
           border: 1px solid rgba(255,255,255,0.22);
           border-radius: 1px;
           transition: background 0.2s, border-color 0.2s, transform 0.15s;
+          white-space: nowrap;
         }
         .sis-btn-ghost:hover {
           background: rgba(255,255,255,0.1);
@@ -221,7 +217,6 @@ export default function HeroSection() {
           display: inline-flex; align-items: center; justify-content: center;
           flex-shrink: 0;
         }
-
 
         /* ══ SCROLL HINT ═════════════════════════════════════════ */
         .sis-scroll {
@@ -249,22 +244,175 @@ export default function HeroSection() {
           50%      { opacity: 1;    transform: scaleY(1);   }
         }
 
-        /* ══ RESPONSIVE ══════════════════════════════════════════ */
-        @media (max-width: 900px) {
-          .sis-centerright {
-            left: 1.5rem;
-            width: 90%;
-            top: 48%;
+        /* ══ TABLET (601px – 900px) ══════════════════════════════ */
+        @media (min-width: 601px) and (max-width: 900px) {
+          .sis-hero {
+            height: 80vh;
+            min-height: 520px;
           }
-          .sis-topleft { top: 1.5rem; left: 1.5rem; }
+
+          /* Video: shift focus to upper-center for portrait tablets */
+          .sis-video {
+            object-position: 60% top;
+          }
+
+          /* Overlay slightly heavier for readability */
+          .sis-overlay {
+            background:
+              linear-gradient(115deg,
+                rgba(0,0,0,0.92) 0%,
+                rgba(0,0,0,0.78) 50%,
+                rgba(0,0,0,0.50) 100%
+              );
+          }
+
+          .sis-topleft {
+            top: 1.8rem;
+            left: 1.8rem;
+          }
+          .sis-topleft h2 {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+          }
+          .sis-topleft-bar {
+            height: 44px;
+          }
+
+          .sis-centerright {
+            left: 1.8rem;
+            top: 50%;
+            width: 80%;
+            max-width: 520px;
+          }
+
+          .sis-h1 {
+            font-size: clamp(2.4rem, 5.5vw, 3.6rem);
+            margin-bottom: 1rem;
+          }
+
+          .sis-body {
+            font-size: 0.88rem;
+            line-height: 1.7;
+            max-width: 100%;
+          }
+
+          .sis-ctas {
+            gap: 0.55rem;
+          }
+
           .sis-scroll { display: none; }
         }
 
+        /* ══ MOBILE (≤ 600px) ════════════════════════════════════ */
         @media (max-width: 600px) {
-          .sis-topleft h2 { font-size: 1.6rem; }
+          .sis-hero {
+            height: 100svh;
+            min-height: 0;
+          }
 
+          /* Video: focus on upper area so face/subject shows */
+          .sis-video {
+            object-position: 65% top;
+            width: 100%;
+            height: 100%;
+          }
+
+          /* Heavier overlay for legibility */
+          .sis-overlay {
+            background: linear-gradient(
+              to top,
+              rgba(0,0,0,0.92) 0%,
+              rgba(0,0,0,0.65) 45%,
+              rgba(0,0,0,0.20) 100%
+            );
+          }
+
+          /* Flex column, content centered vertically */
+          .sis-content {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          }
+
+          /* Top-left label: pulled out of absolute, flows in flex */
+          .sis-topleft {
+            position: static;
+            padding: 0 1.25rem;
+            margin-bottom: 0.9rem;
+          }
+          .sis-topleft h2 {
+            font-size: clamp(1.2rem, 5vw, 1.6rem);
+          }
+          .sis-topleft-bar {
+            height: 32px;
+            margin-bottom: 0.4rem;
+          }
+
+          /* Center-right: full width, static, no gap */
+          .sis-centerright {
+            position: static;
+            top: auto;
+            left: auto;
+            transform: none;
+            width: 100%;
+            max-width: 100%;
+            padding: 0 1.25rem;
+          }
+
+          .sis-eyebrow {
+            margin-bottom: 0.3rem;
+          }
+          .sis-eyebrow span {
+            font-size: 0.75rem;
+          }
+
+          .sis-h1 {
+            font-size: clamp(2.2rem, 9.5vw, 2.8rem);
+            margin-bottom: 0.75rem;
+            line-height: 1;
+          }
+
+          .sis-body {
+            font-size: 0.84rem;
+            line-height: 1.68;
+            max-width: 100%;
+            margin-bottom: 1.25rem;
+            color: rgba(255,255,255,0.72);
+          }
+
+          /* Stack CTAs, full-width, with bottom safe area */
+          .sis-ctas {
+            flex-direction: column;
+            gap: 0.5rem;
+            padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+          }
+
+          .sis-btn-red,
+          .sis-btn-ghost {
+            justify-content: center;
+            padding: 0.9rem 1.2rem;
+            font-size: 0.72rem;
+          }
+
+          .sis-scroll { display: none; }
         }
 
+        /* ══ VERY SMALL (≤ 360px) ════════════════════════════════ */
+        @media (max-width: 360px) {
+          .sis-h1 {
+            font-size: 2rem;
+          }
+          .sis-topleft h2 {
+            font-size: 1.1rem;
+          }
+          .sis-topleft,
+          .sis-centerright {
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
+        }
+
+        /* ══ REDUCED MOTION ══════════════════════════════════════ */
         @media (prefers-reduced-motion: reduce) {
           .sis-topleft, .sis-eyebrow, .sis-h1, .sis-body,
           .sis-ctas, .sis-scroll {
@@ -337,15 +485,7 @@ export default function HeroSection() {
               </Link>
             </div>
           </div>
-
-          {/* scroll hint */}
-          {/* <div className={`sis-scroll${vis ? " in" : ""}`} aria-hidden>
-            <span>Scroll</span>
-            <div className="sis-scroll-line" />
-          </div> */}
         </div>
-
-
       </section>
     </>
   );
