@@ -20,11 +20,21 @@ export function UserProfileDropdown() {
   }, []);
 
   return (
-    <div ref={ref} className="hidden lg:block relative">
+    // ✅ "hidden lg:block" hataya → "block" kiya taaki mobile par bhi dikhe
+    <div ref={ref} className="block relative">
       {/* Trigger */}
+      {/* Small mobile only (< 768px): sirf icon */}
       <button
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-2 px-4 py-2 border-[1.5px] border-brand-red text-brand-red rounded-lg text-[13px] font-semibold tracking-wide hover:bg-red-50 transition-colors"
+        className="md:hidden flex items-center justify-center w-9 h-9 border-[1.5px] border-brand-red text-brand-red rounded-lg hover:bg-red-50 transition-colors"
+      >
+        <User size={18} />
+      </button>
+
+      {/* Tablet + Desktop (>= 768px): icon + USER text + chevron */}
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="hidden md:flex items-center gap-2 px-4 py-2 border-[1.5px] border-brand-red text-brand-red rounded-lg text-[13px] font-semibold tracking-wide hover:bg-red-50 transition-colors"
         style={{ fontFamily: "var(--font-display)", letterSpacing: "0.06em" }}
       >
         <User size={15} />
@@ -35,26 +45,11 @@ export function UserProfileDropdown() {
       {/* Dropdown card */}
       {open && (
         <div
+          // ✅ Mobile par right-0 se left-0 bhi handle kiya taaki screen se bahar na jaye
           className="absolute right-0 top-[calc(100%+8px)] w-[272px] bg-white border border-brand-grey-200 rounded-2xl shadow-lg z-50 overflow-hidden"
           style={{ boxShadow: "0 8px 32px rgba(0,0,0,0.10)" }}
         >
           <div className="px-6 pt-7 pb-5 text-center">
-
-            {/* Avatar */}
-            {/* <div className="relative w-[68px] h-[68px] rounded-full mx-auto mb-1" style={{ background: "rgba(200,16,46,0.08)" }}>
-              <User size={32} className="absolute inset-0 m-auto text-brand-red" strokeWidth={1.5} />
-              
-              <span className="absolute top-0.5 left-2 text-[10px] text-brand-red/30 select-none">✦</span>
-              <span className="absolute bottom-1 right-1.5 text-[9px] text-brand-red/30 select-none">✦</span>
-              <span className="absolute top-2 right-0.5 text-[8px] text-brand-red/20 select-none">✦</span>
-            </div>
-
-            <h3 className="text-[19px] font-bold text-brand-grey-900 mt-3 mb-1" style={{ fontFamily: "var(--font-display)" }}>
-              Welcome!
-            </h3>
-            <p className="text-[13px] text-brand-grey-500 leading-relaxed mb-5">
-              Access your account to manage<br className="hidden sm:block" /> your profile and stay connected.
-            </p> */}
 
             <hr className="border-brand-grey-100 mb-4" />
 

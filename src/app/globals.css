@@ -382,8 +382,8 @@ body {
   color: var(--brand-red);
 }
 
-/* @media (max-width: 500px) {
-  .btn-outline {
-    font-size: 12px !important;
+@media (max-width: 500px) {
+  .btn-primary {
+    padding: 12px 20px !important;
   }
-} */
+}
