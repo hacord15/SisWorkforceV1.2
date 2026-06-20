@@ -41,9 +41,9 @@ export default function Navbar() {
       <div className="bg-white border-b border-gray-200 py-2 px-4 hidden md:block">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-6">
-            <a href="mailto:info@sisglobalindia.com" className="flex items-center gap-2 text-sm text-gray-600 hover:text-red-600 transition-colors">
+            <a href="mailto:info@sisglobalworkforce.com" className="flex items-center gap-2 text-sm text-gray-600 hover:text-red-600 transition-colors">
               <Mail size={14} />
-              info@sisglobalindia.com
+              info@sisglobalworkforce.com
             </a>
             <a href="tel:+911145678900" className="flex items-center gap-2 text-sm text-gray-600 hover:text-red-600 transition-colors">
               <Phone size={14} />
@@ -203,11 +203,11 @@ export default function Navbar() {
                   011-49032418
                 </a>
                 <a
-                  href="mailto:info@sisglobalindia.com"
+                  href="mailto:info@sisglobalworkforce.com"
                   className="flex items-center gap-3 py-2 px-2 text-sm text-gray-700 hover:text-red-600"
                 >
                   <Mail size={16} />
-                  info@sisglobalindia.com
+                  info@sisglobalworkforce.com
                 </a>
               </div>
 

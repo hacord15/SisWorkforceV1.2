@@ -34,7 +34,7 @@ export default function PrivacyPolicy() {
                 A-28 & 29, Phase-1, Okhla Industrial Area, New Delhi – 110020,
                 India
               </p>
-              <p>Email: info@sisglobalindia.com</p>
+              <p>Email: info@sisglobalworkforce.com</p>
               <p>Phone: +91-11-49032418</p>
               <p>Website: https://sisglobalworkforce.com</p>
             </div>
@@ -226,7 +226,7 @@ export default function PrivacyPolicy() {
                   📍 A-28 & 29, Phase-1, Okhla Industrial Area, New Delhi –
                   110020, India
                 </p>
-                <p>📧 info@sisglobalindia.com</p>
+                <p>📧 info@sisglobalworkforce.com</p>
                 <p>📞 +91-11-49032418</p>
                 <p>🌐 https://sisglobalworkforce.com</p>
               </div>
