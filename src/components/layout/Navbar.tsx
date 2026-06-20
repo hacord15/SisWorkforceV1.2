@@ -47,7 +47,7 @@ export default function Navbar() {
             </a>
             <a href="tel:+911145678900" className="flex items-center gap-2 text-sm text-gray-600 hover:text-red-600 transition-colors">
               <Phone size={14} />
-              +91 11 4567 8900
+              011-49032418
             </a>
           </div>
           <div className="flex items-center gap-4">
@@ -200,7 +200,7 @@ export default function Navbar() {
                   className="flex items-center gap-3 py-2 px-2 text-sm text-gray-700 hover:text-red-600"
                 >
                   <Phone size={16} />
-                  +91 11 4567 8900
+                  011-49032418
                 </a>
                 <a
                   href="mailto:info@sisglobalindia.com"

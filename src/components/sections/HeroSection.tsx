@@ -98,7 +98,7 @@ export default function HeroSection() {
               href="/employers"
               className="group relative inline-flex items-center gap-[0.45rem] overflow-hidden whitespace-nowrap rounded-[1px] border border-[#C8102E] bg-[#C8102E] px-6 py-[0.8rem] font-[var(--font-display)] text-[0.68rem] font-extrabold uppercase tracking-[0.16em] text-white no-underline transition-[background,transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-[#a80d26] hover:shadow-[0_8px_24px_rgba(200,16,46,0.45)] max-[600px]:justify-center max-[600px]:px-[1.2rem] max-[600px]:py-[0.9rem] max-[600px]:text-[0.72rem]"
             >
-              Hire Workforce
+              Partner With Us
               <ArrowRight
                 size={13}
                 className="flex-shrink-0 transition-transform duration-200 group-hover:translate-x-1"
