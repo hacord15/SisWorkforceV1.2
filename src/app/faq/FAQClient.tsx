@@ -330,7 +330,7 @@ export default function FAQClient({ categories, faqs }: Props) {
                     className="flex items-center gap-2 px-5 py-2.5 border border-brand-grey-300 text-brand-grey-700 text-sm font-semibold rounded hover:border-brand-red hover:text-brand-red transition-colors"
                     style={{ fontFamily: "var(--font-display)", letterSpacing: "0.05em" }}
                   >
-                    <Phone size={14} /> 0124-4171 888
+                    <Phone size={14} /> 011-49032418
                   </a>
                   <a
                     href="mailto:info@sisglobal.com"

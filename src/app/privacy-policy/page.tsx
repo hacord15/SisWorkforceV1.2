@@ -1,5 +1,10 @@
+import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/layout/Navbar";
+
 export default function PrivacyPolicy() {
   return (
+    <>
+    <Navbar />
     <section className="bg-white py-16">
       <div className="container mx-auto max-w-5xl px-6">
         <div className="mb-12 text-center">
@@ -235,5 +240,8 @@ export default function PrivacyPolicy() {
         </div>
       </div>
     </section>
+    <Footer />
+    </>
+    
   );
 }

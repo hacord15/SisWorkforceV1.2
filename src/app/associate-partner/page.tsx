@@ -512,7 +512,7 @@ export default function LeadPage() {
             <p className="text-white/70 mb-8 text-base">Call our partnerships team for a direct conversation — we&apos;ll find the right model for your business.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="tel:01244171888" className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-white text-white text-sm font-semibold rounded-full hover:bg-white hover:text-brand-red transition-colors">
-                <Phone size={15} /> 0124-4171 888
+                <Phone size={15} /> 011-49032418
               </a>
               <a href="mailto:partners@sisglobal.com" className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-white/50 text-white text-sm font-semibold rounded-full hover:bg-white/20 transition-colors">
                 <Mail size={15} /> partners@sisglobal.com

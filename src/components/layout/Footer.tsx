@@ -49,9 +49,9 @@ const footerLinks = {
   ],
   Company: [
     { label: "About Us", href: "/sis-global", icon: FaInfoCircle },
-    { label: "Blog", href: "/blog", icon: FaBlog },
-    { label: "Shop", href: "/shop", icon: FaStore },
-    { label: "Press Kit", href: "/press", icon: FaNewspaper },
+    // { label: "Blog", href: "/blog", icon: FaBlog },
+    // { label: "Shop", href: "/shop", icon: FaStore },
+    // { label: "Press Kit", href: "/press", icon: FaNewspaper },
     { label: "Contact", href: "/contact", icon: FaEnvelope },
   ],
   Support: [
