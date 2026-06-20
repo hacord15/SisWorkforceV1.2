@@ -13,6 +13,7 @@ import TechSection from "@/components/sections/TechSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import ImpactSection from "@/components/sections/ImpactSection";
 import WorkforceReadinessSection from "@/components/sections/WorkforceReadinessSection";
+import ClientsSection from "@/components/sections/ClientsSection";
 
 export default function HomePage() {
   return (
@@ -20,7 +21,8 @@ export default function HomePage() {
       <Navbar />
       <main>
         <HeroSection />
-        <StatsBar />
+        <ClientsSection />
+        {/* <StatsBar /> */}
         <AboutSection />
         <WhySISSection />
          <WorkforceReadinessSection />
