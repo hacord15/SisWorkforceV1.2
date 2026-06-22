@@ -3,6 +3,7 @@
 import { useIntersectionObserver } from "@/lib/useIntersectionObserver";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import image from "next/image";
 
 const highlights = [
   "Quality-driven recruitment",
@@ -28,12 +29,13 @@ export default function AboutSection() {
           >
             <div className="relative rounded-lg overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80"
+                // src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80"\
+                src="/assets/about-banner.png"
                 alt="SIS Global Office"
                 className="w-full h-[250px] sm:h-[320px] md:h-[420px] object-cover"
               />
               <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 bg-brand-red text-white text-[10px] sm:text-xs font-semibold px-2 sm:px-3 py-1 rounded tracking-wider uppercase">
-                Backed by SIS India Ltd.
+                Backed by SIS Limited
               </div>
             </div>
             {/* Decorative element - hidden on mobile */}

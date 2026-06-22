@@ -477,13 +477,13 @@ export default function ContactClient({ office, faqs }: Props) {
                 />
 
                 {/* Floating stat badge */}
-                <div
+                {/* <div
                   className="absolute bottom-5 left-5 px-4 py-3 rounded-xl backdrop-blur-md"
                   style={{ background: "rgba(0,0,0,0.55)", border: "1px solid rgba(255,255,255,0.10)" }}
                 >
                   <p className="text-white font-bold text-lg leading-none">10,000+</p>
                   <p className="text-white/55 text-xs mt-0.5">Workers Placed Globally</p>
-                </div>
+                </div> */}
 
                 {/* Second stat badge */}
                 <div
