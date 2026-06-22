@@ -85,7 +85,7 @@ export default function TechSection() {
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
             }`}
           >
-            <p className="text-xs font-bold tracking-widest uppercase text-white/40 mb-5">
+            <p className="text-lg font-bold tracking-widest uppercase text-white/40 mb-5">
               The platform ensures
             </p>
 
@@ -105,7 +105,7 @@ export default function TechSection() {
                   >
                     <Icon size={15} />
                   </div>
-                  <span className="text-white/70 text-xs font-medium leading-snug">{label}</span>
+                  <span className="text-white/70 text-lg font-medium leading-snug">{label}</span>
                 </div>
               ))}
             </div>
@@ -131,7 +131,7 @@ export default function TechSection() {
               />
 
               <div className="relative z-10">
-                <p className="text-xs font-bold tracking-widest uppercase text-brand-red/70 mb-2">
+                <p className="text-lg font-bold tracking-widest uppercase text-brand-red/70 mb-2">
                   Employer Benefit
                 </p>
                 <h3
@@ -144,14 +144,14 @@ export default function TechSection() {
 
                 <div className="grid grid-cols-2 gap-3 mb-8">
                   {EMPLOYER_BENEFITS.map(({ icon: Icon, label }) => (
-                    <div key={label} className="flex items-center gap-2.5">
+                    <div key={label} className="flex items-center  gap-2.5">
                       <div
                         className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0"
                         style={{ background: "rgba(200,16,46,0.25)", color: "#FF6B7A" }}
                       >
                         <Icon size={13} />
                       </div>
-                      <span className="text-white/70 text-xs font-medium">{label}</span>
+                      <span className="text-white/70 text-lg font-medium">{label}</span>
                     </div>
                   ))}
                 </div>

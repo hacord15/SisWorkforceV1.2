@@ -78,7 +78,7 @@ export default function TestimonialsSection() {
               </div>
 
               {/* Quote text */}
-              <p className="text-brand-grey-600 text-sm leading-relaxed flex-1 mb-7 italic">
+              <p className="text-brand-grey-600 text-lg leading-relaxed flex-1 mb-7 italic">
                 &ldquo;{t.quote}&rdquo;
               </p>
 

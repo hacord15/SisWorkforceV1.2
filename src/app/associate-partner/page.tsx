@@ -53,7 +53,7 @@ const BENEFITS = [
   { icon: <TrendingUp size={22} />, title: "Business Growth",    desc: "Co-branded marketing materials, joint pitching support, and lead sharing to grow your business faster." },
   { icon: <Award size={22} />,      title: "SIS Certification",  desc: "Gain official SIS Associate Partner certification — a mark of trust recognised by 5,000+ enterprise clients." },
   { icon: <Users size={22} />,      title: "Training & Support", desc: "Access onboarding training, SOPs, compliance resources, and a dedicated partner success manager." },
-  { icon: <Shield size={22} />,     title: "Compliance Umbrella",desc: "Operate under SIS India Group's compliance framework, reducing your legal and operational risk." },
+  { icon: <Shield size={22} />,     title: "Compliance Umbrella",desc: "Operate under SIS Group's compliance framework, reducing your legal and operational risk." },
 ];
 
 const TESTIMONIALS = [

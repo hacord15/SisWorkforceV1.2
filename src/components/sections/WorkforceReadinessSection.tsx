@@ -135,7 +135,7 @@ export default function WorkforceReadinessSection() {
                 className="object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-grey-900/40 to-transparent" />
-              <p className="absolute bottom-3 left-4 text-white text-sm font-semibold drop-shadow">
+              <p className="absolute bottom-3 left-4 text-white text-lg font-semibold drop-shadow">
                 Structured module-based training
               </p>
             </div>
@@ -200,7 +200,7 @@ export default function WorkforceReadinessSection() {
                 className="object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-grey-900/40 to-transparent" />
-              <p className="absolute bottom-3 left-4 text-white text-sm font-semibold drop-shadow">
+              <p className="absolute bottom-3 left-4 text-white text-lg font-semibold drop-shadow">
                 Productive from the first day on-site
               </p>
             </div>

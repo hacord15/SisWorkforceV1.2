@@ -23,7 +23,7 @@ export const navItems: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/",children: [
       { label: "SIS Global", href: "/sis-global" },
-      { label: "SIS India Group", href: "/sis-india-group" },
+      { label: "SIS Group", href: "/sis-group" },
     ], },
   // {
   //   label: "Solutions",

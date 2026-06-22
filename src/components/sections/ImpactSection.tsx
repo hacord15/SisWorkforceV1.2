@@ -327,10 +327,10 @@ export default function ImpactSection() {
           </div>
 
           {/* floating pill — placements */}
-          <div className="imp-pill">
+          {/* <div className="imp-pill">
             <span className="imp-pill-num">25K+</span>
             <span className="imp-pill-lbl">Successful Placements</span>
-          </div>
+          </div> */}
 
           {/* floating chip — live indicator */}
           <div className="imp-chip">

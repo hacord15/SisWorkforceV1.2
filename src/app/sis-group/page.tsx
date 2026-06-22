@@ -181,7 +181,7 @@ export default function SISIndiaGroupPage() {
             <div className="flex items-center gap-1.5 text-xs text-white/40 mb-10">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
               <ChevronRight size={12} />
-              <span className="text-white/70">SIS India Group</span>
+              <span className="text-white/70">SIS Group</span>
             </div>
 
             <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -195,10 +195,10 @@ export default function SISIndiaGroupPage() {
                 </div>
 
                 <h1 className="text-5xl md:text-6xl font-bold leading-[1.04] mb-6" style={{ fontFamily: "var(--font-display)" }}>
-                  SIS India <span className="text-brand-red">Group</span>
+                  SIS <span className="text-brand-red">Group</span>
                 </h1>
                 <p className="text-white/60 text-lg leading-relaxed mb-4">
-                  A diversified conglomerate founded in 1992, SIS India Group is the country&apos;s
+                  A diversified conglomerate founded in 1992, SIS Group is the country&apos;s
                   largest integrated security and services organisation — with operations spanning
                   security, workforce, cash management, facility services, and technology.
                 </p>
@@ -474,7 +474,7 @@ export default function SISIndiaGroupPage() {
           <div className="grid md:grid-cols-2">
             <div className="flex flex-col justify-center px-12 py-16 text-white relative overflow-hidden" style={{ background: "linear-gradient(135deg,#171717 0%,#262626 100%)" }}>
               <div className="absolute top-0 right-0 w-40 h-40 rounded-full border border-white/5 translate-x-1/2 -translate-y-1/2" />
-              <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "rgba(200,16,46,0.8)" }}>SIS India Group</p>
+              <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "rgba(200,16,46,0.8)" }}>SIS Group</p>
               <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: "var(--font-display)" }}>Partner with India&apos;s Most Trusted Services Group</h3>
               <p className="text-white/50 text-sm leading-relaxed mb-8">Whether you need security, workforce, cash management or facility services — the SIS Group has a solution for you.</p>
               <a href="https://www.sisindia.com" target="_blank" rel="noopener noreferrer" className="btn-primary w-fit">Visit SIS India ↗</a>

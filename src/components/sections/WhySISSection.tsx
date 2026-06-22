@@ -79,7 +79,7 @@ export default function WhySISSection() {
           <div className="absolute inset-0 flex items-center px-8 sm:px-12">
             <div className="max-w-md">
               <p
-                className="text-white text-xl sm:text-2xl font-bold leading-snug drop-shadow"
+                className="text-white text-xl sm:text-3xl font-bold leading-snug drop-shadow"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 The right talent, at the right time — every time.

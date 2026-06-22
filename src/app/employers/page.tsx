@@ -56,7 +56,7 @@ const WHY_CARDS = [
   { icon: <Shield size={22} />, title: "Full Compliance", desc: "We manage PF, ESI, TDS, labour law compliance and act as employer of record for all contract placements." },
   { icon: <BarChart3 size={22} />, title: "Real-Time Reporting", desc: "Dedicated account managers and weekly dashboards keep you fully informed on placement progress and SLA adherence." },
   { icon: <Briefcase size={22} />, title: "Replacement Guarantee", desc: "Free replacement within 60–90 days if a placed candidate exits for performance reasons." },
-  { icon: <Star size={22} />, title: "Backed by SIS India", desc: "Leveraging 31+ years of operational excellence and 2,50,000+ workforce managed by SIS India Group." },
+  { icon: <Star size={22} />, title: "Backed by SIS India", desc: "Leveraging 31+ years of operational excellence and 2,50,000+ workforce managed by SIS Group." },
 ];
 
 const STEPS = [
