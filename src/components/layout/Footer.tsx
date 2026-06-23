@@ -2,67 +2,57 @@
 
 import Link from "next/link";
 import {
-  FaTwitter,
   FaLinkedin,
   FaFacebook,
   FaInstagram,
   FaBriefcase,
   FaBuilding,
-  FaUserCircle,
-  FaLightbulb,
-  FaMoneyBillWave,
   FaFileAlt,
-  FaUserTie,
-  FaTags,
   FaQuestionCircle,
   FaHandshake,
   FaInfoCircle,
-  FaBlog,
-  FaStore,
-  FaNewspaper,
   FaEnvelope,
-  FaHeadset,
   FaFileContract,
   FaShieldAlt,
   FaCookie,
   FaChevronRight,
+  FaHome,
+  FaCommentAlt,
+  FaGlobe,
+  FaMapMarkerAlt,
+  FaUserNurse,
+  FaHardHat,
+  FaConciergeBell,
 } from "react-icons/fa";
 
 const footerLinks = {
-  "For Job Seekers": [
-    { label: "Browse Jobs", href: "/jobs", icon: FaBriefcase },
-    { label: "Browse Companies", href: "/companies", icon: FaBuilding },
-    { label: "Candidate Dashboard", href: "/dashboard", icon: FaUserCircle },
-    { label: "Career Advice", href: "/career-advice", icon: FaLightbulb },
-    { label: "Salary Explorer", href: "/salary", icon: FaMoneyBillWave },
+  Company: [
+    { label: "Home", href: "/", icon: FaHome },
+    { label: "About Us", href: "/sis-global", icon: FaInfoCircle },
+    { label: "Feedback", href: "/feedback", icon: FaCommentAlt },
+    { label: "Contact Us", href: "/contact", icon: FaEnvelope },
   ],
   "For Employers": [
-    { label: "Post a Job", href: "/post-job", icon: FaFileAlt },
-    { label: "Browse Candidates", href: "/candidates", icon: FaUserTie },
-    { label: "Pricing Plans", href: "/pricing", icon: FaTags },
-    { label: "Employer FAQ", href: "/faq", icon: FaQuestionCircle },
-    {
-      label: "Associate Partner",
-      href: "/associate-partner",
-      icon: FaHandshake,
-    },
+    { label: "Countries", href: "/countries", icon: FaGlobe },
+    { label: "Industries", href: "/industries", icon: FaBuilding },
+    { label: "FAQs", href: "/faq", icon: FaQuestionCircle },
+    { label: "Enquiry Form", href: "/enquiry", icon: FaFileAlt },
   ],
-  Company: [
-    { label: "About Us", href: "/sis-global", icon: FaInfoCircle },
-    // { label: "Blog", href: "/blog", icon: FaBlog },
-    // { label: "Shop", href: "/shop", icon: FaStore },
-    // { label: "Press Kit", href: "/press", icon: FaNewspaper },
-    { label: "Contact", href: "/contact", icon: FaEnvelope },
+  "For Job Seekers": [
+    { label: "Find Jobs", href: "/jobs", icon: FaBriefcase },
+    { label: "Jobs in Dubai", href: "/jobs/dubai", icon: FaMapMarkerAlt },
+    { label: "Jobs in Qatar", href: "/jobs/qatar", icon: FaMapMarkerAlt },
+    { label: "Nursing Jobs", href: "/jobs/nursing", icon: FaUserNurse },
+    { label: "Civil Engineer Jobs", href: "/jobs/civil-engineer", icon: FaHardHat },
+    { label: "Hotel Jobs", href: "/jobs/hotel", icon: FaConciergeBell },
+    { label: "Sales Jobs", href: "/jobs/sales", icon: FaHandshake },
   ],
-  Support: [
-    { label: "Help Center", href: "/help", icon: FaHeadset },
-    { label: "FAQ's", href: "/faq", icon: FaQuestionCircle },
-    { label: "Terms of Service", href: "/terms", icon: FaFileContract },
+  "Quick Links": [
     { label: "Privacy Policy", href: "/privacy-policy", icon: FaShieldAlt },
-    { label: "Cookie Policy", href: "/cookies", icon: FaCookie },
+    { label: "Terms of Use", href: "/terms", icon: FaFileContract },
+    { label: "Cookies Policy", href: "/cookies", icon: FaCookie },
   ],
 };
-
 const socialLinks = [
   // {
   //   icon: FaTwitter,

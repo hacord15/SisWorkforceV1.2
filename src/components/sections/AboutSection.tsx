@@ -48,7 +48,7 @@ export default function AboutSection() {
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8 md:translate-x-12"
             }`}
           >
-            <p className="text-brand-red text-xs sm:text-sm font-semibold tracking-widest uppercase mb-1 sm:mb-2">
+            <p className="text-brand-red text-lg sm:text-xl font-semibold tracking-widest uppercase mb-1 sm:mb-2">
               WHY SIS GLOBAL?
             </p>
             <h2

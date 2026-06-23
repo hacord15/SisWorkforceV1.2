@@ -24,7 +24,7 @@ export default function CTASection() {
         <p className="text-white/80 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
           Let SIS Global Workforce Solutions handle your hiring. Get access to verified talent across all industries.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link href="/employers" className="btn-outline !text-white !border-white hover:!bg-white hover:!text-brand-red">
             Partner With Us <ArrowRight size={16} />
           </Link>

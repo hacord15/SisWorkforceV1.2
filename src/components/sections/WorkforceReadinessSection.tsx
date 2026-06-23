@@ -240,14 +240,14 @@ export default function WorkforceReadinessSection() {
                 </div>
               ))}
             </div>
-
-            <div className="mt-8">
-              <Link href="/contact" className="btn-primary inline-flex items-center gap-2">
-                Hire Trained Workforce <ArrowRight size={15} />
-              </Link>
-            </div>
           </div>
 
+        </div>
+        {/* ── CTA Button — centered below both columns ── */}
+        <div className="mt-10 flex justify-center">
+          <Link href="/contact" className="btn-primary inline-flex items-center gap-2">
+            Hire Trained Workforce <ArrowRight size={15} />
+          </Link>
         </div>
       </div>
     </section>

@@ -2,26 +2,31 @@
 
 import { useIntersectionObserver } from "@/lib/useIntersectionObserver";
 import {
-  Banknote, TrendingUp, Globe2, BookOpen,
-  HeartHandshake, PiggyBank, ArrowRight,
+  Banknote,
+  TrendingUp,
+  Globe2,
+  BookOpen,
+  HeartHandshake,
+  PiggyBank,
+  ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
 const IMPACT_POINTS = [
-  { icon: Banknote,       label: "Increase family income"              },
-  { icon: TrendingUp,     label: "Improve social status"               },
-  { icon: Globe2,         label: "Build international careers"         },
-  { icon: BookOpen,       label: "Access continuous training"          },
-  { icon: HeartHandshake, label: "Secure family welfare"               },
-  { icon: PiggyBank,      label: "Create long-term financial stability"},
+  { icon: Banknote, label: "Increase family income" },
+  { icon: TrendingUp, label: "Improve social status" },
+  { icon: Globe2, label: "Build international careers" },
+  { icon: BookOpen, label: "Access continuous training" },
+  { icon: HeartHandshake, label: "Secure family welfare" },
+  { icon: PiggyBank, label: "Create long-term financial stability" },
 ];
 
 const STATS = [
   { value: "25,000+", label: "Successful Placements" },
-  { value: "30+",     label: "Destination Countries" },
-  { value: "6",       label: "Industry Sectors"      },
-  { value: "48 hrs",  label: "Avg. Shortlisting Time"},
+  { value: "30+", label: "Destination Countries" },
+  { value: "6", label: "Industry Sectors" },
+  { value: "48 hrs", label: "Avg. Shortlisting Time" },
 ];
 
 export default function ImpactSection() {
@@ -310,9 +315,10 @@ export default function ImpactSection() {
       <div className="imp-redwash" aria-hidden />
 
       <div className="imp-grid">
-
         {/* ══ LEFT — IMAGE ══════════════════════════════════════ */}
-        <div className={`imp-img-col imp-fade-left imp-d1${isVisible ? " in" : ""}`}>
+        <div
+          className={`imp-img-col imp-fade-left imp-d1${isVisible ? " in" : ""}`}
+        >
           {/* offset border */}
           <div className="imp-img-border" />
 
@@ -341,37 +347,51 @@ export default function ImpactSection() {
 
         {/* ══ RIGHT — COPY ══════════════════════════════════════ */}
         <div className="imp-copy-col">
-
-          <span className={`imp-eyebrow imp-fade imp-d1${isVisible ? " in" : ""}`}>
+          <span
+            className={`imp-eyebrow imp-fade imp-d1${isVisible ? " in" : ""}`}
+          >
             Our Purpose
           </span>
 
-          <h2 className={`imp-heading imp-fade imp-d2${isVisible ? " in" : ""}`}>
+          <h2
+            className={`imp-heading imp-fade imp-d2${isVisible ? " in" : ""}`}
+          >
             Changing Lives Through{" "}
             <span className="imp-heading-red">Global Employment</span>
           </h2>
 
-          <div className={`imp-divider imp-fade imp-d2${isVisible ? " in" : ""}`} />
+          <div
+            className={`imp-divider imp-fade imp-d2${isVisible ? " in" : ""}`}
+          />
 
           <p className={`imp-body imp-fade imp-d3${isVisible ? " in" : ""}`}>
-            Our ethos lies in providing meaningful employment — not just limited to
-            jobs, but about{" "}
-            <strong>transforming lives.</strong>
+            Our ethos lies in providing meaningful employment — not just limited
+            to jobs, but about <strong>transforming lives.</strong>
           </p>
           <p className={`imp-body imp-fade imp-d3${isVisible ? " in" : ""}`}>
-            Through ethical recruitment, continuous upskilling, insurance support,
-            family connect initiatives, and post-deployment support, we help workers
-            build better futures for themselves and their families.
+            Through ethical recruitment, continuous upskilling, insurance
+            support, family connect initiatives, and post-deployment support, we
+            help workers build better futures for themselves and their families.
           </p>
 
           {/* impact points */}
-          <div className={`imp-points imp-fade imp-d4${isVisible ? " in" : ""}`}>
+          <div
+            className={`imp-points imp-fade imp-d4${isVisible ? " in" : ""}`}
+          >
             {IMPACT_POINTS.map(({ icon: Icon, label }) => (
               <div className="imp-point" key={label}>
                 <div className="imp-point-icon">
-                  <Icon size={13} strokeWidth={1.8} />
+                  <Icon size={16} strokeWidth={1.8} />
                 </div>
-                <span>{label}</span>
+                <span
+                  style={{
+                    fontSize: "15px",
+                    lineHeight: "1.35",
+                    fontWeight: 500,
+                  }}
+                >
+                  {label}
+                </span>
               </div>
             ))}
           </div>
@@ -387,7 +407,7 @@ export default function ImpactSection() {
           </div> */}
 
           {/* quote */}
-          <p className={`imp-quote imp-fade imp-d5${isVisible ? " in" : ""}`}>
+          <p className={`imp-quote imp-fade imp-d5${isVisible ? " in" : ""}`} style={{ fontSize: "16px" }}>
             Our mission is to uplift workers and their families socially and
             economically through global employment opportunities.
           </p>
@@ -398,7 +418,6 @@ export default function ImpactSection() {
               Find Opportunities <ArrowRight size={13} className="imp-arr" />
             </Link>
           </div> */}
-
         </div>
       </div>
     </section>

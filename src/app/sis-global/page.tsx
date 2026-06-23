@@ -201,29 +201,29 @@ export default function AboutPage() {
                 </div>
 
                 {/* Feature cards below */}
-                <div className="grid grid-cols-2 gap-4">
-                  {FEATURES.map((f, i) => (
-                    <div
-                      key={f.title}
-                      className="rounded-2xl p-6 border transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-                      style={{
-                        background:  i % 2 === 0 ? "#FFF5F6" : "#FAFAFA",
-                        borderColor: i % 2 === 0 ? "rgba(200,16,46,0.15)" : "#E5E5E5",
-                      }}
-                    >
-                      <div
-                        className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
-                        style={{ background: i % 2 === 0 ? "rgba(200,16,46,0.1)" : "#F0F0F0", color: "#C8102E" }}
-                      >
-                        {f.icon}
-                      </div>
-                      <h3 className="font-bold text-brand-grey-900 text-sm mb-2" style={{ fontFamily: "var(--font-display)" }}>
-                        {f.title}
-                      </h3>
-                      <p className="text-xs text-brand-grey-500 leading-relaxed">{f.desc}</p>
-                    </div>
-                  ))}
-                </div>
+<div className="grid grid-cols-2 gap-4">
+  {FEATURES.map((f, i) => (
+    <div
+      key={f.title}
+      className="rounded-2xl p-6 border transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+      style={{
+        background:  i % 2 === 0 ? "#FFF5F6" : "#FAFAFA",
+        borderColor: i % 2 === 0 ? "rgba(200,16,46,0.15)" : "#E5E5E5",
+      }}
+    >
+      <div
+        className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+        style={{ background: i % 2 === 0 ? "rgba(200,16,46,0.1)" : "#F0F0F0", color: "#C8102E" }}
+      >
+        {f.icon}
+      </div>
+      <h3 className="font-bold text-brand-grey-900 text-base mb-2" style={{ fontFamily: "var(--font-display)" }}>
+        {f.title}
+      </h3>
+      <p className="text-sm text-brand-grey-500 leading-relaxed">{f.desc}</p>
+    </div>
+  ))}
+</div>
               </div>
             </div>
           </div>
@@ -335,11 +335,11 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ── VALUES ── */}
+       {/* ── VALUES ── */}
         <section className="py-20" style={{ background: "linear-gradient(135deg,#F9F9F9 0%,#F2F2F2 100%)" }}>
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-14">
-              <h2 className="text-4xl font-bold text-brand-grey-900" style={{ fontFamily: "var(--font-display)" }}>
+              <h2 className="text-5xl font-bold text-brand-grey-900" style={{ fontFamily: "var(--font-display)" }}>
                 Core Values
               </h2>
               <div className="section-divider mt-4" />
@@ -349,10 +349,10 @@ export default function AboutPage() {
               {VALUES.map((v, i) => (
                 <div
                   key={v.title}
-                  className="group bg-white rounded-2xl p-7 text-center border border-brand-grey-200 hover:border-brand-red/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+                  className="group bg-white rounded-2xl p-8 text-center border border-brand-grey-200 hover:border-brand-red/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
                 >
                   <div
-                    className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5 transition-all duration-300 group-hover:scale-110"
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5 transition-all duration-300 group-hover:scale-110"
                     style={{
                       background: i % 2 === 0 ? "rgba(200,16,46,0.08)" : "#F0F0F0",
                       color: "#C8102E",
@@ -360,10 +360,10 @@ export default function AboutPage() {
                   >
                     {v.icon}
                   </div>
-                  <h3 className="font-bold text-brand-grey-900 mb-3 text-base" style={{ fontFamily: "var(--font-display)" }}>
+                  <h3 className="font-bold text-brand-grey-900 mb-3 text-lg" style={{ fontFamily: "var(--font-display)" }}>
                     {v.title}
                   </h3>
-                  <p className="text-xs text-brand-grey-500 leading-relaxed">{v.desc}</p>
+                  <p className="text-sm text-brand-grey-500 leading-relaxed">{v.desc}</p>
                 </div>
               ))}
             </div>
