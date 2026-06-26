@@ -611,12 +611,13 @@ export default function ContactClient({ office, faqs }: Props) {
           <p className="text-white/70 text-base mb-8">
             Our team is available Monday to Saturday, 9AM to 6:30PM IST.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={`tel:${office.phone.replace(/[\s-]/g, "")}`} className="btn-outline !text-white !border-white hover:!bg-white hover:!text-brand-red">
+          <div className="flex flex-col items-center sm:flex-row gap-4 justify-center">
+
+            <a href={`tel:${office.phone.replace(/[\s-]/g, "")}`} className="btn-outline !text-white !border-white hover:!bg-white hover:!text-brand-red justify-center">
               <Phone size={15} />
               {office.phone}
             </a>
-            <a href={`mailto:${office.email}`} className="btn-outline !text-white !border-white/50 hover:!bg-white/20">
+            <a href={`mailto:${office.email}`} className="btn-outline !text-white !border-white/50 hover:!bg-white/20 justify-center">
               <Mail size={15} />
               {office.email}
             </a>

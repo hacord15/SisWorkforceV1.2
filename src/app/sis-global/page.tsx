@@ -11,15 +11,13 @@ import {
   Users, Globe, Shield, Heart, Lightbulb, MessageSquare, Eye, Rocket,
 } from "lucide-react";
 
-// ── Static data ─────────────────────────────────────────────────────────────
-
 const STATS = [
-  { value: 15982, suffix: " cr", label: "REVENUE",   decimal: false },
-  { value: 22329,  suffix: "",   label: "CUSTOMERS",  decimal: false },
-  { value: 357028, suffix: "",   label: "EMPLOYEES",  decimal: false },
-  { value: 446,    suffix: "",   label: "OFFICES",    decimal: false },
-  { value: 78154,  suffix: "",   label: "SITES",      decimal: false },
-  { value: 790,    suffix: "",   label: "DISTRICTS",  decimal: false },
+  { value: 15982,  suffix: " cr", label: "REVENUE"   },
+  { value: 22329,  suffix: "",    label: "CUSTOMERS"  },
+  { value: 357028, suffix: "",    label: "EMPLOYEES"  },
+  { value: 446,    suffix: "",    label: "OFFICES"    },
+  { value: 78154,  suffix: "",    label: "SITES"      },
+  { value: 790,    suffix: "",    label: "DISTRICTS"  },
 ];
 
 const FEATURES = [
@@ -47,13 +45,11 @@ const VALUES = [
   { icon: <CheckCircle size={22} />,   title: "Customer Commitment",     desc: "Maintaining the highest standards of service delivery and client satisfaction." },
 ];
 
-// ── Images (Unsplash — replace with /public assets) ───────────────────────
-const IMG_HERO        = "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1400&q=85";
-const IMG_WHO_WE_ARE  = "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80";
-const IMG_VISION      = "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&q=80";
-const IMG_MISSION     = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&q=80";
+const IMG_HERO       = "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1400&q=85";
+const IMG_WHO_WE_ARE = "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80";
+const IMG_VISION     = "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&q=80";
+const IMG_MISSION    = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&q=80";
 
-// ── Animated counter hook ─────────────────────────────────────────────────
 function useCountUp(target: number, duration = 2000, started: boolean) {
   const [count, setCount] = useState(0);
   useEffect(() => {
@@ -62,7 +58,6 @@ function useCountUp(target: number, duration = 2000, started: boolean) {
     const step = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
-      // ease-out cubic
       const eased = 1 - Math.pow(1 - progress, 3);
       setCount(Math.floor(eased * target));
       if (progress < 1) requestAnimationFrame(step);
@@ -86,22 +81,16 @@ function StatCounter({ value, suffix, label }: { value: number; suffix: string; 
     return () => observer.disconnect();
   }, []);
 
-  const display = count.toLocaleString("en-IN") + suffix;
-
   return (
     <div ref={ref} className="relative">
-      <div
-        className="text-4xl font-bold mb-1 tabular-nums"
-        style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.02em" }}
-      >
-        {display}
+      <div className="text-4xl font-bold mb-1 tabular-nums" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.02em" }}>
+        {count.toLocaleString("en-IN") + suffix}
       </div>
       <div className="text-white/90 text-sm font-semibold">{label}</div>
     </div>
   );
 }
 
-// ── Page ───────────────────────────────────────────────────────────────────
 export default function AboutPage() {
   return (
     <>
@@ -110,24 +99,13 @@ export default function AboutPage() {
 
         {/* ── HERO ── */}
         <section className="relative overflow-hidden" style={{ background: "linear-gradient(135deg,#FFF5F6 0%,#FFF0F2 50%,#F5F5F5 100%)" }}>
-          {/* Background hero image — right half */}
           <div className="absolute right-0 top-0 w-1/2 h-full hidden md:block">
-            <Image
-              src={IMG_HERO}
-              alt="SIS Global diverse workforce team"
-              fill
-              className="object-cover object-center"
-              priority
-            />
-            {/* fade left so text stays legible */}
+            <Image src={IMG_HERO} alt="SIS Global diverse workforce team" fill className="object-cover object-center" priority />
             <div className="absolute inset-0" style={{ background: "linear-gradient(to right, #FFF5F6 0%, transparent 40%)" }} />
           </div>
-
-          {/* Decorative radial overlays */}
           <div className="absolute right-0 top-0 w-1/2 h-full pointer-events-none overflow-hidden">
             <div className="absolute right-0 top-0 w-full h-full" style={{ background: "radial-gradient(ellipse 60% 80% at 80% 40%, rgba(200,16,46,0.06) 0%, transparent 70%)" }} />
           </div>
-
           <div className="max-w-7xl mx-auto px-4 py-20 relative z-10">
             <div className="flex items-center gap-2 text-xs text-brand-grey-500 mb-8">
               <Link href="/" className="hover:text-brand-red transition-colors">Home</Link>
@@ -139,7 +117,7 @@ export default function AboutPage() {
                 About <span className="text-brand-red">SIS Group</span>
               </h1>
               <p className="text-brand-grey-500 text-lg leading-relaxed mb-8 max-w-xl">
-                SIS Group is one of Asia-Pacific's leading security and workforce management organizations with:
+                SIS Group is one of Asia-Pacific's leading security and workforce management organizations.
               </p>
             </div>
           </div>
@@ -185,45 +163,22 @@ export default function AboutPage() {
                   ))}
                 </div>
               </div>
-
-              {/* Right — image + feature cards overlay */}
               <div className="relative">
-                {/* Main image */}
                 <div className="relative w-full h-72 rounded-2xl overflow-hidden shadow-lg mb-4">
-                  <Image
-                    src={IMG_WHO_WE_ARE}
-                    alt="SIS Global workforce solutions team meeting"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover object-center"
-                  />
+                  <Image src={IMG_WHO_WE_ARE} alt="SIS Global workforce solutions team meeting" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-center" />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-grey-900/30 to-transparent" />
                 </div>
-
-                {/* Feature cards below */}
-<div className="grid grid-cols-2 gap-4">
-  {FEATURES.map((f, i) => (
-    <div
-      key={f.title}
-      className="rounded-2xl p-6 border transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-      style={{
-        background:  i % 2 === 0 ? "#FFF5F6" : "#FAFAFA",
-        borderColor: i % 2 === 0 ? "rgba(200,16,46,0.15)" : "#E5E5E5",
-      }}
-    >
-      <div
-        className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-        style={{ background: i % 2 === 0 ? "rgba(200,16,46,0.1)" : "#F0F0F0", color: "#C8102E" }}
-      >
-        {f.icon}
-      </div>
-      <h3 className="font-bold text-brand-grey-900 text-base mb-2" style={{ fontFamily: "var(--font-display)" }}>
-        {f.title}
-      </h3>
-      <p className="text-sm text-brand-grey-500 leading-relaxed">{f.desc}</p>
-    </div>
-  ))}
-</div>
+                <div className="grid grid-cols-2 gap-4">
+                  {FEATURES.map((f, i) => (
+                    <div key={f.title} className="rounded-2xl p-6 border transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style={{ background: i % 2 === 0 ? "#FFF5F6" : "#FAFAFA", borderColor: i % 2 === 0 ? "rgba(200,16,46,0.15)" : "#E5E5E5" }}>
+                      <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: i % 2 === 0 ? "rgba(200,16,46,0.1)" : "#F0F0F0", color: "#C8102E" }}>
+                        {f.icon}
+                      </div>
+                      <h3 className="font-bold text-brand-grey-900 text-base mb-2" style={{ fontFamily: "var(--font-display)" }}>{f.title}</h3>
+                      <p className="text-sm text-brand-grey-500 leading-relaxed">{f.desc}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -231,97 +186,50 @@ export default function AboutPage() {
 
         {/* ── VISION & MISSION ── */}
         <section className="py-20 relative" style={{ background: "linear-gradient(135deg,#171717 0%,#262626 100%)" }}>
-          {/* Decorative rings */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full border border-white/5" />
             <div className="absolute -bottom-20 -left-20 w-72 h-72 rounded-full border border-brand-red/10" />
           </div>
-
           <div className="max-w-7xl mx-auto px-4 relative z-10">
             <div className="grid md:grid-cols-2 gap-8">
-
               {/* Vision */}
-              <div
-                className="rounded-3xl overflow-hidden relative"
-                style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
-              >
-                {/* Image top */}
+              <div className="rounded-3xl overflow-hidden relative" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
                 <div className="relative w-full h-48">
-                  <Image
-                    src={IMG_VISION}
-                    alt="Vision — global workforce leadership"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover object-center"
-                  />
+                  <Image src={IMG_VISION} alt="Vision" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-center" />
                   <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(23,23,23,0.3) 0%, rgba(23,23,23,0.85) 100%)" }} />
-                  <div
-                    className="absolute top-5 left-5 w-14 h-14 rounded-2xl flex items-center justify-center"
-                    style={{ background: "rgba(200,16,46,0.80)", color: "#fff" }}
-                  >
+                  <div className="absolute top-5 left-5 w-14 h-14 rounded-2xl flex items-center justify-center" style={{ background: "rgba(200,16,46,0.80)", color: "#fff" }}>
                     <Eye size={24} />
                   </div>
                   <span className="absolute bottom-4 left-6 text-xs font-bold tracking-[0.2em] uppercase text-brand-red/90">Our Vision</span>
                 </div>
-
                 <div className="p-10 relative z-10">
-                  {/* Red glow */}
-                  <div
-                    className="absolute -top-16 -right-16 w-48 h-48 rounded-full pointer-events-none"
-                    style={{ background: "radial-gradient(circle, rgba(200,16,46,0.18) 0%, transparent 70%)" }}
-                  />
-                  <h2 className="text-3xl font-bold text-white mb-4 leading-tight" style={{ fontFamily: "var(--font-display)" }}>
-                    Vision
-                  </h2>
+                  <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(200,16,46,0.18) 0%, transparent 70%)" }} />
+                  <h2 className="text-3xl font-bold text-white mb-4 leading-tight" style={{ fontFamily: "var(--font-display)" }}>Vision</h2>
                   <div className="w-10 h-0.5 bg-brand-red mb-6 rounded-full" />
                   <p className="text-white/65 text-base leading-relaxed">
-                    To become the world's most trusted global workforce solutions company by creating
-                    sustainable employment opportunities and enabling business growth through ethical
-                    and technology-driven workforce deployment.
+                    To become the world's most trusted global workforce solutions company by creating sustainable employment opportunities and enabling business growth through ethical and technology-driven workforce deployment.
                   </p>
                 </div>
               </div>
 
               {/* Mission */}
-              <div
-                className="rounded-3xl overflow-hidden relative"
-                style={{ background: "rgba(200,16,46,0.08)", border: "1px solid rgba(200,16,46,0.20)" }}
-              >
-                {/* Image top */}
+              <div className="rounded-3xl overflow-hidden relative" style={{ background: "rgba(200,16,46,0.08)", border: "1px solid rgba(200,16,46,0.20)" }}>
                 <div className="relative w-full h-48">
-                  <Image
-                    src={IMG_MISSION}
-                    alt="Mission — skilled professionals ready for deployment"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover object-center"
-                  />
+                  <Image src={IMG_MISSION} alt="Mission" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-center" />
                   <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(23,23,23,0.3) 0%, rgba(160,13,37,0.80) 100%)" }} />
-                  <div
-                    className="absolute top-5 left-5 w-14 h-14 rounded-2xl flex items-center justify-center"
-                    style={{ background: "rgba(200,16,46,0.90)", color: "#fff" }}
-                  >
+                  <div className="absolute top-5 left-5 w-14 h-14 rounded-2xl flex items-center justify-center" style={{ background: "rgba(200,16,46,0.90)", color: "#fff" }}>
                     <Rocket size={24} />
                   </div>
                   <span className="absolute bottom-4 left-6 text-xs font-bold tracking-[0.2em] uppercase text-white/80">Our Mission</span>
                 </div>
-
                 <div className="p-10 relative z-10">
-                  <div
-                    className="absolute -top-16 -left-16 w-48 h-48 rounded-full pointer-events-none"
-                    style={{ background: "radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%)" }}
-                  />
-                  <h2 className="text-3xl font-bold text-white mb-4 leading-tight" style={{ fontFamily: "var(--font-display)" }}>
-                    Mission
-                  </h2>
+                  <div className="absolute -top-16 -left-16 w-48 h-48 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%)" }} />
+                  <h2 className="text-3xl font-bold text-white mb-4 leading-tight" style={{ fontFamily: "var(--font-display)" }}>Mission</h2>
                   <div className="w-10 h-0.5 bg-brand-red mb-6 rounded-full" />
                   <ul className="space-y-4">
                     {MISSION_POINTS.map((point) => (
                       <li key={point} className="flex items-start gap-3">
-                        <div
-                          className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-                          style={{ background: "rgba(200,16,46,0.30)" }}
-                        >
+                        <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "rgba(200,16,46,0.30)" }}>
                           <CheckCircle size={12} className="text-brand-red" />
                         </div>
                         <span className="text-white/70 text-sm leading-relaxed">{point}</span>
@@ -330,39 +238,24 @@ export default function AboutPage() {
                   </ul>
                 </div>
               </div>
-
             </div>
           </div>
         </section>
 
-       {/* ── VALUES ── */}
+        {/* ── VALUES ── */}
         <section className="py-20" style={{ background: "linear-gradient(135deg,#F9F9F9 0%,#F2F2F2 100%)" }}>
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-14">
-              <h2 className="text-5xl font-bold text-brand-grey-900" style={{ fontFamily: "var(--font-display)" }}>
-                Core Values
-              </h2>
+              <h2 className="text-5xl font-bold text-brand-grey-900" style={{ fontFamily: "var(--font-display)" }}>Core Values</h2>
               <div className="section-divider mt-4" />
             </div>
-
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {VALUES.map((v, i) => (
-                <div
-                  key={v.title}
-                  className="group bg-white rounded-2xl p-8 text-center border border-brand-grey-200 hover:border-brand-red/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
-                >
-                  <div
-                    className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5 transition-all duration-300 group-hover:scale-110"
-                    style={{
-                      background: i % 2 === 0 ? "rgba(200,16,46,0.08)" : "#F0F0F0",
-                      color: "#C8102E",
-                    }}
-                  >
+                <div key={v.title} className="group bg-white rounded-2xl p-8 text-center border border-brand-grey-200 hover:border-brand-red/30 hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5 transition-all duration-300 group-hover:scale-110" style={{ background: i % 2 === 0 ? "rgba(200,16,46,0.08)" : "#F0F0F0", color: "#C8102E" }}>
                     {v.icon}
                   </div>
-                  <h3 className="font-bold text-brand-grey-900 mb-3 text-lg" style={{ fontFamily: "var(--font-display)" }}>
-                    {v.title}
-                  </h3>
+                  <h3 className="font-bold text-brand-grey-900 mb-3 text-lg" style={{ fontFamily: "var(--font-display)" }}>{v.title}</h3>
                   <p className="text-sm text-brand-grey-500 leading-relaxed">{v.desc}</p>
                 </div>
               ))}
@@ -371,16 +264,12 @@ export default function AboutPage() {
         </section>
 
         {/* ── CTA BANNER ── */}
-        <section
-          className="py-20 text-white text-center relative overflow-hidden"
-          style={{ background: "linear-gradient(135deg,#C8102E 0%,#A00D25 60%,#7A0A1C 100%)" }}
-        >
+        <section className="py-20 text-white text-center relative overflow-hidden" style={{ background: "linear-gradient(135deg,#C8102E 0%,#A00D25 60%,#7A0A1C 100%)" }}>
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <div className="absolute -top-20 -left-20 w-80 h-80 rounded-full border border-white/10" />
             <div className="absolute -bottom-10 -right-10 w-60 h-60 rounded-full border border-white/10" />
             <div className="absolute top-1/2 left-1/4 w-40 h-40 rounded-full border border-white/5" />
           </div>
-
           <div className="max-w-3xl mx-auto px-4 relative z-10">
             <Users size={36} className="mx-auto mb-4 opacity-80" />
             <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight" style={{ fontFamily: "var(--font-display)" }}>
@@ -390,11 +279,19 @@ export default function AboutPage() {
               Whether you&apos;re looking for your next opportunity or building your next great team —
               SIS Global Workforce Solutions is your partner.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/jobs" className="btn-outline !text-white !border-white hover:!bg-white hover:!text-brand-red">
+
+            {/* ── Buttons — centered on mobile ── */}
+            <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <Link
+                href="/jobs"
+                className="btn-outline !text-white !border-white hover:!bg-white hover:!text-brand-red w-full sm:w-auto justify-center"
+              >
                 Browse Jobs <ArrowRight size={15} />
               </Link>
-              <Link href="/" className="btn-outline !text-white !border-white/50 hover:!bg-white/20">
+              <Link
+                href="/contact"
+                className="btn-outline !text-white !border-white/50 hover:!bg-white/20 w-full sm:w-auto justify-center"
+              >
                 Get In Touch
               </Link>
             </div>
