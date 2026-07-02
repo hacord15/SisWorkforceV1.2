@@ -119,7 +119,7 @@ export default function PrivacyPolicy() {
                 help us operate our website and services.
               </li>
               <li>
-                <strong>Business Partners:</strong> Organizations collaborating
+                <strong>Business Partners:</strong> Organisations collaborating
                 with us for recruitment and workforce solutions.
               </li>
               <li>
@@ -228,12 +228,18 @@ export default function PrivacyPolicy() {
 
               <div className="space-y-2">
                 <p>
-                  📍 A-28 & 29, Phase-1, Okhla Industrial Area, New Delhi –
+                  <b>Address:</b> A-28 & 29, Phase-1, Okhla Industrial Area, New Delhi –
                   110020, India
                 </p>
-                <p>📧 info@sisglobalworkforce.com</p>
-                <p>📞 +91-11-49032418</p>
-                <p>🌐 https://sisglobalworkforce.com</p>
+                <p>
+                  <b>Email:</b> info@sisglobalworkforce.com
+                </p>
+                <p>
+                  <b>Phone:</b> +91-11-49032418
+                </p>
+                <p>
+                  <b>Website:</b> https://sisglobalworkforce.com
+                </p>
               </div>
             </div>
           </div>

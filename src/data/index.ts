@@ -64,7 +64,7 @@ export const industries = [
       bulletpoints: [
         "Nurses",
         "Caregivers",
-        "Maedical Technicians",
+        "Medical Technicians",
         "MRI Technologists",
       ],
     icon: HeartPulse,
@@ -172,7 +172,7 @@ export const whyCards: WhyCard[] = [
     id: 2,
     title: "Short-Term Staffing",
     description:
-      "Rapid workforce mobilization for seasonal or project-based requirements.",
+      "Rapid workforce mobilisation for seasonal or project-based requirements.",
     icon: Bot,
   },
   {

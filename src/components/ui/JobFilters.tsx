@@ -4,9 +4,9 @@ import { useState, useEffect, useCallback } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { SlidersHorizontal, X } from "lucide-react";
 
-const JOB_TYPES = ["Full Time", "Part Time", "Remote", "Hybrid", "Contract"];
-const EXPERIENCE = ["0–2 Years", "2–5 Years", "5–10 Years", "10+ Years"];
-const SALARY_RANGES = ["$0 – $30k", "$30k – $60k", "$60k – $100k", "$100k+"];
+const JOB_TYPES = ["Full-time", "Part-time", "Remote", "Hybrid", "Contract"];
+const EXPERIENCE = ["0–2 years", "2–5 years", "5–10 years", "10+ years"];
+const SALARY_RANGES = ["$0–$30k", "$30k–$60k", "$60k–$100k", "$100k+"];
 
 interface ListItem {
   name: string;

@@ -19,14 +19,17 @@ export default function CTASection() {
           className="text-4xl md:text-5xl font-bold mb-4"
           style={{ fontFamily: "var(--font-display)" }}
         >
-          Ready to Build Your Dream Team?
+         Ready to Build a Reliable Global
+Workforce?
         </h2>
         <p className="text-white/80 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-          Let SIS Global Workforce Solutions handle your hiring. Get access to verified talent across all industries.
+          Let SIS Global Workforce Solutions manage
+your hiring and give you access to verified
+talent across industries.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link href="/employers" className="btn-outline !text-white !border-white hover:!bg-white hover:!text-brand-red">
-            Partner With Us <ArrowRight size={16} />
+            Partner with Us <ArrowRight size={16} />
           </Link>
           <a href="tel:01244171888" className="btn-outline !text-white !border-white/60 hover:!bg-white/20">
             <Phone size={16} />

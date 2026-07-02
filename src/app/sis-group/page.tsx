@@ -65,7 +65,7 @@ function useCountUp(target: number, duration = 1800, delay = 0) {
 
 const GROUP_STATS = [
   {
-    raw: "₹15,982 Cr+",
+    raw: "₹15,982 Cr",
     numeric: null,
     suffix: "",
     prefix: "₹",
@@ -73,9 +73,9 @@ const GROUP_STATS = [
     sub: "FY 2023–24",
   },
   {
-    raw: "357,028+",
+    raw: "357,028",
     numeric: 357028,
-    suffix: "+",
+    suffix: "",
     prefix: "",
     label: "Employees",
     sub: "Across all verticals",
@@ -83,15 +83,15 @@ const GROUP_STATS = [
   {
     raw: "78,154",
     numeric: 78154,
-    suffix: "+",
+    suffix: "",
     prefix: "",
     label: "Sites",
-    sub: "Founded 1992",
+    sub: "Founded in 1992",
   },
   {
     raw: "22,329+",
     numeric: 22329,
-    suffix: "+",
+    suffix: "",
     prefix: "",
     label: "Customers",
     sub: "Diversified portfolio",
@@ -99,15 +99,15 @@ const GROUP_STATS = [
   {
     raw: "446+",
     numeric: 446,
-    suffix: "+",
+    suffix: "",
     prefix: "",
     label: "Offices",
     sub: "Pan-India presence",
   },
   {
-    raw: "790+",
+    raw: "790",
     numeric: 790,
-    suffix: "+",
+    suffix: "",
     prefix: "",
     label: "Districts",
     sub: "International operations",
@@ -187,7 +187,7 @@ const BUSINESSES = [
     color: "#C8102E",
     title: "SIS Global Workforce",
     category: "Workforce Solutions",
-    desc: "Technology-enabled workforce outsourcing connecting skilled, verified talent with trusted employers across industries and geographies.",
+    desc: "Technology-enabled workforce outsourcing that connects skilled, verified talent with trusted employers across industries and geographies. ",
     highlights: [
       "Permanent Staffing",
       "Contract Staffing",
@@ -475,11 +475,11 @@ export default function SISIndiaGroupPage() {
                 <p className="text-white/60 text-lg leading-relaxed mb-4">
                   A diversified conglomerate founded in 1992, SIS Group is the
                   country&apos;s largest integrated security and services
-                  organisation — with operations spanning security, workforce,
+                  organisation — with operations spanning security, workforce solutions,
                   cash management, facility services, and technology.
                 </p>
                 <p className="text-white/50 text-base leading-relaxed mb-10">
-                  Listed on the NSE & BSE, the Group employs over 2,50,000
+                  Listed on the NSE and BSE, the Group employs over 2,50,000
                   professionals and serves clients across 22+ Indian states and
                   8 countries worldwide.
                 </p>
@@ -526,8 +526,10 @@ export default function SISIndiaGroupPage() {
               <div className="flex items-center gap-3">
                 <TrendingUp size={18} className="text-white/70 flex-shrink-0" />
                 <span className="text-white/80 text-sm">
-                  Listed on <strong className="text-white">NSE & BSE</strong> —
-                  India&apos;s most trusted integrated services conglomerate
+                  Listed on the<strong className="text-white">NSE and BSE</strong> —
+                  one of India&apos;smost trusted integrated services
+                  conglomerates.
+
                 </span>
               </div>
               <a
@@ -559,8 +561,9 @@ export default function SISIndiaGroupPage() {
                 Our Business Verticals
               </h2>
               <p className="text-brand-grey-500 mt-4 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
-                A diversified portfolio of world-class service businesses,
-                united by a commitment to excellence
+                A diversified portfolio of world-class
+                service businesses, united by a
+                commitment to excellence.
               </p>
               <div className="section-divider mt-6" />
             </div>
@@ -689,7 +692,7 @@ export default function SISIndiaGroupPage() {
                   { year: "2014", event: "International expansion" },
                   { year: "2017", event: "Listed on NSE & BSE" },
                   { year: "2021", event: "₹10,000 Cr revenue milestone" },
-                  { year: "2024", event: "2,50,000+ workforce" },
+                  { year: "2024", event: "2,50,000+ employees" },
                 ].map((item, i) => (
                   <div
                     key={item.year}
@@ -919,8 +922,9 @@ export default function SISIndiaGroupPage() {
                 Partner with India&apos;s Most Trusted Services Group
               </h3>
               <p className="text-white/50 text-sm leading-relaxed mb-8">
-                Whether you need security, workforce, cash management or
-                facility services — the SIS Group has a solution for you.
+               Whether you need security, workforce,
+cash management, or facility services, the
+SIS Group has a solution for you.
               </p>
               <a
                 href="https://www.sisindia.com"
@@ -947,7 +951,8 @@ export default function SISIndiaGroupPage() {
                 className="text-3xl font-bold mb-4 leading-tight"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                Looking for Workforce Solutions Specifically?
+                Looking specifically for workforce
+solutions?
               </h3>
               <p className="text-white/70 text-sm leading-relaxed mb-8">
                 Hire skilled, verified talent across all industries with our
@@ -958,7 +963,7 @@ export default function SISIndiaGroupPage() {
                   href="/jobs"
                   className="btn-outline !text-white !border-white hover:!bg-white hover:!text-brand-red"
                 >
-                  Browse Jobs <ArrowRight size={14} />
+                   Hire Workforce <ArrowRight size={14} />
                 </Link>
                 <a
                   href="tel:01244171888"

@@ -15,7 +15,7 @@ const PLATFORM_FEATURES = [
   { icon: Database,          label: "Candidate database management"   },
   { icon: LayoutDashboard,   label: "Employer dashboard"              },
   { icon: MessageCircle,     label: "Grievance management"            },
-  { icon: Zap,               label: "Faster hiring visibility"        },
+  { icon: Zap,               label: "Improved hiring visibility"        },
   { icon: BarChart3,         label: "Workforce analytics"             },
   { icon: RefreshCcw,        label: "Employee lifecycle management"   },
 ];
@@ -86,7 +86,7 @@ export default function TechSection() {
             }`}
           >
             <p className="text-lg font-bold tracking-widest uppercase text-white/40 mb-5">
-              The platform ensures
+              The platform enables:
             </p>
 
             <div className="grid grid-cols-2 gap-3">
@@ -111,7 +111,7 @@ export default function TechSection() {
             </div>
           </div>
 
-          {/* Right — employer benefit card */}
+          {/* Right — Employer Benefits card */}
           <div
             className={`transition-all duration-700 delay-200 ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
@@ -132,7 +132,7 @@ export default function TechSection() {
 
               <div className="relative z-10">
                 <p className="text-lg font-bold tracking-widest uppercase text-brand-red/70 mb-2">
-                  Employer Benefit
+                  Employer Benefits
                 </p>
                 <h3
                   className="text-2xl font-bold text-white mb-2"

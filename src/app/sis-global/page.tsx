@@ -24,23 +24,23 @@ const FEATURES = [
   { icon: <Target size={20} />,    title: "Smart Matching",     desc: "AI-powered job recommendations tailored to your skills and experience." },
   { icon: <Shield size={20} />,    title: "Verified Employers", desc: "Every company is thoroughly vetted before listing jobs on our platform." },
   { icon: <BarChart3 size={20} />, title: "Salary Insights",    desc: "Real-time salary benchmarking data to help candidates negotiate better." },
-  { icon: <Cpu size={20} />,       title: "Technology Driven",  desc: "Our proprietary platform connects talent with opportunity at scale." },
+  { icon: <Cpu size={20} />,       title: "Technology-driven",  desc: "Our proprietary platform connects verified workforce talent with employer requirements at scale." },
 ];
 
 const MISSION_POINTS = [
-  "To provide skilled and industry-ready workforce globally",
-  "To uplift worker families through international careers",
+  "To provide skilled, industry-ready workforce solutions globally.",
+  "To uplift workers and their families through international career opportunities.",
   "To maintain ethical and compliant recruitment practices",
   "To build long-term workforce partnerships with global employers",
 ];
 
 const VALUES = [
-  { icon: <Globe size={22} />,         title: "Integrity",               desc: "Building a platform where everyone has equal opportunity regardless of background, location, or experience." },
-  { icon: <Lightbulb size={22} />,     title: "Ethical Recruitment",     desc: "Constantly improving how people find jobs and how companies find the right talent, faster." },
+  { icon: <Globe size={22} />,         title: "Integrity",               desc: "" },
+  { icon: <Lightbulb size={22} />,     title: "Ethical Recruitment",     desc: "Following transparent, responsible, and fee-free recruitment practices that protect workers and employers." },
   { icon: <MessageSquare size={22} />, title: "Transparency",            desc: "Honest communication with candidates, employers, and our own team — always." },
-  { icon: <Heart size={22} />,         title: "Compliance",              desc: "Every hire we facilitate is a life changed. That responsibility drives everything we do." },
-  { icon: <Users size={22} />,         title: "Workforce Welfare",       desc: "We succeed when our candidates and clients succeed. We work together to make that happen." },
-  { icon: <Cpu size={22} />,           title: "Continuous Learning",     desc: "Leveraging technology to solve the world's toughest workforce challenges at scale." },
+  { icon: <Heart size={22} />,         title: "Compliance",              desc: "Ensuring every deployment follows applicable labour, visa, documentation, and contractual requirements." },
+  { icon: <Users size={22} />,         title: "Workforce Welfare",       desc: "Supporting worker welfare before, during, and after deployment through training, guidance, and assistance." },
+  { icon: <Cpu size={22} />,           title: "Continuous Learning",     desc: "Continuously upskilling candidates and teams to improve readiness, productivity, and long-term employability." },
   { icon: <BarChart3 size={22} />,     title: "Technology & Innovation", desc: "Using data and insights to continuously improve our platform and the outcomes we deliver." },
   { icon: <CheckCircle size={22} />,   title: "Customer Commitment",     desc: "Maintaining the highest standards of service delivery and client satisfaction." },
 ];
@@ -117,7 +117,8 @@ export default function AboutPage() {
                 About <span className="text-brand-red">SIS Group</span>
               </h1>
               <p className="text-brand-grey-500 text-lg leading-relaxed mb-8 max-w-xl">
-                SIS Group is one of Asia-Pacific's leading security and workforce management organizations.
+                SIS Group is one of Asia-Pacific’s leading security and
+workforce management organisations.
               </p>
             </div>
           </div>
@@ -152,7 +153,11 @@ export default function AboutPage() {
                 </h2>
                 <div className="section-divider section-divider-left mb-6" />
                 <p className="text-brand-grey-500 leading-relaxed mb-4">
-                  SIS Global Workforce Solutions is the international workforce deployment arm focused on solving global workforce shortages with compliant, scalable, and industry-ready talent.
+                  SIS Global Workforce Solutions is the international
+workforce deployment arm of the Group, focused on
+solving global workforce shortages with compliant,
+scalable, and industry-ready talent.
+
                 </p>
                 <div className="space-y-3">
                   {["Overseas workforce deployment", "Skilled manpower sourcing", "Workforce lifecycle management", "Compliance support", "Payroll outsourcing", "Workforce scalability solutions"].map((item) => (
@@ -207,7 +212,11 @@ export default function AboutPage() {
                   <h2 className="text-3xl font-bold text-white mb-4 leading-tight" style={{ fontFamily: "var(--font-display)" }}>Vision</h2>
                   <div className="w-10 h-0.5 bg-brand-red mb-6 rounded-full" />
                   <p className="text-white/65 text-base leading-relaxed">
-                    To become the world's most trusted global workforce solutions company by creating sustainable employment opportunities and enabling business growth through ethical and technology-driven workforce deployment.
+                   To become the world’s most trusted global workforce
+solutions company by creating sustainable employment
+opportunities and enabling business growth through
+ethical, technology-driven workforce deployment.
+
                   </p>
                 </div>
               </div>
@@ -276,8 +285,9 @@ export default function AboutPage() {
               Ready to Work With Us?
             </h2>
             <p className="text-white/75 text-lg mb-10 leading-relaxed">
-              Whether you&apos;re looking for your next opportunity or building your next great team —
-              SIS Global Workforce Solutions is your partner.
+              Whether you are looking for your next opportunity or
+building your next great team, SIS Global Workforce
+Solutions is your trusted partner.
             </p>
 
             {/* ── Buttons — centered on mobile ── */}

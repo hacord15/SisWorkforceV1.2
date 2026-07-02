@@ -6,14 +6,14 @@ import { whyCards } from "@/data";
 
 // Card-level imagery mapped by index — replace with your own assets as needed
 const CARD_IMAGES = [
-  "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80", // team / temp staffing
-  "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80", // direct hire / permanent
-  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80", // executive search
-  "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80", // on-site managed
+  "/assets/whySISsection/cardImg1.jpg", // team / temp staffing
+  "/assets/whySISsection/cardImg2.jpg", // direct hire / permanent
+  "/assets/whySISsection/cardImg3.jpg", // executive search
+  "/assets/whySISsection/cardImg4.jpg", // on-site managed
 ];
 
 const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400&q=85";
+  "/assets/whySISsection/Hero_img.jpg"; // hero banner image
 
 export default function WhySISSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -82,7 +82,8 @@ export default function WhySISSection() {
                 className="text-white text-xl sm:text-3xl font-bold leading-snug drop-shadow"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                The right talent, at the right time — every time.
+                The right talent at the right time — every time.
+
               </p>
               <div className="w-10 h-0.5 bg-brand-red mt-4" />
             </div>

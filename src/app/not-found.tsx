@@ -11,7 +11,7 @@ export const metadata = {
 const QUICK_LINKS = [
   { label: "Browse Jobs",       href: "/find-jobs",         icon: <Briefcase size={15} /> },
   { label: "For Employers",     href: "/employers",         icon: <Search size={15} /> },
-  { label: "Partner With Us",   href: "/associate-partner", icon: <Search size={15} /> },
+  { label: "Partner with Us",   href: "/associate-partner", icon: <Search size={15} /> },
   { label: "Contact Us",        href: "/contact",           icon: <Phone size={15} /> },
 ];
 
