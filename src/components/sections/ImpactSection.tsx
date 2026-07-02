@@ -325,7 +325,7 @@ export default function ImpactSection() {
           {/* main image */}
           <div className="imp-img-frame">
             <Image
-              src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80"
+              src="/assets/impactSection/impactImg.jpg"
               alt="Workers building international careers through SIS Global"
               width={800}
               height={1000}
@@ -365,8 +365,8 @@ export default function ImpactSection() {
           />
 
           <p className={`imp-body imp-fade imp-d3${isVisible ? " in" : ""}`}>
-            Our ethos lies in providing meaningful employment — not just limited
-            to jobs, but about <strong>transforming lives.</strong>
+           Our ethos is rooted in meaningful
+employment — not just creating jobs, but  <strong>transforming lives.</strong>
           </p>
           <p className={`imp-body imp-fade imp-d3${isVisible ? " in" : ""}`}>
             Through ethical recruitment, continuous upskilling, insurance

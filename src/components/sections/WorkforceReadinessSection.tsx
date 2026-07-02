@@ -11,11 +11,11 @@ import Link from "next/link";
 
 const TRAINING_MODULES = [
   { icon: ClipboardCheck, label: "Trade testing"              },
-  { icon: Languages,      label: "Language familiarization"   },
+  { icon: Languages,      label: "Language familiarisation"   },
   { icon: Globe2,         label: "Cultural awareness"         },
   { icon: FileCheck,      label: "Visa & compliance training" },
   { icon: HardHat,        label: "Safety orientation"         },
-  { icon: Brain,          label: "Behavioral assessment"      },
+  { icon: Brain,          label: "Behavioural assessment"      },
   { icon: Briefcase,      label: "Workplace readiness"        },
   { icon: PlaneTakeoff,   label: "Pre-departure orientation"  },
 ];
@@ -44,9 +44,9 @@ const CLIENT_BENEFITS = [
 ];
 
 // Relevant Unsplash images — replace with your own /public assets
-const HERO_IMG   = "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1400&q=85"; // training classroom
-const MODULE_IMG = "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80";  // team briefing
-const DEPLOY_IMG = "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80";    // professional at work
+const HERO_IMG   = "/assets/WorkforceReadiness/HERO_IMG.jpg"; // training classroom
+const MODULE_IMG = "/assets/WorkforceReadiness/MODULE_IMG.jpg";  // team briefing
+const DEPLOY_IMG = "/assets/WorkforceReadiness/DEPLOY_IMG.jpg";    // professional at work
 
 export default function WorkforceReadinessSection() {
   const { ref, isVisible } = useIntersectionObserver();
@@ -83,8 +83,11 @@ export default function WorkforceReadinessSection() {
           </h2>
           <div className="section-divider mt-4" />
           <p className="text-brand-grey-500 text-lg mt-5 max-w-2xl mx-auto leading-relaxed">
-            Every candidate deployed through SIS Global undergoes structured training
-            and readiness evaluation before deployment — so your operations never miss a beat.
+            Every candidate placed through SIS Global
+undergoes structured training and
+readiness evaluation before international
+deployment — so your operations never
+miss a beat.
           </p>
         </div>
 
@@ -246,7 +249,7 @@ export default function WorkforceReadinessSection() {
         {/* ── CTA Button — centered below both columns ── */}
         <div className="mt-10 flex justify-center">
           <Link href="/contact" className="btn-primary inline-flex items-center gap-2">
-            Hire Trained Workforce <ArrowRight size={15} />
+            Hire a Trained Workforce <ArrowRight size={15} />
           </Link>
         </div>
       </div>

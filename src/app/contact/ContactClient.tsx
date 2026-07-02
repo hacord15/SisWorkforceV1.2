@@ -543,7 +543,7 @@ export default function ContactClient({ office, faqs }: Props) {
                         }}
                       >
                         {tab === "employer" ? <Briefcase size={15} /> : <Users size={15} />}
-                        {tab === "employer" ? "Partner With Us" : "Find a Job"}
+                        {tab === "employer" ? "Partner with Us" : "Find a Job"}
                       </button>
                     );
                   })}

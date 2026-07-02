@@ -15,9 +15,9 @@ const DESTINATION_REGIONS = [
     region: "Europe",
     badge: "🇪🇺",
     tagline: "Skilled workforce for European markets",
-    desc: "SIS Global deploys verified, AUG-compliant workforce across major European economies through licensed partnerships and regulated recruitment frameworks.",
+    desc: "SIS Global deploys verified, AUG-compliant workforce across major European economies through licenced partnerships and regulated recruitment frameworks.",
     countries: [
-      { name: "Germany", flag: "🇩🇪", detail: "AUG Licensed deployment" },
+      { name: "Germany", flag: "🇩🇪", detail: "AUG-licensed deployment" },
       { name: "Finland", flag: "🇫🇮", detail: "Nordic market specialist" },
       { name: "Italy", flag: "🇮🇹", detail: "Southern Europe hub" },
       { name: "Poland", flag: "🇵🇱", detail: "Central Europe gateway" },
@@ -37,7 +37,7 @@ const DESTINATION_REGIONS = [
     desc: "A primary destination for SIS Global's workforce deployment. We operate with full MOHRE compliance and MEA licensing across all GCC member states.",
     countries: [
       { name: "UAE", flag: "🇦🇪", detail: "MOHRE Compliant — Regional Hub" },
-      { name: "Oman", flag: "🇴🇲", detail: "Sultanate approved partner" },
+      { name: "Oman", flag: "🇴🇲", detail: "Sultanate-approved partner" },
       { name: "Qatar", flag: "🇶🇦", detail: "World Cup legacy workforce" },
     ],
     image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80",
@@ -51,7 +51,7 @@ const SOURCE_COUNTRIES = [
   {
     name: "India",
     flag: "🇮🇳",
-    desc: "Our primary talent origin. Pre-trained, MEA-documented workers across healthcare, engineering, hospitality, and skilled trades.",
+    desc: "Our primary talent origin. Pre-trained, MEA-compliant and properly documented workers across healthcare, engineering, hospitality, and skilled trades.",
     strength: "250,000+ workforce deployed",
     img: "https://visitayodhyarammandir.com/wp-content/uploads/2024/05/image9-2.png",
   },
@@ -65,7 +65,7 @@ const SOURCE_COUNTRIES = [
   {
     name: "Sri Lanka",
     flag: "🇱🇰",
-    desc: "English-proficient, well-educated talent pool excelling in healthcare, hospitality, and domestic services globally.",
+    desc: "An English-proficient, well-educated talent pool excelling in healthcare, hospitality, and domestic services globally.",
     strength: "High compliance standards",
     img: "https://plus.unsplash.com/premium_photo-1666254114402-cd16bc302aea?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
@@ -74,10 +74,10 @@ const SOURCE_COUNTRIES = [
 const LICENSES = [
   {
     code: "MEA",
-    full: "Ministry of External Affairs License",
+    full: "Ministry of External Affairs Licence",
     country: "Government of India",
     flag: "🇮🇳",
-    desc: "Authorised overseas manpower recruitment agent registered with India's Ministry of External Affairs, enabling legal international workforce deployment.",
+    desc: "An authorised overseas manpower recruitment agent registered with India’s Ministry of External Affairs, enabling legal international workforce deployment.",
     color: "#C8102E",
   },
   {
@@ -90,10 +90,10 @@ const LICENSES = [
   },
   {
     code: "AUG",
-    full: "AUG License",
+    full: "AUG Licence",
     country: "Federal Republic of Germany",
     flag: "🇩🇪",
-    desc: "German statutory license for lawful temporary staffing and workforce leasing under the German Temporary Employment Act — enabling compliant EU deployments.",
+    desc: "German statutory licence for lawful temporary staffing and workforce leasing under the German Temporary Employment Act — enabling compliant EU deployments.",
     color: "#1D4ED8",
   },
   {
@@ -108,7 +108,7 @@ const LICENSES = [
 
 const STATS = [
   { value: "9+", label: "Countries", sub: "Active deployments" },
-  { value: "3", label: "Licenses", sub: "MEA · MOHRE · AUG" },
+  { value: "3", label: "Licences", sub: "MEA · MOHRE · AUG" },
   { value: "3", label: "Source Countries", sub: "India · Nepal · Sri Lanka" },
   { value: "100%", label: "Compliance Rate", sub: "Zero violations record" },
 ];
@@ -166,7 +166,7 @@ export default function CountriesPage() {
                     View Destinations <ArrowRight size={15} />
                   </a>
                   <a href="#compliance" className="flex items-center gap-2 px-5 py-3 border border-white/25 text-white/80 text-sm font-semibold rounded hover:border-white/60 hover:text-white transition-colors" style={{ fontFamily: "var(--font-display)" }}>
-                    <Shield size={15} /> Our Licenses
+                    <Shield size={15} /> Our Licences
                   </a>
                 </div>
               </div>
@@ -202,7 +202,7 @@ export default function CountriesPage() {
             <div className="flex items-center gap-3">
               <Globe size={16} className="text-white/70 flex-shrink-0" />
               <span className="text-white/80 text-sm">
-                Deploying workforce to <strong className="text-white">Europe & GCC</strong> — Sourcing from <strong className="text-white">India, Nepal & Sri Lanka</strong>
+               Deploying workforce to <strong className="text-white"> Europe and the GCC</strong> — sourcing from <strong className="text-white"> India, Nepal, and Sri Lanka.</strong>
               </span>
             </div>
             <Link href="/contact" className="text-white text-xs font-bold tracking-widest uppercase hover:underline flex items-center gap-1.5">
@@ -224,7 +224,7 @@ export default function CountriesPage() {
                 Destination Countries
               </h2>
               <p className="text-brand-grey-500 mt-3 max-w-xl mx-auto text-sm leading-relaxed">
-                We deploy across two primary international markets — European Union and GCC — backed by the requisite licences and compliance frameworks in each jurisdiction.
+                We deploy across two primary international markets — the European Union and the GCC — backed by the requisite licences and compliance frameworks in each jurisdiction.
               </p>
               <div className="section-divider mt-5" />
             </div>
@@ -396,7 +396,9 @@ export default function CountriesPage() {
                 Compliance & Licensing
               </h2>
               <p className="text-brand-grey-500 mt-3 max-w-xl mx-auto text-sm leading-relaxed">
-                SIS Global operates with a strong compliance-first approach, holding the requisite licences in every jurisdiction we operate in.
+                SIS Global follows a compliance-first approach and
+holds the requisite licences across the jurisdictions in
+which it operates
               </p>
               <div className="section-divider mt-5" />
             </div>
@@ -472,7 +474,7 @@ export default function CountriesPage() {
                   {[
                     "Zero tolerance for forced or bonded labour",
                     "No recruitment fees charged to workers",
-                    "Transparent contracts in worker&apos;s native language",
+                    "Transparent contracts in worker&apos;s native languages",
                     "Destination-country labour law compliance",
                     "Regular third-party compliance audits",
                     "Worker welfare and grievance mechanisms",
@@ -504,9 +506,9 @@ export default function CountriesPage() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { step: "01", title: "Requirement",     desc: "Employer shares workforce need, destination country, and timeline." },
+                { step: "01", title: "Requirement",     desc: "The employer shares workforce requirements, destination country, and deployment timeline." },
                 { step: "02", title: "Sourcing",        desc: "We identify, screen, and pre-qualify candidates from our source country networks." },
-                { step: "03", title: "Documentation",   desc: "Visa, medical, skills certificates, MEA documents — handled end-to-end." },
+                { step: "03", title: "Documentation",   desc: "Visa documents, medical records, skill certificates, and MEA documentation are handled end-to-end." },
                 { step: "04", title: "Deployment",      desc: "Workers deployed with full contracts, insurance, and on-arrival orientation." },
               ].map((s, i) => (
                 <div key={s.step} className="relative">
@@ -547,7 +549,8 @@ export default function CountriesPage() {
                 Need Workforce in Europe or GCC?
               </h3>
               <p className="text-white/70 text-sm leading-relaxed mb-8">
-                Get compliant, pre-verified workforce deployed to your international locations within agreed timelines.
+                Get a compliant, pre-verified workforce deployed to
+your international locations within agreed timelines.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/employers" className="btn-outline !text-white !border-white hover:!bg-white hover:!text-brand-red">

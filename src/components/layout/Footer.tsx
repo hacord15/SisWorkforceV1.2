@@ -17,37 +17,37 @@ import {
 
 const footerLinks = {
   Company: [
-    { label: "Home",       href: "/",        icon: FaHome        },
-    { label: "About Us",   href: "/sis-global", icon: FaInfoCircle },
-    { label: "Feedback",   href: "/feedback", icon: FaCommentAlt  },
-    { label: "Contact Us", href: "/contact",  icon: FaEnvelope    },
+    { label: "Home", href: "/", icon: FaHome },
+    { label: "About Us", href: "/sis-global", icon: FaInfoCircle },
+    { label: "Feedback", href: "/feedback", icon: FaCommentAlt },
+    { label: "Contact Us", href: "/contact", icon: FaEnvelope },
   ],
   "For Employers": [
-    { label: "Countries",    href: "/countries",  icon: FaGlobe         },
-    { label: "Industries",   href: "/industries", icon: FaBuilding      },
-    { label: "FAQs",         href: "/faq",       icon: FaQuestionCircle},
-    { label: "Enquiry Form", href: "/contact",    icon: FaFileAlt       },
+    { label: "Countries", href: "/countries", icon: FaGlobe },
+    { label: "Industries", href: "/industries", icon: FaBuilding },
+    { label: "FAQs", href: "/faq", icon: FaQuestionCircle },
+    { label: "Enquiry Form", href: "/contact", icon: FaFileAlt },
   ],
   // ↓ href values use query params so the jobs page filters automatically
   "For Job Seekers": [
-    { label: "Find Jobs",         href: "/jobs",                                     icon: FaBriefcase   },
-    { label: "Jobs in Dubai",     href: "/jobs?location=United+Arab+Emirates",       icon: FaMapMarkerAlt},
-    { label: "Jobs in Qatar",     href: "/jobs?location=Qatar",                      icon: FaMapMarkerAlt},
-    { label: "Nursing Jobs",      href: "/jobs?category=Healthcare",                 icon: FaUserNurse   },
-    { label: "Civil Engineer Jobs",href: "/jobs?category=Engineering",               icon: FaHardHat     },
-    { label: "Hotel Jobs",        href: "/jobs?category=Hospitality+%26+Tourism",    icon: FaConciergeBell},
-    { label: "Sales Jobs",        href: "/jobs?category=Sales",                      icon: FaHandshake   },
+    { label: "Find Jobs", href: "/jobs", icon: FaBriefcase },
+    { label: "Jobs in Dubai", href: "/jobs?location=United+Arab+Emirates", icon: FaMapMarkerAlt },
+    { label: "Jobs in Qatar", href: "/jobs?location=Qatar", icon: FaMapMarkerAlt },
+    { label: "Nursing Jobs", href: "/jobs?category=Healthcare", icon: FaUserNurse },
+    { label: "Civil Engineer Jobs", href: "/jobs?category=Engineering", icon: FaHardHat },
+    { label: "Hotel Jobs", href: "/jobs?category=Hospitality+%26+Tourism", icon: FaConciergeBell },
+    { label: "Sales Jobs", href: "/jobs?category=Sales", icon: FaHandshake },
   ],
   "Quick Links": [
-    { label: "Privacy Policy", href: "/privacy",  icon: FaShieldAlt   },
-    { label: "Terms of Use",   href: "/terms",    icon: FaFileContract},
-    { label: "Cookies Policy", href: "/cookies",  icon: FaCookie      },
+    { label: "Privacy Policy", href: "/privacy-policy", icon: FaShieldAlt },
+    { label: "Terms of Use", href: "/terms-conditions", icon: FaFileContract },
+    { label: "Cookie Policy", href: "/cookies-policy", icon: FaCookie },
   ],
 };
 
 const socialLinks = [
-  { icon: FaLinkedin,  href: "https://www.linkedin.com/company/sisglobalworkforcesolutions", label: "LinkedIn",  color: "hover:bg-[#0077B5]" },
-  { icon: FaFacebook,  href: "https://www.facebook.com/people/SIS-Global-Workforce-Solutions/61589420021952/", label: "Facebook",  color: "hover:bg-[#4267B2]" },
+  { icon: FaLinkedin, href: "https://www.linkedin.com/company/sisglobalworkforcesolutions", label: "LinkedIn", color: "hover:bg-[#0077B5]" },
+  { icon: FaFacebook, href: "https://www.facebook.com/people/SIS-Global-Workforce-Solutions/61589420021952/", label: "Facebook", color: "hover:bg-[#4267B2]" },
   { icon: FaInstagram, href: "https://www.instagram.com/sisglobalworkforce/", label: "Instagram", color: "hover:bg-[#E4405F]" },
 ];
 
@@ -72,7 +72,9 @@ export default function Footer() {
               </Link>
             </div>
             <p className="text-brand-grey-400 text-sm leading-relaxed mb-6">
-              The world&apos;s leading job board connecting talented professionals with world-class companies.
+              A global workforce solutions partner connecting
+              skilled, verified talent with trusted employers
+              worldwide.
             </p>
             <div className="mt-4 flex items-center gap-3">
               {socialLinks.map((s) => (
@@ -124,9 +126,9 @@ export default function Footer() {
               © {new Date().getFullYear()} SIS Global Workforce Solutions. All rights reserved.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 order-1 md:order-2">
-              <Link href="/privacy"  className="text-brand-grey-500 hover:text-white text-xs sm:text-sm transition-colors">Privacy Policy</Link>
-              <Link href="/terms"    className="text-brand-grey-500 hover:text-white text-xs sm:text-sm transition-colors">Terms of Use</Link>
-              <Link href="/cookies"  className="text-brand-grey-500 hover:text-white text-xs sm:text-sm transition-colors">Cookie Policy</Link>
+              <Link href="/privacy" className="text-brand-grey-500 hover:text-white text-xs sm:text-sm transition-colors">Privacy Policy</Link>
+              <Link href="/terms" className="text-brand-grey-500 hover:text-white text-xs sm:text-sm transition-colors">Terms of Use</Link>
+              <Link href="/cookies" className="text-brand-grey-500 hover:text-white text-xs sm:text-sm transition-colors">Cookie Policy</Link>
             </div>
           </div>
         </div>

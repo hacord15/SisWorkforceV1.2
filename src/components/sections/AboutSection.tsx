@@ -23,9 +23,8 @@ export default function AboutSection() {
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Image */}
           <div
-            className={`relative transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8 md:-translate-x-12"
-            }`}
+            className={`relative transition-all duration-700 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8 md:-translate-x-12"
+              }`}
           >
             <div className="relative rounded-lg overflow-hidden shadow-2xl">
               <img
@@ -44,9 +43,8 @@ export default function AboutSection() {
 
           {/* Content */}
           <div
-            className={`transition-all duration-700 delay-200 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8 md:translate-x-12"
-            }`}
+            className={`transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8 md:translate-x-12"
+              }`}
           >
             <p className="text-brand-red text-lg sm:text-xl font-semibold tracking-widest uppercase mb-1 sm:mb-2">
               WHY SIS GLOBAL?
@@ -58,9 +56,14 @@ export default function AboutSection() {
               We Are More Than a Recruitment Company
             </h2>
             <div className="section-divider section-divider-left mb-4 sm:mb-6" />
-            
+
             <p className="text-brand-grey-600 text-sm sm:text-base mb-3 sm:mb-4 leading-relaxed">
-              <strong className="text-brand-grey-800">With more than 50 years of manpower expertise,</strong> SIS Global Workforce Solutions, is led by industry veterans who have build sustainable workforce ecosystems for global businesses successfully.
+              <strong className="text-brand-grey-800">With more than 50 years of manpower
+                expertise,</strong>  SIS Global Workforce Solutions is
+              led by industry veterans who have
+              successfully built sustainable workforce
+              ecosystems for global businesses.
+
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 mb-6 sm:mb-8">
@@ -73,7 +76,11 @@ export default function AboutSection() {
             </div>
 
             <p className="text-brand-grey-600 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">
-              We combine the strength of SIS Group enterprises deep legacy with advanced workforce technology and ethical recruitment practices to create scalable workforce solutions for employers worldwide.
+              We combine the deep legacy of SIS Group
+enterprises with advanced workforce
+technology and ethical recruitment
+practices to create scalable workforce
+solutions for employers worldwide.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">

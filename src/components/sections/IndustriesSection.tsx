@@ -8,7 +8,7 @@ import { ArrowRight, BriefcaseBusiness, HardHat, Wrench } from "lucide-react";
 const WORKFORCE_CATEGORIES = [
   {
     icon: BriefcaseBusiness,
-    label: "White Collar",
+    label: "White-collar",
     color: "#0A65CC",
     bg: "#E8F1FB",
     description: "Managers, analysts, consultants, HR professionals, and corporate specialists.",
@@ -16,19 +16,20 @@ const WORKFORCE_CATEGORIES = [
   },
   {
     icon: HardHat,
-    label: "Grey Collar",
+    label: "Grey-collar",
     color: "#C8102E",
     bg: "#FFF0F2",
     description: "Skilled technicians and supervisors who bridge field and office operations.",
     roles: ["Site Supervisors", "QA/QC Inspectors", "Lab Technicians", "Nurses", "Electricians"],
+    
   },
   {
     icon: Wrench,
-    label: "Blue Collar",
+    label: "Blue-collar",
     color: "#0BA02C",
     bg: "#E7F9ED",
     description: "Trained tradespeople and operators who power industries on the ground.",
-    roles: ["Welders", "Forklift Operators", "Steel Fixers", "Housekeeping", "Pipe Fitters"],
+    roles: ["Welders", "Forklift Operators", "Steel Fixers","Housekeeping Staff", "Pipe Fitters"],
   },
 ];
 
@@ -147,8 +148,9 @@ export default function IndustriesSection() {
             </h2>
             <div className="section-divider mt-4" />
             <p className="text-brand-grey-500 text-sm mt-5 max-w-xl mx-auto">
-              From boardroom to shop floor — we source, screen, and place talent
-              across every level of your organisation.
+              From the boardroom to the shop floor, we
+source, screen, and place talent across
+every level of your organisation.
             </p>
           </div>
 
