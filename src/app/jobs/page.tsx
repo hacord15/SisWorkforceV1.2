@@ -273,9 +273,9 @@ export default async function FindJobsPage({
 
                         {/* Mobile buttons */}
                         <div className="sm:hidden flex items-center gap-3 mt-4 pt-4 border-t border-brand-grey-100">
-                          <Link href={`${href}#apply`} className="btn-primary flex-1 !py-2.5 text-xs flex items-center justify-center gap-1.5">
+                          {/* <Link href={`${href}#apply`} className="btn-primary flex-1 !py-2.5 text-xs flex items-center justify-center gap-1.5">
                             Apply Now <ArrowRight size={12} />
-                          </Link>
+                          </Link> */}
                           <Link href={href} className="flex-1 text-center text-xs font-semibold py-2.5 border border-brand-grey-200 rounded-lg text-brand-grey-600 hover:border-brand-red hover:text-brand-red transition-colors">
                             View Details →
                           </Link>

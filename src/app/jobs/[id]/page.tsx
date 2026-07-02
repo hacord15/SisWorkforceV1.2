@@ -231,7 +231,7 @@ export default async function JobDetailPage({ params }: { params: Promise<{ id: 
               )}
 
               {/* Bottom apply CTA */}
-              <div className="bg-white border border-brand-grey-200 rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-4 shadow-sm" style={{ borderTop: "3px solid #C8102E" }}>
+              {/* <div className="bg-white border border-brand-grey-200 rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-4 shadow-sm" style={{ borderTop: "3px solid #C8102E" }}>
                 <div className="flex-1 text-center sm:text-left">
                   <p className="font-bold text-brand-grey-900 text-base" style={{ fontFamily: "var(--font-display)" }}>Interested in this role?</p>
                   <p className="text-sm text-brand-grey-500 mt-0.5">Register and apply — takes less than 2 minutes.</p>
@@ -242,7 +242,7 @@ export default async function JobDetailPage({ params }: { params: Promise<{ id: 
                     Apply Now <ArrowRight size={14} />
                   </Link>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* Right sidebar */}
@@ -288,10 +288,10 @@ export default async function JobDetailPage({ params }: { params: Promise<{ id: 
               )}
 
               {/* Share sidebar card */}
-              <SidebarCard title="Share This Job">
+              {/* <SidebarCard title="Share This Job">
                 <p className="text-xs text-brand-grey-500 mb-4">Know someone perfect for this role?</p>
                 <ShareButton url={shareUrl} title={shareTitle} variant="expanded" />
-              </SidebarCard>
+              </SidebarCard> */}
             </div>
 
           </div>

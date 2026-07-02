@@ -11,7 +11,7 @@ export const OFFICE = {
   address: "A-28 & 29, Phase-1, Okhla Industrial Area, New Delhi – 110020",
   phone:   "+91-11-49032418",
   email:   "info@sisglobalworkforce.com",
-  hours:   "Mon – Sat: 9:00 AM – 6:30 PM",
+  hours:   "Monday to Saturday: 9:00 AM to 6:30 PM",
   mapUrl:  "https://maps.google.com/?q=A-28+Okhla+Industrial+Area+Phase+1+New+Delhi",
   socials: {
     linkedin:  "https://www.linkedin.com/company/sisglobalworkforcesolutions/",

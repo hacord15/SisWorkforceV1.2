@@ -114,7 +114,8 @@ function EmployerForm({
           required
           options={["India", "UAE", "Saudi Arabia", "Qatar", "Kuwait", "Oman", "Bahrain", "Singapore", "UK", "Australia", "USA", "Other"]}
         />
-        <InputField label="Number of Workers *" name="workers" type="number" placeholder="e.g. 50" required />
+        <InputField label="Number of Workers Required
+ *" name="workers" type="number" placeholder="e.g. 50" required />
       </div>
       <div>
         <label className="block text-xs font-bold text-brand-grey-700 uppercase tracking-widest mb-2">
@@ -412,12 +413,13 @@ export default function ContactClient({ office, faqs }: Props) {
                 className="text-5xl md:text-6xl font-bold text-white leading-[1.05] mb-5"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                Let&apos;s Build Your{" "}
+                Let Us Build Your{" "}
                 <span className="text-brand-red">Global Workforce Together</span>
               </h1>
               <p className="text-white/55 text-lg leading-relaxed max-w-md mb-8">
-                Whether you&apos;re looking to hire skilled workforce or find an international job —
-                our team is ready to help.
+                Whether you are looking to hire skilled workers
+or find an international job, our team is ready
+to help.
               </p>
 
               {/* Quick contact chips */}
@@ -521,7 +523,8 @@ export default function ContactClient({ office, faqs }: Props) {
                   Contact Us
                 </h2>
                 <p className="text-sm text-brand-grey-500 mb-5">
-                  Tell us who you are and we&apos;ll take it from there.
+                  Tell us who you are, and we will take it from
+there.
                 </p>
 
                 {/* Toggle pill */}
@@ -557,7 +560,8 @@ export default function ContactClient({ office, faqs }: Props) {
                 {activeTab === "employer" ? (
                   <>
                     <p className="text-sm text-brand-grey-500 mb-5">
-                      Tell us your requirement and we&apos;ll match you with the right talent.
+                      Tell us your requirements, and we will match
+you with the right talent
                     </p>
                     {employerSubmitted ? (
                       <SuccessState message="Requirement Submitted!" onReset={() => setEmployerSubmitted(false)} />
@@ -609,7 +613,9 @@ export default function ContactClient({ office, faqs }: Props) {
             <span className="text-white/80">Transforming Worker Lives.</span>
           </h2>
           <p className="text-white/70 text-base mb-8">
-            Our team is available Monday to Saturday, 9AM to 6:30PM IST.
+            Our team is available Monday to Saturday, 9:00
+AM to 6:30 PM IST
+
           </p>
           <div className="flex flex-col items-center sm:flex-row gap-4 justify-center">
 

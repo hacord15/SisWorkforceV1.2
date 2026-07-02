@@ -149,7 +149,8 @@ export default function FAQClient({ categories, faqs }: Props) {
               style={{ background: "rgba(200,16,46,0.2)", color: "#FF6B7A", border: "1px solid rgba(200,16,46,0.28)" }}
             >
               <span className="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse" />
-              Help Center
+              Help Centre
+
             </span>
 
             <h1
@@ -159,7 +160,10 @@ export default function FAQClient({ categories, faqs }: Props) {
               Frequently Asked <span className="text-brand-red">Questions</span>
             </h1>
             <p className="text-white/55 text-lg leading-relaxed mb-8">
-              Everything you need to know about SIS Global Workforce Solutions. Can&apos;t find your answer? Contact our team directly.
+             Everything you need to know about SIS Global
+Workforce Solutions. If you cannot find your answer,
+contact our team directly.
+
             </p>
 
             {/* Search bar */}
@@ -184,7 +188,7 @@ export default function FAQClient({ categories, faqs }: Props) {
               {[
                 { label: "24 Questions",        color: "rgba(255,255,255,0.08)" },
                 { label: "6 Categories",        color: "rgba(255,255,255,0.08)" },
-                { label: "Avg. response: 4 hrs",color: "rgba(200,16,46,0.25)"  },
+                { label: "Average response time: 4 working hours",color: "rgba(200,16,46,0.25)"  },
               ].map((p) => (
                 <span
                   key={p.label}
@@ -269,7 +273,7 @@ export default function FAQClient({ categories, faqs }: Props) {
               <div className="flex items-center justify-between mb-5">
                 <p className="text-sm text-brand-grey-500">
                   Showing <strong className="text-brand-grey-900">{filtered.length}</strong>{" "}
-                  question{filtered.length !== 1 ? "s" : ""}
+                  questions
                   {activeCategory !== "all" && (
                     <> in <strong className="text-brand-red">{categories.find((c) => c.id === activeCategory)?.label}</strong></>
                   )}
@@ -318,7 +322,7 @@ export default function FAQClient({ categories, faqs }: Props) {
                   Still have questions?
                 </h3>
                 <p className="text-sm text-brand-grey-500 mb-6 max-w-sm mx-auto leading-relaxed">
-                  Can&apos;t find what you&apos;re looking for? Our support team is available Monday to Saturday, 9AM–7PM IST.
+                 Cannot find what you are looking for? Our support team is available Monday to Saturday, 9:00 AM to 7:00 PM IST
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-3">
