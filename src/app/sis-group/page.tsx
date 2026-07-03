@@ -16,6 +16,10 @@ import {
   Star,
   CheckCircle,
   Phone,
+  BriefcaseBusiness,
+  Landmark,
+  Cpu,
+  GraduationCap,
 } from "lucide-react";
 
 // ── useCountUp hook (inline — no extra file needed) ───────────────────────
@@ -168,7 +172,7 @@ const PRESENCE_STATS = [
 const BUSINESSES = [
   {
     id: "security",
-    icon: "🛡️",
+    icon: <Shield size={30} />,
     color: "#C8102E",
     title: "SIS Security",
     category: "Security Solutions",
@@ -183,11 +187,11 @@ const BUSINESSES = [
   },
   {
     id: "workforce",
-    icon: "👥",
+    icon: <Users size={30} />,
     color: "#C8102E",
     title: "SIS Global Workforce",
     category: "Workforce Solutions",
-    desc: "Technology-enabled workforce outsourcing that connects skilled, verified talent with trusted employers across industries and geographies. ",
+    desc: "Technology-enabled workforce outsourcing that connects skilled, verified talent with trusted employers across industries and geographies.",
     highlights: [
       "Permanent Staffing",
       "Contract Staffing",
@@ -199,8 +203,8 @@ const BUSINESSES = [
   },
   {
     id: "cash",
-    icon: "💰",
-    color: "#404040",
+    icon: <Landmark size={30} />,
+    color: "#C8102E",
     title: "SIS Cash Services",
     category: "Cash Management",
     desc: "End-to-end cash management services including ATM management, cash-in-transit, cash processing, and vault management for banks and enterprises.",
@@ -214,8 +218,8 @@ const BUSINESSES = [
   },
   {
     id: "facility",
-    icon: "🏢",
-    color: "#404040",
+    icon: <Building2 size={30} />,
+    color: "#C8102E",
     title: "Terminix SIS",
     category: "Facility Management",
     desc: "Comprehensive facility management and pest control services for residential complexes, commercial spaces, and large industrial facilities.",
@@ -229,7 +233,7 @@ const BUSINESSES = [
   },
   {
     id: "tech",
-    icon: "💻",
+    icon: <Cpu size={30} />,
     color: "#C8102E",
     title: "SIS Tech",
     category: "Technology Services",
@@ -244,8 +248,8 @@ const BUSINESSES = [
   },
   {
     id: "training",
-    icon: "🎓",
-    color: "#404040",
+    icon: <GraduationCap size={30} />,
+    color: "#C8102E",
     title: "SIS Academy",
     category: "Training & Development",
     desc: "Skill development and workforce training programs empowering thousands of individuals with industry-certified qualifications annually.",
@@ -272,7 +276,7 @@ const LEADERSHIP = [
     name: "Rituraj Kishore Sinha",
     role: "Group CEO & Managing Director",
     avatar: "RJS",
-    color: "#404040",
+    color: "#C8102E",
     quote: "Technology and talent together define the future of services.",
   },
   {
@@ -286,7 +290,7 @@ const LEADERSHIP = [
     name: "A. Venkataraman",
     role: "President — Security Division",
     avatar: "AV",
-    color: "#737373",
+    color: "#C8102E",
     quote: "Safety is not a product, it is a culture we build together.",
   },
 ];
@@ -593,11 +597,12 @@ export default function SISIndiaGroupPage() {
                   <div className="p-8">
                     <div className="flex items-center gap-4 mb-5">
                       <div
-                        className="w-14 h-14 rounded-xl flex items-center justify-center text-3xl flex-shrink-0"
+                        className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
                         style={{
                           background: biz.isActive
                             ? "rgba(200,16,46,0.08)"
                             : "#F5F5F5",
+                          color: biz.color,
                         }}
                       >
                         {biz.icon}
@@ -922,9 +927,9 @@ export default function SISIndiaGroupPage() {
                 Partner with India&apos;s Most Trusted Services Group
               </h3>
               <p className="text-white/50 text-sm leading-relaxed mb-8">
-               Whether you need security, workforce,
-cash management, or facility services, the
-SIS Group has a solution for you.
+                Whether you need security, workforce,
+                cash management, or facility services, the
+                SIS Group has a solution for you.
               </p>
               <a
                 href="https://www.sisindia.com"
@@ -952,7 +957,7 @@ SIS Group has a solution for you.
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 Looking specifically for workforce
-solutions?
+                solutions?
               </h3>
               <p className="text-white/70 text-sm leading-relaxed mb-8">
                 Hire skilled, verified talent across all industries with our
@@ -963,7 +968,7 @@ solutions?
                   href="/jobs"
                   className="btn-outline !text-white !border-white hover:!bg-white hover:!text-brand-red"
                 >
-                   Hire Workforce <ArrowRight size={14} />
+                  Hire Workforce <ArrowRight size={14} />
                 </Link>
                 <a
                   href="tel:01244171888"

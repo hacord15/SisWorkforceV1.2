@@ -27,7 +27,9 @@ type Form = {
   passport_number: string; dob: string; gender: string;
   country_id: number | ""; state_id: number | ""; city_id: number | "";
   experience: string; international_experience: string;
+  
 };
+
 
 type FieldErrors = { phone?: string; email?: string };
 
@@ -105,11 +107,48 @@ function Input({
 }
 
 // ── Select ────────────────────────────────────────────────────────────────
+// function Select({
+//   icon, placeholder, value, onChange, options, disabled = false,
+// }: {
+//   icon?: React.ReactNode; placeholder: string;
+//   value: number | string; onChange: (v: number | string) => void;
+//   options: { value: number | string; label: string }[];
+//   disabled?: boolean;
+// }) {
+//   return (
+//     <div className="relative">
+//       {icon && (
+//         <span className="absolute left-3 top-1/2 -translate-y-1/2 text-brand-grey-400 pointer-events-none z-10">
+//           {icon}
+//         </span>
+//       )}
+//       <select
+//         value={value} disabled={disabled}
+//         onChange={(e) => { const v = e.target.value; onChange(v === "" ? "" : Number(v)); }}
+//         className={`w-full ${icon ? "pl-9" : "pl-3.5"} pr-8 h-[38px] border border-brand-grey-200 rounded-lg text-[13px] bg-white appearance-none cursor-pointer transition-colors focus:outline-none focus:border-brand-grey-400 disabled:bg-brand-grey-50 disabled:cursor-not-allowed disabled:text-brand-grey-400 ${
+//           value === "" ? "text-brand-grey-400" : "text-brand-grey-800"
+//         }`}
+//       >
+//         <option value="">{placeholder}</option>
+//         {options.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
+//       </select>
+//       <ChevronDown size={13} className="absolute right-3 top-1/2 -translate-y-1/2 text-brand-grey-400 pointer-events-none" />
+//     </div>
+//   );
+// }
+
 function Select({
-  icon, placeholder, value, onChange, options, disabled = false,
+  icon,
+  placeholder,
+  value,
+  onChange,
+  options,
+  disabled = false,
 }: {
-  icon?: React.ReactNode; placeholder: string;
-  value: number | string; onChange: (v: number | string) => void;
+  icon?: React.ReactNode;
+  placeholder: string;
+  value: number | string;
+  onChange: (v: number | string) => void;
   options: { value: number | string; label: string }[];
   disabled?: boolean;
 }) {
@@ -120,17 +159,39 @@ function Select({
           {icon}
         </span>
       )}
+
       <select
-        value={value} disabled={disabled}
-        onChange={(e) => { const v = e.target.value; onChange(v === "" ? "" : Number(v)); }}
-        className={`w-full ${icon ? "pl-9" : "pl-3.5"} pr-8 h-[38px] border border-brand-grey-200 rounded-lg text-[13px] bg-white appearance-none cursor-pointer transition-colors focus:outline-none focus:border-brand-grey-400 disabled:bg-brand-grey-50 disabled:cursor-not-allowed disabled:text-brand-grey-400 ${
+        value={value}
+        disabled={disabled}
+        onChange={(e) => {
+          const v = e.target.value;
+
+          // Gender options ko string hi rehne do
+          if (v === "Male" || v === "Female" || v === "Other") {
+            onChange(v);
+          } else {
+            onChange(v === "" ? "" : Number(v));
+          }
+        }}
+        className={`w-full ${
+          icon ? "pl-9" : "pl-3.5"
+        } pr-8 h-[38px] border border-brand-grey-200 rounded-lg text-[13px] bg-white appearance-none cursor-pointer transition-colors focus:outline-none focus:border-brand-grey-400 disabled:bg-brand-grey-50 disabled:cursor-not-allowed disabled:text-brand-grey-400 ${
           value === "" ? "text-brand-grey-400" : "text-brand-grey-800"
         }`}
       >
         <option value="">{placeholder}</option>
-        {options.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
+
+        {options.map((o) => (
+          <option key={o.value} value={o.value}>
+            {o.label}
+          </option>
+        ))}
       </select>
-      <ChevronDown size={13} className="absolute right-3 top-1/2 -translate-y-1/2 text-brand-grey-400 pointer-events-none" />
+
+      <ChevronDown
+        size={13}
+        className="absolute right-3 top-1/2 -translate-y-1/2 text-brand-grey-400 pointer-events-none"
+      />
     </div>
   );
 }
@@ -214,7 +275,7 @@ export default function RegisterPage() {
         country_id:               typeof form.country_id === "number" ? form.country_id : null,
         state_id:                 typeof form.state_id   === "number" ? form.state_id   : null,
         city_id:                  typeof form.city_id    === "number" ? form.city_id    : null,
-        // experience:               form.experience ? Number(form.experience) : null,
+        experience: form.experience.trim() || null,
         // international_experience: form.international_experience ? Number(form.international_experience) : null,
       });
       setSignup(res);
@@ -415,6 +476,7 @@ export default function RegisterPage() {
                       { value: "Other", label: "Other" },
                     ]}
                   />
+                  
                 </div>
               </div>
 

@@ -5,7 +5,7 @@ import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import {
-  Building2,
+   Building2, ArrowRight, ChevronRight,
   Users, Clock, Shield, BarChart3, Briefcase, Star,
   Phone, Mail, Upload, AlertCircle, Loader2,
   Handshake,
@@ -204,7 +204,64 @@ export default function EmployersPage() {
       <main>
 
         {/* ══════════ HERO ══════════ */}
-        <CountrySlider />
+        {/* <CountrySlider /> */}
+        {/* ══════════ HERO SECTION ══════════ */}
+<section className="relative overflow-hidden bg-brand-grey-900 text-white">
+  {/* Banner Image as background */}
+  <div className="absolute inset-0">
+    <img
+      src="/assets/employer-banner.png"
+      alt="Employer Workforce Solutions"
+      className="w-full h-full object-cover"
+    />
+    {/* Dark gradient overlay so text stays readable */}
+<div
+  className="absolute inset-0"
+  style={{
+    background:
+      "linear-gradient(100deg, rgba(17,17,17,0.75) 0%, rgba(17,17,17,0.6) 40%, rgba(17,17,17,0.3) 75%, rgba(17,17,17,0.1) 100%)",
+  }}
+/>
+  </div>
+
+  {/* Decorative elements */}
+  <div className="absolute inset-0 pointer-events-none overflow-hidden">
+    <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full border border-white/5" />
+    <div className="absolute -bottom-16 -left-16 w-72 h-72 rounded-full border border-brand-red/10" />
+    <div className="absolute right-0 top-0 w-1/2 h-full" style={{ background: "radial-gradient(ellipse 60% 80% at 90% 30%, rgba(200,16,46,0.16) 0%, transparent 70%)" }} />
+  </div>
+
+  <div className="max-w-7xl mx-auto px-4 py-20 relative z-10">
+    <div className="flex items-center gap-1.5 text-xs text-white/40 mb-8">
+      <Link href="/" className="hover:text-white transition-colors">Home</Link>
+      <ChevronRight size={11} />
+      <span className="text-white/70">For Employers</span>
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-14 items-center">
+      <div>
+        <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.18em] uppercase px-3 py-1.5 rounded-full mb-6" style={{ background: "rgba(200,16,46,0.2)", color: "#FF6B7A", border: "1px solid rgba(200,16,46,0.3)" }}>
+          <span className="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse" />
+          For Employers
+        </span>
+        <h1 className="text-5xl md:text-6xl font-bold leading-[1.04] mb-5" style={{ fontFamily: "var(--font-display)" }}>
+          Hire Verified Talent, <span className="text-brand-red">Faster</span>
+        </h1>
+        <p className="text-white/60 text-lg leading-relaxed mb-8">
+          Partner with SIS Global for pre-verified candidates, full compliance management, and 48-hour shortlisting — backed by 31+ years of workforce solutions expertise across India.
+        </p>
+        <div className="flex flex-wrap gap-4">
+          <a href="#partner-form" className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red text-white text-sm font-semibold rounded-full hover:bg-brand-red/90 transition-colors" style={{ fontFamily: "var(--font-display)" }}>
+            Post a Requirement <ArrowRight size={15} />
+          </a>
+          <a href="tel:01244171888" className="inline-flex items-center gap-2 px-5 py-3 border border-white/25 text-white/80 text-sm font-semibold rounded-full hover:border-white/60 hover:text-white transition-colors" style={{ fontFamily: "var(--font-display)" }}>
+            <Phone size={14} /> Talk to Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* ══════════ WHY SIS ══════════ */}
         <section className="py-20 bg-white">
@@ -227,7 +284,7 @@ export default function EmployersPage() {
         </section>
 
         {/* ══════════ HOW IT WORKS ══════════ */}
-        <section className="py-16" style={{ background: "linear-gradient(135deg,#F9F9F9 0%,#F2F2F2 100%)" }}>
+        {/* <section className="py-16" style={{ background: "linear-gradient(135deg,#F9F9F9 0%,#F2F2F2 100%)" }}>
           <div className="max-w-5xl mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-brand-grey-900" style={{ fontFamily: "var(--font-display)" }}>How It Works</h2>
@@ -250,7 +307,7 @@ export default function EmployersPage() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* ══════════ ASSOCIATE PARTNER FORM ══════════ */}
         <section id="partner-form" className="py-20" style={{ background: "linear-gradient(160deg,#FAFAFA 0%,#F3F3F3 100%)" }}>

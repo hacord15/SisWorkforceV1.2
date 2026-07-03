@@ -241,58 +241,63 @@ export default function LeadPage() {
       <Navbar />
       <main>
         {/* ══════════ HERO SECTION ══════════ */}
-        <section className="relative overflow-hidden bg-brand-grey-900 text-white">
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full border border-white/5" />
-            <div className="absolute -bottom-16 -left-16 w-72 h-72 rounded-full border border-brand-red/10" />
-            <div className="absolute right-0 top-0 w-1/2 h-full" style={{ background: "radial-gradient(ellipse 60% 80% at 90% 30%, rgba(200,16,46,0.16) 0%, transparent 70%)" }} />
-          </div>
+       {/* ══════════ HERO SECTION ══════════ */}
+<section className="relative overflow-hidden bg-brand-grey-900 text-white">
+  {/* Banner Image as background */}
+  <div className="absolute inset-0">
+    <img
+      src="/assets/associate-banner.png"
+      alt="Associate Partner Programme"
+      className="w-full h-full object-cover"
+    />
+    {/* Dark gradient overlay so text stays readable */}
+    <div
+      className="absolute inset-0"
+      style={{
+        background:
+          "linear-gradient(100deg, rgba(17,17,17,0.94) 0%, rgba(17,17,17,0.82) 40%, rgba(17,17,17,0.45) 75%, rgba(17,17,17,0.2) 100%)",
+      }}
+    />
+  </div>
 
-          <div className="max-w-7xl mx-auto px-4 py-20 relative z-10">
-            <div className="flex items-center gap-1.5 text-xs text-white/40 mb-8">
-              <Link href="/" className="hover:text-white transition-colors">Home</Link>
-              <ChevronRight size={11} />
-              <span className="text-white/70">Associate Partner Programme</span>
-            </div>
+  {/* Decorative elements — stays on top of image + overlay */}
+  <div className="absolute inset-0 pointer-events-none overflow-hidden">
+    <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full border border-white/5" />
+    <div className="absolute -bottom-16 -left-16 w-72 h-72 rounded-full border border-brand-red/10" />
+    <div className="absolute right-0 top-0 w-1/2 h-full" style={{ background: "radial-gradient(ellipse 60% 80% at 90% 30%, rgba(200,16,46,0.16) 0%, transparent 70%)" }} />
+  </div>
 
-            <div className="grid md:grid-cols-2 gap-14 items-center">
-              <div>
-                <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.18em] uppercase px-3 py-1.5 rounded-full mb-6" style={{ background: "rgba(200,16,46,0.2)", color: "#FF6B7A", border: "1px solid rgba(200,16,46,0.3)" }}>
-                  <span className="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse" />
-                  Grow Together
-                </span>
-                <h1 className="text-5xl md:text-6xl font-bold leading-[1.04] mb-5" style={{ fontFamily: "var(--font-display)" }}>
-                  Become an <span className="text-brand-red">Associate Partner</span>
-                </h1>
-                <p className="text-white/60 text-lg leading-relaxed mb-8">
-                  Join India&apos;s largest workforce solutions network. Co-brand with SIS Global, expand your reach, earn competitive commissions, and grow your business under a trusted 31-year legacy.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <a href="#lead-form" className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red text-white text-sm font-semibold rounded-full hover:bg-brand-red/90 transition-colors" style={{ fontFamily: "var(--font-display)" }}>
-                    Apply Now <ArrowRight size={15} />
-                  </a>
-                  <a href="tel:01244171888" className="inline-flex items-center gap-2 px-5 py-3 border border-white/25 text-white/80 text-sm font-semibold rounded-full hover:border-white/60 hover:text-white transition-colors" style={{ fontFamily: "var(--font-display)" }}>
-                    <Phone size={14} /> Talk to Us
-                  </a>
-                </div>
-              </div>
+  <div className="max-w-7xl mx-auto px-4 py-20 relative z-10">
+    <div className="flex items-center gap-1.5 text-xs text-white/40 mb-8">
+      <Link href="/" className="hover:text-white transition-colors">Home</Link>
+      <ChevronRight size={11} />
+      <span className="text-white/70">Associate Partner Programme</span>
+    </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { value: "500+", label: "Active Partners" },
-                  { value: "31+",  label: "Years of Trust"  },
-                  { value: "22+",  label: "States Covered"  },
-                  { value: "8+",   label: "Countries"       },
-                ].map((s) => (
-                  <div key={s.label} className="rounded-2xl p-6 border" style={{ background: "rgba(255,255,255,0.05)", borderColor: "rgba(255,255,255,0.08)" }}>
-                    <div className="text-3xl font-bold text-white mb-1" style={{ fontFamily: "var(--font-display)" }}>{s.value}</div>
-                    <div className="text-xs text-white/50 font-medium">{s.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+    <div className="grid md:grid-cols-2 gap-14 items-center">
+      <div>
+        <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.18em] uppercase px-3 py-1.5 rounded-full mb-6" style={{ background: "rgba(200,16,46,0.2)", color: "#FF6B7A", border: "1px solid rgba(200,16,46,0.3)" }}>
+          <span className="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse" />
+          Grow Together
+        </span>
+        <h1 className="text-5xl md:text-6xl font-bold leading-[1.04] mb-5" style={{ fontFamily: "var(--font-display)" }}>
+          Become an <span className="text-brand-red">Associate Partner</span>
+        </h1>
+        <p className="text-white/60 text-lg leading-relaxed mb-8">
+          Join India&apos;s largest workforce solutions network. Co-brand with SIS Global, expand your reach, earn competitive commissions, and grow your business under a trusted 31-year legacy.
+        </p>
+        <div className="flex flex-wrap gap-4">
+          <a href="#lead-form" className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red text-white text-sm font-semibold rounded-full hover:bg-brand-red/90 transition-colors" style={{ fontFamily: "var(--font-display)" }}>
+            Apply Now <ArrowRight size={15} />
+          </a>
+          <a href="tel:01244171888" className="inline-flex items-center gap-2 px-5 py-3 border border-white/25 text-white/80 text-sm font-semibold rounded-full hover:border-white/60 hover:text-white transition-colors" style={{ fontFamily: "var(--font-display)" }}>
+            <Phone size={14} /> Talk to Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* ══════════ BENEFITS SECTION ══════════ */}
         <section className="py-20" style={{ background: "linear-gradient(135deg,#F9F9F9 0%,#F2F2F2 100%)" }}>
@@ -315,7 +320,7 @@ export default function LeadPage() {
         </section>
 
         {/* ══════════ TESTIMONIALS SECTION ══════════ */}
-        <section className="py-16 bg-white">
+        {/* <section className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-brand-grey-900 mb-3" style={{ fontFamily: "var(--font-display)" }}>What Our Partners Say</h2>
@@ -343,7 +348,7 @@ export default function LeadPage() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* ══════════ LEAD FORM SECTION ══════════ */}
         <section id="lead-form" className="py-20" style={{ background: "linear-gradient(160deg,#FAFAFA 0%,#F3F3F3 100%)" }}>
