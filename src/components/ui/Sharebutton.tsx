@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 
 interface ShareButtonProps {
-  url:      string;
+  url:      string;        // can be relative or absolute
   title:    string;
   variant?: "icon" | "expanded";
 }
@@ -45,34 +45,46 @@ const PLATFORMS = [
 ];
 
 export default function ShareButton({ url, title, variant = "icon" }: ShareButtonProps) {
-  const [open,   setOpen]   = useState(false);
   const [copied, setCopied] = useState(false);
 
+  // Helper to get absolute URL
+  const getFullUrl = () => {
+    if (typeof window === "undefined") return url; // fallback for SSR
+    return new URL(url, window.location.origin).href;
+  };
+
   const copyLink = async () => {
+    const fullUrl = getFullUrl();
     try {
-      await navigator.clipboard.writeText(url);
+      await navigator.clipboard.writeText(fullUrl);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch { /* silent */ }
   };
 
-  const handleToggle = async () => {
+  const handleShare = async () => {
+    const fullUrl = getFullUrl();
     if (navigator.share) {
-      try { await navigator.share({ title, url }); return; }
-      catch { /* user cancelled or unsupported */ }
+      try {
+        await navigator.share({ title, url: fullUrl });
+      } catch {
+        // user cancelled or unsupported – do nothing
+      }
+    } else {
+      await copyLink(); // fallback to copy
     }
-    setOpen((v) => !v);
   };
 
   // ── Expanded variant (sidebar card) ──────────────────────────────────
   if (variant === "expanded") {
+    const fullUrl = getFullUrl();
     return (
       <div className="flex flex-col gap-3">
         <div className="grid grid-cols-2 gap-2">
           {PLATFORMS.map((p) => (
             <a
               key={p.name}
-              href={p.href(url, title)}
+              href={p.href(fullUrl, title)}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold text-white transition-opacity hover:opacity-85"
@@ -100,101 +112,21 @@ export default function ShareButton({ url, title, variant = "icon" }: ShareButto
     );
   }
 
-  // ── Icon variant — single button → popover with icon circles ─────────
+  // ── Icon variant — single button (native share / copy fallback) ────
   return (
     <div className="relative">
-
-      {/* Trigger button */}
       <button
-        onClick={handleToggle}
-        aria-label="Share this job"
-        title="Share"
+        onClick={handleShare}
+        aria-label={copied ? "Link copied" : "Share this job"}
+        title={copied ? "Link copied" : "Share"}
         className={`w-9 h-9 rounded-xl flex items-center justify-center border transition-all ${
-          open
+          copied
             ? "border-brand-red text-brand-red bg-red-50"
             : "border-brand-grey-200 bg-white text-brand-grey-600 hover:border-brand-red hover:text-brand-red"
         }`}
       >
-        <Share2 size={15} />
+        {copied ? <Check size={15} /> : <Share2 size={15} />}
       </button>
-
-      {/* Popover */}
-      {open && (
-        <>
-          {/* Backdrop */}
-          <div className="fixed inset-0 z-30" onClick={() => setOpen(false)} />
-
-          <div
-            className="absolute right-0 top-11 z-40 bg-white rounded-2xl shadow-2xl"
-            style={{
-              width:     240,
-              border:    "1px solid #E5E5E5",
-              borderTop: "3px solid #C8102E",
-              animation: "sharePopIn 0.18s ease both",
-            }}
-          >
-            {/* Header */}
-            <p className="text-[10px] font-bold uppercase tracking-widest text-brand-grey-400 px-4 pt-3 pb-3">
-              Share via
-            </p>
-
-            {/* Social icon circles */}
-            <div className="flex items-start justify-between px-4 pb-4">
-              {PLATFORMS.map((p, i) => (
-                <a
-                  key={p.name}
-                  href={p.href(url, title)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setOpen(false)}
-                  className="flex flex-col items-center gap-1.5 group"
-                  style={{
-                    animation: `shareIconIn 0.22s ease ${i * 45}ms both`,
-                  }}
-                >
-                  <span
-                    className="w-11 h-11 rounded-full flex items-center justify-center text-white transition-all group-hover:scale-110 group-hover:shadow-lg"
-                    style={{ background: p.color }}
-                  >
-                    {p.icon}
-                  </span>
-                  <span className="text-[9px] font-medium text-brand-grey-500 text-center leading-tight">
-                    {p.name}
-                  </span>
-                </a>
-              ))}
-            </div>
-
-            {/* Copy link */}
-            <div className="px-4 pb-3 pt-1 border-t border-brand-grey-100">
-              <button
-                onClick={copyLink}
-                className="w-full flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold border transition-all"
-                style={{
-                  background:  copied ? "rgba(200,16,46,0.06)" : "#F5F5F5",
-                  borderColor: copied ? "rgba(200,16,46,0.3)"  : "#E5E5E5",
-                  color:       copied ? "#C8102E"               : "#525252",
-                }}
-              >
-                {copied ? <Check size={13} /> : <Copy size={13} />}
-                {copied ? "Link copied!" : "Copy link"}
-              </button>
-            </div>
-          </div>
-
-          {/* Keyframes injected once */}
-          <style>{`
-            @keyframes sharePopIn {
-              from { opacity: 0; transform: translateY(6px) scale(0.96); }
-              to   { opacity: 1; transform: translateY(0)  scale(1);    }
-            }
-            @keyframes shareIconIn {
-              from { opacity: 0; transform: translateY(8px) scale(0.85); }
-              to   { opacity: 1; transform: translateY(0)  scale(1);    }
-            }
-          `}</style>
-        </>
-      )}
     </div>
   );
 }
