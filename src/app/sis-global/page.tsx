@@ -35,7 +35,7 @@ const MISSION_POINTS = [
 ];
 
 const VALUES = [
-  { icon: <Globe size={22} />,         title: "Integrity",               desc: "" },
+  { icon: <Globe size={22} />,         title: "Integrity",               desc: "Building a platform where everyone has equal opportunity regardless of background, location, or experience." },
   { icon: <Lightbulb size={22} />,     title: "Ethical Recruitment",     desc: "Following transparent, responsible, and fee-free recruitment practices that protect workers and employers." },
   { icon: <MessageSquare size={22} />, title: "Transparency",            desc: "Honest communication with candidates, employers, and our own team — always." },
   { icon: <Heart size={22} />,         title: "Compliance",              desc: "Ensuring every deployment follows applicable labour, visa, documentation, and contractual requirements." },
