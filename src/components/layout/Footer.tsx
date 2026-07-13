@@ -126,9 +126,9 @@ export default function Footer() {
               © {new Date().getFullYear()} SIS Global Workforce Solutions. All rights reserved.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 order-1 md:order-2">
-              <Link href="/privacy" className="text-brand-grey-500 hover:text-white text-xs sm:text-sm transition-colors">Privacy Policy</Link>
-              <Link href="/terms" className="text-brand-grey-500 hover:text-white text-xs sm:text-sm transition-colors">Terms of Use</Link>
-              <Link href="/cookies" className="text-brand-grey-500 hover:text-white text-xs sm:text-sm transition-colors">Cookie Policy</Link>
+              <Link href="/privacy-policy" className="text-brand-grey-500 hover:text-white text-xs sm:text-sm transition-colors">Privacy Policy</Link>
+              <Link href="/terms-conditions" className="text-brand-grey-500 hover:text-white text-xs sm:text-sm transition-colors">Terms of Use</Link>
+              <Link href="/cookies-policy" className="text-brand-grey-500 hover:text-white text-xs sm:text-sm transition-colors">Cookie Policy</Link>
             </div>
           </div>
         </div>
