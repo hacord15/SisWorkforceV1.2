@@ -20,7 +20,7 @@ export default function HeroSection() {
         muted
         loop
         playsInline
-        poster="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600&q=80"
+        // poster="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600&q=80"
       >
         <source src="/hero.mp4" type="video/mp4" />
       </video>

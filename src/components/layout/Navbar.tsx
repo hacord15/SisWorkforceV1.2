@@ -45,7 +45,10 @@ export default function Navbar() {
               <Mail size={14} />
               info@sisglobalworkforce.com
             </a>
-            <a href="tel:+911145678900" className="flex items-center gap-2 text-sm text-gray-600 hover:text-red-600 transition-colors">
+            <a
+              href="tel:+911149032418"
+              className="flex items-center gap-2 text-sm text-gray-600 hover:text-red-600 transition-colors"
+            >
               <Phone size={14} />
               011-49032418
             </a>
@@ -196,7 +199,7 @@ export default function Navbar() {
             <div className="pt-4 mt-2 space-y-3">
               <div className="flex flex-col gap-2 pt-2">
                 <a
-                  href="tel:+911145678900"
+                  href="tel:+911149032418"
                   className="flex items-center gap-3 py-2 px-2 text-sm text-gray-700 hover:text-red-600"
                 >
                   <Phone size={16} />

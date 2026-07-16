@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 export const navItems: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "",children: [
+  { label: "About Us", href: "/sis-global",children: [
       { label: "SIS Global", href: "/sis-global" },
       { label: "SIS Group", href: "/sis-group" },
     ], },
@@ -55,6 +55,15 @@ export const stats: Stat[] = [
 
 export const STATS_About = [];
 
+export const industry_img = {  
+  healthcare: "/assets/industries/healthcare.jpg",
+  hospitality: "/assets/industries/hospitality.jpg",
+  oil_gas: "/assets/industries/oil-gas.jpg",
+  logistics: "/assets/industries/logistics.jpg",
+  engineering_mep: "/assets/industries/engineering-mep.jpg",
+  it_technology: "/assets/industries/it-technology.jpg",
+};
+
 export const industries = [
   {
     id: "healthcare",
@@ -68,8 +77,7 @@ export const industries = [
         "MRI Technologists",
       ],
     icon: HeartPulse,
-    image:
-      "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&q=80",
+    image:industry_img.healthcare,
     href: "/industries/healthcare",
   },
 
@@ -85,8 +93,7 @@ export const industries = [
         "Housekeeping",
       ],
     icon: Hotel,
-    image:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80",
+    image:industry_img.hospitality,
     href: "/industries/hospitality",
   },
 
@@ -102,8 +109,7 @@ export const industries = [
         "Maintenance Engineers",
       ],
     icon: Cog,
-    image:
-      "https://images.unsplash.com/photo-1513828583688-c52646db42da?w=400&q=80",
+    image:industry_img.oil_gas,
     href: "/industries/oil-gas",
   },
 
@@ -119,8 +125,7 @@ export const industries = [
         
       ],
     icon: Truck,
-    image:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&q=80",
+    image:industry_img.logistics,
     href: "/industries/logistics",
   },
 
@@ -137,8 +142,7 @@ export const industries = [
         "Pipe Fitters",
       ],
     icon: Wrench,
-    image:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=80",
+    image:industry_img.engineering_mep,
     href: "/industries/engineering-mep",
   },
 
@@ -154,8 +158,7 @@ export const industries = [
         
       ],
     icon: MonitorSmartphone,
-    image:
-      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&q=80",
+    image:industry_img.it_technology,
     href: "/industries/it-technology",
   },
 ];

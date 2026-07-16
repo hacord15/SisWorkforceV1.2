@@ -24,7 +24,7 @@ const DESTINATION_REGIONS = [
       { name: "Romania", flag: "🇷🇴", detail: "Emerging markets partner" },
       { name: "Spain", flag: "🇪🇸", detail: "Iberian Peninsula hub" },
     ],
-    image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&q=80",
+    image: "/assets/countries/europe.jpg",
     accentColor: "#1D4ED8",
     lightBg: "rgba(29,78,216,0.05)",
     lightBorder: "rgba(29,78,216,0.15)",
@@ -40,7 +40,7 @@ const DESTINATION_REGIONS = [
       { name: "Oman", flag: "🇴🇲", detail: "Sultanate-approved partner" },
       { name: "Qatar", flag: "🇶🇦", detail: "World Cup legacy workforce" },
     ],
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80",
+    image: "/assets/countries/gcc.jpg",
     accentColor: "#C8102E",
     lightBg: "rgba(200,16,46,0.05)",
     lightBorder: "rgba(200,16,46,0.18)",
@@ -53,21 +53,21 @@ const SOURCE_COUNTRIES = [
     flag: "🇮🇳",
     desc: "Our primary talent origin. Pre-trained, MEA-compliant and properly documented workers across healthcare, engineering, hospitality, and skilled trades.",
     strength: "250,000+ workforce deployed",
-    img: "https://visitayodhyarammandir.com/wp-content/uploads/2024/05/image9-2.png",
+    img: "/assets/countries/ram-mandir.png",
   },
   {
     name: "Nepal",
     flag: "🇳🇵",
     desc: "Hardworking and disciplined workforce, particularly strong in construction, facility management, and industrial roles.",
     strength: "Specialist trade skills",
-    img: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&q=80",
+    img: "/assets/countries/nepal.jpg",
   },
   {
     name: "Sri Lanka",
     flag: "🇱🇰",
     desc: "An English-proficient, well-educated talent pool excelling in healthcare, hospitality, and domestic services globally.",
     strength: "High compliance standards",
-    img: "https://plus.unsplash.com/premium_photo-1666254114402-cd16bc302aea?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    img: "/assets/countries/sri-lanka.avif",
   },
 ];
 
@@ -107,7 +107,7 @@ const LICENSES = [
 ];
 
 const STATS = [
-  { value: "9+", label: "Countries", sub: "Active deployments" },
+  { value: "9", label: "Countries", sub: "Active deployments" },
   { value: "3", label: "Licences", sub: "MEA · MOHRE · AUG" },
   { value: "3", label: "Source Countries", sub: "India · Nepal · Sri Lanka" },
   { value: "100%", label: "Compliance Rate", sub: "Zero violations record" },

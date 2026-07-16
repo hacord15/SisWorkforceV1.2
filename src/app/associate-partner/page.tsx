@@ -48,18 +48,18 @@ const INITIAL_FORM: LeadFormData = {
 
 // ── Static data ────────────────────────────────────────────────────────────
 const BENEFITS = [
-  { icon: <DollarSign size={22} />, title: "Revenue Sharing",    desc: "Earn competitive commissions on every successful placement or service delivered through the SIS Global network." },
-  { icon: <Globe size={22} />,      title: "National Network",   desc: "Tap into SIS Global's pan-India presence across 22+ states and reach clients you couldn't access independently." },
-  { icon: <TrendingUp size={22} />, title: "Business Growth",    desc: "Co-branded marketing materials, joint pitching support, and lead sharing to grow your business faster." },
-  { icon: <Award size={22} />,      title: "SIS Certification",  desc: "Gain official SIS Associate Partner certification — a mark of trust recognised by 5,000+ enterprise clients." },
-  { icon: <Users size={22} />,      title: "Training & Support", desc: "Access onboarding training, SOPs, compliance resources, and a dedicated partner success manager." },
-  { icon: <Shield size={22} />,     title: "Compliance Umbrella",desc: "Operate under SIS Group's compliance framework, reducing your legal and operational risk." },
+  { icon: <DollarSign size={22} />, title: "Revenue Sharing", desc: "Earn competitive commissions on every successful placement or service delivered through the SIS Global network." },
+  { icon: <Globe size={22} />, title: "National Network", desc: "Tap into SIS Global's pan-India presence across 22+ states and reach clients you couldn't access independently." },
+  { icon: <TrendingUp size={22} />, title: "Business Growth", desc: "Co-branded marketing materials, joint pitching support, and lead sharing to grow your business faster." },
+  { icon: <Award size={22} />, title: "SIS Certification", desc: "Gain official SIS Associate Partner certification — a mark of trust recognised by 5,000+ enterprise clients." },
+  { icon: <Users size={22} />, title: "Training & Support", desc: "Access onboarding training, SOPs, compliance resources, and a dedicated partner success manager." },
+  { icon: <Shield size={22} />, title: "Compliance Umbrella", desc: "Operate under SIS Group's compliance framework, reducing your legal and operational risk." },
 ];
 
 const TESTIMONIALS = [
-  { name: "Pradeep Nair",   org: "Nair Staffing Solutions, Kochi",   quote: "Partnering with SIS Global doubled our client base in 8 months. The co-branded credibility opened doors we never could before.",   rating: 5 },
-  { name: "Meera Joshi",    org: "TalentFirst HR, Pune",             quote: "The compliance support alone was worth it. We stopped worrying about PF and ESI and focused entirely on recruitment.",              rating: 5 },
-  { name: "Aarav Malhotra", org: "GulfConnect Recruiters, Dubai",    quote: "As an international partner, SIS Global gave us access to Indian employers who needed Gulf-ready talent. Excellent collaboration.", rating: 5 },
+  { name: "Pradeep Nair", org: "Nair Staffing Solutions, Kochi", quote: "Partnering with SIS Global doubled our client base in 8 months. The co-branded credibility opened doors we never could before.", rating: 5 },
+  { name: "Meera Joshi", org: "TalentFirst HR, Pune", quote: "The compliance support alone was worth it. We stopped worrying about PF and ESI and focused entirely on recruitment.", rating: 5 },
+  { name: "Aarav Malhotra", org: "GulfConnect Recruiters, Dubai", quote: "As an international partner, SIS Global gave us access to Indian employers who needed Gulf-ready talent. Excellent collaboration.", rating: 5 },
 ];
 
 // ── API Function ───────────────────────────────────────────────────────────
@@ -177,38 +177,38 @@ export default function LeadPage() {
   // }, []);
 
   useEffect(() => {
-  async function fetchCountries() {
-    try {
-      const res = await fetch(COUNTRIES_API_ENDPOINT, {
-        headers: { accept: "application/json" },
-      });
+    async function fetchCountries() {
+      try {
+        const res = await fetch(COUNTRIES_API_ENDPOINT, {
+          headers: { accept: "application/json" },
+        });
 
-      if (!res.ok) throw new Error(`Status ${res.status}`);
+        if (!res.ok) throw new Error(`Status ${res.status}`);
 
-      const data: Country[] = await res.json();
+        const data: Country[] = await res.json();
 
-      setCountries(data);
+        setCountries(data);
 
-      const india = data.find(
-        (country) => country.country_name === "India"
-      );
+        const india = data.find(
+          (country) => country.country_name === "India"
+        );
 
-      if (india) {
-        setForm((prev) => ({
-          ...prev,
-          country_id: india.country_id,
-        }));
+        if (india) {
+          setForm((prev) => ({
+            ...prev,
+            country_id: india.country_id,
+          }));
+        }
+      } catch (err) {
+        setCountriesError("Could not load countries. Please refresh.");
+        console.error(err);
+      } finally {
+        setCountriesLoading(false);
       }
-    } catch (err) {
-      setCountriesError("Could not load countries. Please refresh.");
-      console.error(err);
-    } finally {
-      setCountriesLoading(false);
     }
-  }
 
-  fetchCountries();
-}, []);
+    fetchCountries();
+  }, []);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
@@ -241,63 +241,63 @@ export default function LeadPage() {
       <Navbar />
       <main>
         {/* ══════════ HERO SECTION ══════════ */}
-       {/* ══════════ HERO SECTION ══════════ */}
-<section className="relative overflow-hidden bg-brand-grey-900 text-white">
-  {/* Banner Image as background */}
-  <div className="absolute inset-0">
-    <img
-      src="/assets/associate-banner.png"
-      alt="Associate Partner Programme"
-      className="w-full h-full object-cover"
-    />
-    {/* Dark gradient overlay so text stays readable */}
-    <div
-      className="absolute inset-0"
-      style={{
-        background:
-          "linear-gradient(100deg, rgba(17,17,17,0.94) 0%, rgba(17,17,17,0.82) 40%, rgba(17,17,17,0.45) 75%, rgba(17,17,17,0.2) 100%)",
-      }}
-    />
-  </div>
+        {/* ══════════ HERO SECTION ══════════ */}
+        <section className="relative overflow-hidden bg-brand-grey-900 text-white">
+          {/* Banner Image as background */}
+          <div className="absolute inset-0">
+            <img
+              src="/assets/associate-banner.png"
+              alt="Associate Partner Programme"
+              className="w-full h-full object-cover"
+            />
+            {/* Dark gradient overlay so text stays readable */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(100deg, rgba(17,17,17,0.94) 0%, rgba(17,17,17,0.82) 40%, rgba(17,17,17,0.45) 75%, rgba(17,17,17,0.2) 100%)",
+              }}
+            />
+          </div>
 
-  {/* Decorative elements — stays on top of image + overlay */}
-  <div className="absolute inset-0 pointer-events-none overflow-hidden">
-    <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full border border-white/5" />
-    <div className="absolute -bottom-16 -left-16 w-72 h-72 rounded-full border border-brand-red/10" />
-    <div className="absolute right-0 top-0 w-1/2 h-full" style={{ background: "radial-gradient(ellipse 60% 80% at 90% 30%, rgba(200,16,46,0.16) 0%, transparent 70%)" }} />
-  </div>
+          {/* Decorative elements — stays on top of image + overlay */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full border border-white/5" />
+            <div className="absolute -bottom-16 -left-16 w-72 h-72 rounded-full border border-brand-red/10" />
+            <div className="absolute right-0 top-0 w-1/2 h-full" style={{ background: "radial-gradient(ellipse 60% 80% at 90% 30%, rgba(200,16,46,0.16) 0%, transparent 70%)" }} />
+          </div>
 
-  <div className="max-w-7xl mx-auto px-4 py-20 relative z-10">
-    <div className="flex items-center gap-1.5 text-xs text-white/40 mb-8">
-      <Link href="/" className="hover:text-white transition-colors">Home</Link>
-      <ChevronRight size={11} />
-      <span className="text-white/70">Associate Partner Programme</span>
-    </div>
+          <div className="max-w-7xl mx-auto px-4 py-20 relative z-10">
+            <div className="flex items-center gap-1.5 text-xs text-white/40 mb-8">
+              <Link href="/" className="hover:text-white transition-colors">Home</Link>
+              <ChevronRight size={11} />
+              <span className="text-white/70">Associate Partner Programme</span>
+            </div>
 
-    <div className="grid md:grid-cols-2 gap-14 items-center">
-      <div>
-        <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.18em] uppercase px-3 py-1.5 rounded-full mb-6" style={{ background: "rgba(200,16,46,0.2)", color: "#FF6B7A", border: "1px solid rgba(200,16,46,0.3)" }}>
-          <span className="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse" />
-          Grow Together
-        </span>
-        <h1 className="text-5xl md:text-6xl font-bold leading-[1.04] mb-5" style={{ fontFamily: "var(--font-display)" }}>
-          Become an <span className="text-brand-red">Associate Partner</span>
-        </h1>
-        <p className="text-white/60 text-lg leading-relaxed mb-8">
-          Join India&apos;s largest workforce solutions network. Co-brand with SIS Global, expand your reach, earn competitive commissions, and grow your business under a trusted 31-year legacy.
-        </p>
-        <div className="flex flex-wrap gap-4">
-          <a href="#lead-form" className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red text-white text-sm font-semibold rounded-full hover:bg-brand-red/90 transition-colors" style={{ fontFamily: "var(--font-display)" }}>
-            Apply Now <ArrowRight size={15} />
-          </a>
-          <a href="tel:01244171888" className="inline-flex items-center gap-2 px-5 py-3 border border-white/25 text-white/80 text-sm font-semibold rounded-full hover:border-white/60 hover:text-white transition-colors" style={{ fontFamily: "var(--font-display)" }}>
-            <Phone size={14} /> Talk to Us
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+            <div className="grid md:grid-cols-2 gap-14 items-center">
+              <div>
+                <span className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.18em] uppercase px-3 py-1.5 rounded-full mb-6" style={{ background: "rgba(200,16,46,0.2)", color: "#FF6B7A", border: "1px solid rgba(200,16,46,0.3)" }}>
+                  <span className="w-1.5 h-1.5 rounded-full bg-brand-red animate-pulse" />
+                  Grow Together
+                </span>
+                <h1 className="text-5xl md:text-6xl font-bold leading-[1.04] mb-5" style={{ fontFamily: "var(--font-display)" }}>
+                  Become an <span className="text-brand-red">Associate Partner</span>
+                </h1>
+                <p className="text-white/60 text-lg leading-relaxed mb-8">
+                  Join India&apos;s largest workforce solutions network. Co-brand with SIS Global, expand your reach, earn competitive commissions, and grow your business under a trusted 31-year legacy.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <a href="#lead-form" className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red text-white text-sm font-semibold rounded-full hover:bg-brand-red/90 transition-colors" style={{ fontFamily: "var(--font-display)" }}>
+                    Apply Now <ArrowRight size={15} />
+                  </a>
+                  <a href="tel:01244171888" className="inline-flex items-center gap-2 px-5 py-3 border border-white/25 text-white/80 text-sm font-semibold rounded-full hover:border-white/60 hover:text-white transition-colors" style={{ fontFamily: "var(--font-display)" }}>
+                    <Phone size={14} /> Talk to Us
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* ══════════ BENEFITS SECTION ══════════ */}
         <section className="py-20" style={{ background: "linear-gradient(135deg,#F9F9F9 0%,#F2F2F2 100%)" }}>
@@ -516,8 +516,12 @@ export default function LeadPage() {
             <h2 className="text-4xl font-bold mb-3" style={{ fontFamily: "var(--font-display)" }}>Ready to Grow Together?</h2>
             <p className="text-white/70 mb-8 text-base">Call our partnerships team for a direct conversation — we&apos;ll find the right model for your business.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:01244171888" className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-white text-white text-sm font-semibold rounded-full hover:bg-white hover:text-brand-red transition-colors">
-                <Phone size={15} /> 011-49032418
+              <a
+                href="tel:+911149032418"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-white text-white text-sm font-semibold rounded-full hover:bg-white hover:text-brand-red transition-colors"
+              >
+                <Phone size={15} />
+                011-49032418
               </a>
               <a href="mailto:partners@sisglobal.com" className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-white/50 text-white text-sm font-semibold rounded-full hover:bg-white/20 transition-colors">
                 <Mail size={15} /> partners@sisglobal.com

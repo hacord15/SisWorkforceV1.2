@@ -13,7 +13,7 @@ type Category = (typeof CATEGORIES)[number];
 
 interface Props {
   categories: readonly Category[];
-  faqs:       FAQ[];
+  faqs: FAQ[];
 }
 
 // ── AccordionItem ──────────────────────────────────────────────────────────
@@ -28,8 +28,8 @@ function AccordionItem({
       className="border rounded-2xl overflow-hidden transition-all duration-200"
       style={{
         borderColor: isOpen ? "rgba(200,16,46,0.3)" : "#E5E5E5",
-        background:  "white",
-        boxShadow:   isOpen ? "0 4px 20px rgba(200,16,46,0.08)" : "none",
+        background: "white",
+        boxShadow: isOpen ? "0 4px 20px rgba(200,16,46,0.08)" : "none",
       }}
     >
       <button
@@ -41,7 +41,7 @@ function AccordionItem({
           className="w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5 transition-colors"
           style={{
             background: isOpen ? "#C8102E" : "#F5F5F5",
-            color:      isOpen ? "white"   : "#A3A3A3",
+            color: isOpen ? "white" : "#A3A3A3",
             fontFamily: "var(--font-display)",
           }}
         >
@@ -65,8 +65,8 @@ function AccordionItem({
       {/* Answer panel */}
       <div
         style={{
-          maxHeight:  isOpen ? 400 : 0,
-          overflow:   "hidden",
+          maxHeight: isOpen ? 400 : 0,
+          overflow: "hidden",
           transition: "max-height 0.35s cubic-bezier(0.4,0,0.2,1)",
         }}
       >
@@ -83,8 +83,8 @@ function AccordionItem({
 
 export default function FAQClient({ categories, faqs }: Props) {
   const [activeCategory, setActiveCategory] = useState("all");
-  const [openId,         setOpenId]         = useState<number | null>(1);
-  const [query,          setQuery]          = useState("");
+  const [openId, setOpenId] = useState<number | null>(1);
+  const [query, setQuery] = useState("");
 
   const filtered = useMemo(() => {
     let list = faqs;
@@ -160,9 +160,9 @@ export default function FAQClient({ categories, faqs }: Props) {
               Frequently Asked <span className="text-brand-red">Questions</span>
             </h1>
             <p className="text-white/55 text-lg leading-relaxed mb-8">
-             Everything you need to know about SIS Global
-Workforce Solutions. If you cannot find your answer,
-contact our team directly.
+              Everything you need to know about SIS Global
+              Workforce Solutions. If you cannot find your answer,
+              contact our team directly.
 
             </p>
 
@@ -186,9 +186,9 @@ contact our team directly.
             {/* Quick stat pills */}
             <div className="flex flex-wrap gap-3 mt-6">
               {[
-                { label: "24 Questions",        color: "rgba(255,255,255,0.08)" },
-                { label: "6 Categories",        color: "rgba(255,255,255,0.08)" },
-                { label: "Average response time: 4 working hours",color: "rgba(200,16,46,0.25)"  },
+                { label: "24 Questions", color: "rgba(255,255,255,0.08)" },
+                { label: "6 Categories", color: "rgba(255,255,255,0.08)" },
+                { label: "Average response time: 4 working hours", color: "rgba(200,16,46,0.25)" },
               ].map((p) => (
                 <span
                   key={p.label}
@@ -227,7 +227,7 @@ contact our team directly.
                         className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-all duration-200 text-left"
                         style={{
                           background: isActive ? "rgba(200,16,46,0.07)" : "transparent",
-                          color:      isActive ? "#C8102E" : "#525252",
+                          color: isActive ? "#C8102E" : "#525252",
                         }}
                       >
                         <span className="text-base leading-none">{cat.icon}</span>
@@ -236,7 +236,7 @@ contact our team directly.
                           className="text-[11px] font-bold px-2 py-0.5 rounded-full"
                           style={{
                             background: isActive ? "rgba(200,16,46,0.12)" : "#F0F0F0",
-                            color:      isActive ? "#C8102E" : "#A3A3A3",
+                            color: isActive ? "#C8102E" : "#A3A3A3",
                           }}
                         >
                           {cat.count}
@@ -322,7 +322,7 @@ contact our team directly.
                   Still have questions?
                 </h3>
                 <p className="text-sm text-brand-grey-500 mb-6 max-w-sm mx-auto leading-relaxed">
-                 Cannot find what you are looking for? Our support team is available Monday to Saturday, 9:00 AM to 7:00 PM IST
+                  Cannot find what you are looking for? Our support team is available Monday to Saturday, 9:00 AM to 7:00 PM IST
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-3">
@@ -330,11 +330,12 @@ contact our team directly.
                     <MessageSquare size={14} /> Contact Support
                   </Link>
                   <a
-                    href="tel:01244171888"
+                    href="tel:+911149032418"
                     className="flex items-center gap-2 px-5 py-2.5 border border-brand-grey-300 text-brand-grey-700 text-sm font-semibold rounded hover:border-brand-red hover:text-brand-red transition-colors"
                     style={{ fontFamily: "var(--font-display)", letterSpacing: "0.05em" }}
                   >
-                    <Phone size={14} /> 011-49032418
+                    <Phone size={14} />
+                    011-49032418
                   </a>
                   <a
                     href="mailto:info@sisglobal.com"

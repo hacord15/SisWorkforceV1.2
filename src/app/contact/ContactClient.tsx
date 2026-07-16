@@ -455,14 +455,7 @@ to help.
                 className="relative rounded-3xl overflow-hidden aspect-[4/3]"
                 style={{ border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 32px 64px rgba(0,0,0,0.45)" }}
               >
-                {/*
-                  Image: "Team collaboration" by Campaign Creators on Unsplash (free, no attribution required)
-                  https://unsplash.com/photos/people-sitting-down-near-table-with-assorted-laptop-computers-pypeCEaJeZY
-
-                  IMPORTANT: add "images.unsplash.com" to the `images.remotePatterns` array in next.config.js
-                  so Next.js <Image> can optimise this URL, e.g.:
-                    remotePatterns: [{ protocol: "https", hostname: "images.unsplash.com" }]
-                */}
+               
                 <Image
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=85&auto=format&fit=crop"
                   alt="Diverse professional team collaborating — SIS Global Workforce Solutions"

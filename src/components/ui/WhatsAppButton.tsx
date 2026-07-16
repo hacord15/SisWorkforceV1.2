@@ -15,7 +15,7 @@ import { useState } from "react";
  *   position     – "bottom-right" | "bottom-left"  (default: "bottom-right")
  */
 export default function WhatsAppButton({
-  phoneNumber = "+91-9818065979",
+  phoneNumber = "+919818065979",
   message = "Hello! I'd like to know more about your workforce solutions.",
   position = "bottom-right",
 }) {

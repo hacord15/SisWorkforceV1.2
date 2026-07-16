@@ -31,7 +31,7 @@ talent across industries.
           <Link href="/employers" className="btn-outline !text-white !border-white hover:!bg-white hover:!text-brand-red">
             Partner with Us <ArrowRight size={16} />
           </Link>
-          <a href="tel:01244171888" className="btn-outline !text-white !border-white/60 hover:!bg-white/20">
+          <a href="tel:+911149032418" className="btn-outline !text-white !border-white/60 hover:!bg-white/20">
             <Phone size={16} />
             Call 011-49032418
           </a>

@@ -45,10 +45,10 @@ const VALUES = [
   { icon: <CheckCircle size={22} />,   title: "Customer Commitment",     desc: "Maintaining the highest standards of service delivery and client satisfaction." },
 ];
 
-const IMG_HERO       = "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1400&q=85";
-const IMG_WHO_WE_ARE = "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80";
-const IMG_VISION     = "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&q=80";
-const IMG_MISSION    = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&q=80";
+const IMG_HERO       = "/assets/sis-global/hero_img.jpg";
+const IMG_WHO_WE_ARE = "/assets/sis-global/who_we_are.jpg";
+const IMG_VISION     = "/assets/sis-global/img_vision.jpg";
+const IMG_MISSION    = "/assets/sis-global/img_mission.jpg";
 
 function useCountUp(target: number, duration = 2000, started: boolean) {
   const [count, setCount] = useState(0);
