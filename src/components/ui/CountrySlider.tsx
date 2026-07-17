@@ -650,3 +650,12 @@
 // };
 
 // export default CountrySlider;
+
+
+export default function CountrySlider() {
+  return (
+    <div>
+      Country Slider
+    </div>
+  );
+}
